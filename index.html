@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Novelas por un Sol - Editorial Independiente Peruana. Literatura contemporánea andina de Sergio Esteban Flores Pinazo (Quipu Andino). Depósito Legal N° 2026-05503.">
+    <meta name="description" content="Novelas del Mundo / Novelas por un Sol. Editorial independiente de Sergio Esteban Flores Pinazo. Literatura contemporánea, cuentos y poesía al alcance de todos.">
     <meta name="author" content="Sergio Esteban Flores Pinazo">
-    <meta name="keywords" content="literatura peruana, novelas, Quipu Andino, Arequipa, narrativa andina, editorial independiente, La Culebra">
-    
-    <title>Novelas por un Sol | Editorial Independiente Peruana - Quipu Andino</title>
-    
-    <!-- Fonts -->
+    <meta name="keywords" content="Novelas del Mundo, Novelas por un Sol, La Culebra, literatura peruana, cuentos, poesía, editorial independiente, Sergio Esteban Flores Pinazo">
+    <title>Novelas del Mundo | Novelas por un Sol</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
             --rojo-andino: #C41E3A;
@@ -27,28 +23,21 @@
             --gris-claro: #f5f5f5;
             --blanco: #ffffff;
             --dorado: #D4AF37;
+            --crema: #fff8e7;
             --tipografia-titulos: 'Playfair Display', serif;
             --tipografia-cuerpo: 'Lato', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--tipografia-cuerpo);
             line-height: 1.6;
             color: var(--gris-oscuro);
             overflow-x: hidden;
+            background: var(--blanco);
         }
 
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -57,7 +46,6 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -67,34 +55,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
         }
 
         .logo {
             font-family: var(--tipografia-titulos);
-            font-size: 1.8rem;
+            font-size: 1.55rem;
             font-weight: 900;
             color: var(--rojo-andino);
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: .5px;
+            white-space: nowrap;
         }
 
-        .logo span {
-            color: var(--negro);
-            font-weight: 400;
-        }
+        .logo span { color: var(--negro); font-weight: 400; }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 1.35rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--gris-oscuro);
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
             position: relative;
         }
@@ -110,23 +97,18 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover {
-            color: var(--rojo-andino);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--rojo-andino); }
+        .nav-links a:hover::after { width: 100%; }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--negro);
         }
 
-        /* Hero Section */
         .hero {
-            margin-top: 80px;
+            margin-top: 76px;
             min-height: 90vh;
             background: linear-gradient(135deg, var(--negro) 0%, var(--gris-oscuro) 100%);
             display: flex;
@@ -138,13 +120,10 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="none" stroke="%23C41E3A" stroke-width="0.5" opacity="0.1"/></svg>');
             background-size: 100px 100px;
-            opacity: 0.3;
+            opacity: 0.35;
         }
 
         .hero-container {
@@ -161,72 +140,72 @@
 
         .hero-content h1 {
             font-family: var(--tipografia-titulos);
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             color: var(--blanco);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             font-weight: 900;
         }
 
-        .hero-content h1 span {
-            color: var(--rojo-andino);
-            display: block;
-        }
+        .hero-content h1 span { color: var(--rojo-andino); display: block; }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--dorado);
             margin-bottom: 1.5rem;
-            font-weight: 300;
+            font-weight: 700;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .hero-description {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.85);
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.88);
             margin-bottom: 2.5rem;
             line-height: 1.8;
-            max-width: 600px;
+            max-width: 650px;
         }
 
-        .hero-buttons {
+        .hero-buttons, .button-row {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 1rem 1.6rem;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
+            font-weight: 900;
+            font-size: 0.92rem;
             transition: all 0.3s ease;
-            border-radius: 3px;
+            border-radius: 4px;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.55rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: .7px;
             cursor: pointer;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
             background: var(--rojo-andino);
             color: var(--blanco);
-            border: 2px solid var(--rojo-andino);
+            border-color: var(--rojo-andino);
         }
 
         .btn-primary:hover {
             background: var(--rojo-oscuro);
             border-color: var(--rojo-oscuro);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.4);
+            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.35);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--blanco);
-            border: 2px solid var(--blanco);
+            border-color: var(--blanco);
         }
 
         .btn-secondary:hover {
@@ -235,10 +214,29 @@
             transform: translateY(-3px);
         }
 
-        .hero-image {
-            position: relative;
-            text-align: center;
+        .btn-dark {
+            background: var(--negro);
+            color: var(--blanco);
+            border-color: var(--negro);
         }
+
+        .btn-dark:hover {
+            background: var(--gris-oscuro);
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            background: var(--blanco);
+            color: var(--rojo-andino);
+            border-color: var(--blanco);
+        }
+
+        .btn-light:hover {
+            background: var(--crema);
+            transform: translateY(-3px);
+        }
+
+        .hero-image { position: relative; text-align: center; }
 
         .hero-image img {
             width: 100%;
@@ -249,9 +247,7 @@
             transition: filter 0.5s ease;
         }
 
-        .hero-image img:hover {
-            filter: grayscale(0%);
-        }
+        .hero-image img:hover { filter: grayscale(0%); }
 
         .author-badge {
             position: absolute;
@@ -259,22 +255,18 @@
             right: 20px;
             background: var(--rojo-andino);
             color: var(--blanco);
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             border-radius: 3px;
-            font-weight: 700;
+            font-weight: 900;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* Featured Book Section */
-        .featured-book {
-            padding: 6rem 2rem;
-            background: var(--gris-claro);
-        }
+        .section { padding: 6rem 2rem; }
+        .featured-book, .payment { background: var(--gris-claro); }
+        .catalog, .reading-section { background: var(--blanco); }
+        .creative-section { background: var(--crema); }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1400px; margin: 0 auto; }
 
         .section-header {
             text-align: center;
@@ -283,7 +275,7 @@
 
         .section-header h2 {
             font-family: var(--tipografia-titulos);
-            font-size: 3rem;
+            font-size: clamp(2rem, 4vw, 3rem);
             color: var(--negro);
             margin-bottom: 1rem;
         }
@@ -291,7 +283,7 @@
         .section-header p {
             font-size: 1.2rem;
             color: var(--gris);
-            max-width: 600px;
+            max-width: 760px;
             margin: 0 auto;
         }
 
@@ -306,10 +298,7 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        .book-cover {
-            position: relative;
-            text-align: center;
-        }
+        .book-cover { position: relative; text-align: center; }
 
         .book-cover img {
             width: 100%;
@@ -325,7 +314,7 @@
             background: var(--dorado);
             color: var(--negro);
             padding: 0.5rem 1.5rem;
-            font-weight: 700;
+            font-weight: 900;
             border-radius: 3px;
             transform: rotate(5deg);
         }
@@ -340,7 +329,7 @@
         .book-info .author {
             color: var(--rojo-andino);
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 900;
             margin-bottom: 2rem;
         }
 
@@ -351,10 +340,13 @@
             margin-bottom: 2rem;
         }
 
-        .book-details {
+        .book-details, .act-grid, .reading-grid, .creative-grid, .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+        }
+
+        .book-details {
+            grid-template-columns: repeat(3, 1fr);
             margin-bottom: 2.5rem;
         }
 
@@ -371,16 +363,8 @@
             margin-bottom: 0.5rem;
         }
 
-        .detail-item h4 {
-            font-size: 1.5rem;
-            color: var(--negro);
-            margin-bottom: 0.3rem;
-        }
-
-        .detail-item p {
-            font-size: 0.9rem;
-            color: var(--gris);
-        }
+        .detail-item h4 { font-size: 1.5rem; color: var(--negro); margin-bottom: 0.3rem; }
+        .detail-item p { font-size: 0.9rem; color: var(--gris); }
 
         .price-tag {
             font-size: 2.5rem;
@@ -396,32 +380,111 @@
             font-weight: 400;
         }
 
-        /* Catalog Section */
-        .catalog {
-            padding: 6rem 2rem;
-            background: var(--blanco);
-        }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+        .act-grid {
+            grid-template-columns: repeat(3, 1fr);
             margin-top: 3rem;
         }
 
-        .catalog-item {
+        .act-card, .reading-card, .creative-card, .catalog-item {
             background: var(--blanco);
             border: 1px solid #e0e0e0;
-            border-radius: 5px;
+            border-radius: 6px;
             overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
         }
 
-        .catalog-item:hover {
-            transform: translateY(-10px);
+        .act-card:hover, .reading-card:hover, .creative-card:hover, .catalog-item:hover {
+            transform: translateY(-8px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
+
+        .act-image {
+            min-height: 240px;
+            background: linear-gradient(135deg, var(--negro), var(--rojo-oscuro));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            position: relative;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .act-image img {
+            width: 100%;
+            height: 100%;
+            max-height: 280px;
+            object-fit: contain;
+        }
+
+        .act-placeholder {
+            font-family: var(--tipografia-titulos);
+            font-size: 2.2rem;
+            font-weight: 900;
+        }
+
+        .act-content, .reading-card, .creative-content, .catalog-item-content { padding: 2rem; }
+
+        .act-content h3, .reading-card h3, .creative-content h3 {
+            font-family: var(--tipografia-titulos);
+            color: var(--negro);
+            font-size: 1.65rem;
+            margin-bottom: .8rem;
+        }
+
+        .act-content p, .reading-card p, .creative-content p { color: var(--gris); margin-bottom: 1.5rem; }
+
+        .badge-free, .badge-paid, .badge-soon {
+            display: inline-block;
+            padding: .35rem .75rem;
+            border-radius: 999px;
+            font-weight: 900;
+            font-size: .78rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-free { background: #e8f7ec; color: #167a35; }
+        .badge-paid { background: var(--crema); color: var(--rojo-oscuro); }
+        .badge-soon { background: #eeeeee; color: var(--gris-oscuro); }
+
+        .reading-grid, .creative-grid {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 3rem;
+        }
+
+        .reading-card {
+            border-top: 5px solid var(--rojo-andino);
+        }
+
+        .reading-card i, .creative-icon {
+            color: var(--rojo-andino);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .creative-card {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            background: var(--blanco);
+        }
+
+        .creative-visual {
+            background: linear-gradient(135deg, var(--negro), var(--gris-oscuro));
+            color: var(--dorado);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 260px;
+            font-size: 4rem;
+        }
+
+        .catalog-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 3rem;
+        }
+
+        .catalog-item { cursor: default; }
 
         .catalog-item-image {
             height: 400px;
@@ -439,13 +502,7 @@
             transition: transform 0.3s ease;
         }
 
-        .catalog-item:hover .catalog-item-image img {
-            transform: scale(1.05);
-        }
-
-        .catalog-item-content {
-            padding: 2rem;
-        }
+        .catalog-item:hover .catalog-item-image img { transform: scale(1.05); }
 
         .catalog-item-content h3 {
             font-family: var(--tipografia-titulos);
@@ -454,12 +511,14 @@
             margin-bottom: 0.5rem;
         }
 
-        .catalog-item-content .category {
+        .category {
             color: var(--rojo-andino);
-            font-weight: 700;
+            font-weight: 900;
             font-size: 0.9rem;
             margin-bottom: 1rem;
             display: block;
+            text-transform: uppercase;
+            letter-spacing: .5px;
         }
 
         .catalog-item-content p {
@@ -471,18 +530,15 @@
         .read-more {
             color: var(--rojo-andino);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 900;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             transition: gap 0.3s ease;
         }
 
-        .read-more:hover {
-            gap: 1rem;
-        }
+        .read-more:hover { gap: 1rem; }
 
-        /* About Section */
         .about {
             padding: 6rem 2rem;
             background: linear-gradient(to right, var(--negro), var(--gris-oscuro));
@@ -498,10 +554,6 @@
             align-items: center;
         }
 
-        .about-image {
-            position: relative;
-        }
-
         .about-image img {
             width: 100%;
             border-radius: 5px;
@@ -514,15 +566,13 @@
             margin-bottom: 1.5rem;
         }
 
-        .about-content h2 span {
-            color: var(--rojo-andino);
-        }
+        .about-content h2 span { color: var(--rojo-andino); }
 
         .about-content p {
             font-size: 1.1rem;
             line-height: 1.9;
             margin-bottom: 1.5rem;
-            opacity: 0.9;
+            opacity: 0.92;
         }
 
         .stats {
@@ -540,23 +590,10 @@
             border-left: 3px solid var(--rojo-andino);
         }
 
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dorado);
-            margin-bottom: 0.5rem;
-        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--dorado); margin-bottom: 0.5rem; }
+        .stat-item p { font-size: 0.9rem; opacity: 0.8; }
 
-        .stat-item p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Payment Section */
-        .payment {
-            padding: 4rem 2rem;
-            background: var(--gris-claro);
-            text-align: center;
-        }
+        .payment { padding: 4rem 2rem; text-align: center; }
 
         .payment h2 {
             font-family: var(--tipografia-titulos);
@@ -586,19 +623,23 @@
             margin-bottom: 1rem;
         }
 
-        .payment-method h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--negro);
+        .payment-method h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--negro); }
+        .payment-method p { font-size: 1.5rem; font-weight: 900; color: var(--gris); }
+
+        .purchase-box {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--blanco);
+            border-radius: 5px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
         }
 
-        .payment-method p {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gris);
-        }
+        .purchase-box h3 { margin-bottom: 1rem; color: var(--negro); }
+        .purchase-box ol { text-align: left; line-height: 2; color: var(--gris); padding-left: 1.5rem; }
 
-        /* Footer */
         footer {
             background: var(--negro);
             color: var(--blanco);
@@ -607,11 +648,10 @@
 
         .footer-container {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 0 auto 3rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 3rem;
-            margin-bottom: 3rem;
         }
 
         .footer-section h3 {
@@ -628,9 +668,7 @@
             transition: color 0.3s ease;
         }
 
-        .footer-section a:hover {
-            color: var(--rojo-andino);
-        }
+        .footer-section a:hover { color: var(--rojo-andino); }
 
         .social-links {
             display: flex;
@@ -646,7 +684,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
@@ -661,120 +698,94 @@
             color: rgba(255,255,255,0.6);
         }
 
-        /* Responsive */
+        .legal-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 1100px) {
+            .nav-links { gap: .8rem; }
+            .nav-links a { font-size: .82rem; }
+        }
+
         @media (max-width: 1024px) {
-            .hero-container,
-            .about-container {
+            .hero-container, .about-container, .book-showcase {
                 grid-template-columns: 1fr;
             }
 
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .book-showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+            .act-grid, .reading-grid { grid-template-columns: 1fr; }
+            .creative-card { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
+            .nav-container { align-items: flex-start; }
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--blanco);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 2rem 1.5rem;
+                box-shadow: 0 10px 25px rgba(0,0,0,.12);
             }
 
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .book-details {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease;
-        }
-
-        /* Loading animation for images */
-        img {
-            loading: lazy;
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; margin-top: .2rem; }
+            .hero { margin-top: 68px; }
+            .book-details, .stats, .footer-container { grid-template-columns: 1fr; }
+            .book-showcase { padding: 1.5rem; }
+            .payment-method { width: 100%; }
+            .btn { width: 100%; }
+            .author-badge { position: static; margin-top: 1rem; display: inline-block; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">NOVELAS <span>POR UN SOL</span></a>
-            <ul class="nav-links">
+            <a href="#inicio" class="logo">NOVELAS <span>DEL MUNDO</span></a>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#la-culebra">La Culebra</a></li>
+                <li><a href="#leer">Leer gratis</a></li>
+                <li><a href="#cuentos-poesia">Cuentos y poesía</a></li>
                 <li><a href="#catalogo">Catálogo</a></li>
                 <li><a href="#autor">Autor</a></li>
                 <li><a href="#comprar">Comprar</a></li>
-                <li><a href="https://wa.me/51931177848" target="_blank">Contacto</a></li>
+                <li><a href="https://wa.me/51931177848?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20Novelas%20del%20Mundo" target="_blank" rel="noopener">Contacto</a></li>
             </ul>
-            <div class="mobile-menu">
+            <div class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Literatura Peruana <span>Que No Pide Permiso</span></h1>
-                <p class="hero-subtitle">Quipu Andino</p>
+                <p class="hero-subtitle">Novelas del Mundo • Campaña Novelas por un Sol</p>
                 <p class="hero-description">
-                    Editorial independiente que publica narrativa contemporánea del Perú profundo. 
-                    Historias reales sobre fronteras, ambición, traición y el precio de soñar demasiado alto.
+                    Editorial independiente que publica narrativa contemporánea, cuentos y poesía. 
+                    Historias intensas, accesibles y universales, nacidas desde el Perú para lectores de cualquier frontera.
                 </p>
                 <div class="hero-buttons">
                     <a href="#la-culebra" class="btn btn-primary">
                         <i class="fas fa-book"></i> Descubrir La Culebra
                     </a>
-                    <a href="#catalogo" class="btn btn-secondary">
-                        <i class="fas fa-books"></i> Ver Catálogo
+                    <a href="#leer" class="btn btn-secondary">
+                        <i class="fas fa-book-open-reader"></i> Leer Acto I gratis
                     </a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- IMAGEN DEL AUTOR EN EL HERO -->
-                <img src="perfil.jpg" alt="Sergio Esteban Flores Pinazo - Quipu Andino">
+                <img src="perfil.jpg" alt="Sergio Esteban Flores Pinazo - autor de La Culebra">
                 <div class="author-badge">
                     <i class="fas fa-pen-fancy"></i> Sergio Esteban Flores Pinazo
                 </div>
@@ -782,89 +793,205 @@
         </div>
     </section>
 
-    <!-- Featured Book: La Culebra -->
-    <section class="featured-book" id="la-culebra">
+    <section class="featured-book section" id="la-culebra">
         <div class="container">
             <div class="section-header">
                 <h2>Novela Destacada</h2>
-                <p>Una historia sobre contrabando, lealtad y el precio de soñar demasiado alto en la frontera peruano-boliviana</p>
+                <p>Una historia sobre contrabando, lealtad y el precio de soñar demasiado alto en la frontera peruano-boliviana.</p>
             </div>
-            
+
             <div class="book-showcase">
                 <div class="book-cover">
-                    <div class="book-badge">BEST SELLER</div>
-                    <!-- PORTADA REAL DE LA CULEBRA SUBIDA A GITHUB -->
-                    <img src="PORTADA DE LA CULEBRA.png" alt="La Culebra - Portada Oficial">
+                    <div class="book-badge">LANZAMIENTO</div>
+                    <img src="PORTADA DE LA CULEBRA.png" alt="La Culebra - Portada oficial">
                 </div>
-                
+
                 <div class="book-info">
                     <h3>La Culebra</h3>
-                    <p class="author">por Quipu Andino (Sergio Esteban Flores Pinazo)</p>
-                    
+                    <p class="author">por Sergio Esteban Flores Pinazo</p>
+
                     <p class="description">
-                        Artemio Puma despierta una madrugada de febrero en Juliaca con 400 soles en el bolsillo 
-                        y una decisión que tomar. Lo que comienza como un simple cruce de frontera para comprar 
-                        mercadería se convierte en una espiral de ambición, traición y consecuencias inevitables. 
-                        Una novela noir andina que explora los límites morales de la supervivencia en el altiplano peruano.
+                        Artemio Puma despierta una madrugada de febrero en Juliaca con 400 soles en el bolsillo
+                        y una decisión que tomar. Lo que comienza como un simple cruce de frontera para comprar
+                        mercadería se convierte en una espiral de ambición, traición y consecuencias inevitables.
+                        Una novela noir andina sobre supervivencia, frontera y moralidad.
                     </p>
-                    
+
                     <div class="book-details">
                         <div class="detail-item">
                             <i class="fas fa-file-alt"></i>
                             <h4>3 Actos</h4>
-                            <p>Edición completa</p>
+                            <p>Publicación por entregas</p>
                         </div>
                         <div class="detail-item">
-                            <i class="fas fa-clock"></i>
-                            <h4>18 meses</h4>
-                            <p>De escritura a publicación</p>
+                            <i class="fas fa-gift"></i>
+                            <h4>Acto I</h4>
+                            <p>Lectura gratis</p>
                         </div>
                         <div class="detail-item">
-                            <i class="fas fa-star"></i>
-                            <h4>4.9/5</h4>
-                            <p>Valoración lectores</p>
+                            <i class="fas fa-mobile-screen"></i>
+                            <h4>Yape/Plin</h4>
+                            <p>931 177 848</p>
                         </div>
                     </div>
-                    
+
                     <div class="price-tag">
-                        S/ 2.00
-                        <span>Precio completo (3 actos) o S/1 por acto individual</span>
+                        Acto I gratis
+                        <span>Actos II y III disponibles por campaña de lectura digital</span>
                     </div>
-                    
+
                     <div class="hero-buttons">
-                        <!-- ENLACE DIRECTO AL WHATSAPP PARA COMPRAR -->
-                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20comprar%20La%20Culebra" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                        <a href="LA_CULEBRA_ACTO I GRATIS.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Descargar Acto I
                         </a>
-                        
-                        <!-- BOTÓN DE DESCARGA FUNCIONAL DEL ACTO I -->
-                        <a href="https://raw.githubusercontent.com/novelasporunsoleditorial-boop/novelas-por-un-sol/main/LA_CULEBRA_ACTO%20I%20GRATIS.pdf" 
-                           class="btn btn-secondary" 
-                           download>
-                           <i class="fas fa-download"></i> Descargar Acto I Gratis
+                        <a href="#leer" class="btn btn-dark">
+                            <i class="fas fa-book-open"></i> Leer en la web
+                        </a>
+                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20comprar%20La%20Culebra" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
                         </a>
                     </div>
-                    
-                    <!-- DATO LEGAL VISIBLE -->
-                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">
-                        <i class="fas fa-certificate" style="color: var(--dorado);"></i> 
-                        Obra registrada con Depósito Legal N° 2026-05503 - Biblioteca Nacional del Perú
+
+                    <p class="legal-note">
+                        <i class="fas fa-certificate" style="color: var(--dorado);"></i>
+                        Obra registrada con Depósito Legal N° 2026-05503 - Biblioteca Nacional del Perú.
                     </p>
                 </div>
+            </div>
+
+            <div class="act-grid">
+                <article class="act-card">
+                    <div class="act-image">
+                        <img src="PORTADA DE LA CULEBRA.png" alt="Acto I de La Culebra">
+                    </div>
+                    <div class="act-content">
+                        <span class="badge-free">Disponible gratis</span>
+                        <h3>Acto I</h3>
+                        <p>Inicio de la caída de Artemio Puma. Descarga el PDF o léelo desde la misma página.</p>
+                        <div class="button-row">
+                            <a href="LA_CULEBRA_ACTO I GRATIS.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Descargar</a>
+                            <a href="#leer" class="btn btn-dark"><i class="fas fa-eye"></i> Leer</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="act-card">
+                    <div class="act-image">
+                        <div class="act-placeholder">ACTO II<br><small>La ruta se oscurece</small></div>
+                    </div>
+                    <div class="act-content">
+                        <span class="badge-paid">Siguiente entrega</span>
+                        <h3>Acto II</h3>
+                        <p>Espacio listo para colocar la imagen representativa del Acto II y dirigir al lector a la compra.</p>
+                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20acceder%20al%20Acto%20II%20de%20La%20Culebra" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Pedir Acto II</a>
+                    </div>
+                </article>
+
+                <article class="act-card">
+                    <div class="act-image">
+                        <div class="act-placeholder">ACTO III<br><small>El precio final</small></div>
+                    </div>
+                    <div class="act-content">
+                        <span class="badge-paid">Cierre de la novela</span>
+                        <h3>Acto III</h3>
+                        <p>Espacio listo para colocar la imagen representativa del Acto III y cerrar la campaña completa.</p>
+                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20acceder%20al%20Acto%20III%20de%20La%20Culebra" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Pedir Acto III</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Catalog Section -->
-    <section class="catalog" id="catalogo">
+    <section class="reading-section section" id="leer">
+        <div class="container">
+            <div class="section-header">
+                <h2>Leer La Culebra en la web</h2>
+                <p>El primer acto puede leerse directamente desde esta página mediante los archivos HTML ya subidos al repositorio.</p>
+            </div>
+
+            <div class="reading-grid">
+                <article class="reading-card">
+                    <i class="fas fa-door-open"></i>
+                    <span class="category">Acto I</span>
+                    <h3>Prólogo</h3>
+                    <p>La entrada directa al mundo de Artemio Puma: caída, frontera y tensión desde la primera página.</p>
+                    <a href="la_culebra_prologo.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer prólogo</a>
+                </article>
+
+                <article class="reading-card">
+                    <i class="fas fa-road"></i>
+                    <span class="category">Acto I</span>
+                    <h3>Capítulo 1</h3>
+                    <p>El inicio del viaje, la necesidad y la primera decisión que empuja al protagonista hacia la ruta.</p>
+                    <a href="la_culebra_capitulo1.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer capítulo 1</a>
+                </article>
+
+                <article class="reading-card">
+                    <i class="fas fa-snake"></i>
+                    <span class="category">Acto I</span>
+                    <h3>Capítulo 2</h3>
+                    <p>La ambición toma forma y la historia empieza a mostrar el verdadero costo de cruzar ciertos límites.</p>
+                    <a href="la_culebra_capitulo2.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer capítulo 2</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="creative-section section" id="cuentos-poesia">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cuentos diarios y poesía</h2>
+                <p>Dos puertas de entrada para atraer lectores todos los días: relatos breves y poemas publicados por entregas.</p>
+            </div>
+
+            <div class="creative-grid">
+                <article class="creative-card">
+                    <div class="creative-visual">
+                        <i class="fas fa-feather-pointed"></i>
+                    </div>
+                    <div class="creative-content">
+                        <span class="category">Publicación diaria</span>
+                        <h3>Cuentos del día</h3>
+                        <p>Relatos breves para redes y web: historias rápidas, intensas y compartibles para formar comunidad lectora.</p>
+                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20recibir%20los%20cuentos%20diarios%20de%20Novelas%20del%20Mundo" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Recibir cuentos</a>
+                    </div>
+                </article>
+
+                <article class="creative-card">
+                    <div class="creative-visual">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="creative-content">
+                        <span class="category">Poema por poema</span>
+                        <h3>Poesía y poemarios</h3>
+                        <p>Poemarios completos difundidos por entregas para construir hábito de lectura y conexión emocional con la editorial.</p>
+                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20recibir%20poemas%20y%20poemarios%20de%20Novelas%20del%20Mundo" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Recibir poesía</a>
+                    </div>
+                </article>
+
+                <article class="creative-card">
+                    <div class="creative-visual">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="creative-content">
+                        <span class="category">Comunidad</span>
+                        <h3>Lectores fundadores</h3>
+                        <p>Canal para que los primeros lectores pidan novedades, recomienden textos y acompañen el lanzamiento de cada entrega.</p>
+                        <a href="https://wa.me/51931177848?text=Hola,%20quiero%20ser%20lector%20fundador%20de%20Novelas%20del%20Mundo" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Unirme</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog section" id="catalogo">
         <div class="container">
             <div class="section-header">
                 <h2>Catálogo Editorial</h2>
-                <p>14 novelas, cuentos y poesía que exploran la identidad peruana contemporánea</p>
+                <p>Novelas, cuentos y poesía que exploran identidad, frontera, memoria, familia y supervivencia.</p>
             </div>
-            
+
             <div class="catalog-grid">
-                <!-- Book 1 -->
                 <div class="catalog-item">
                     <div class="catalog-item-image">
                         <img src="https://via.placeholder.com/250x350/1a1a1a/FFFFFF?text=El+Código+Inca" alt="El Código Inca">
@@ -872,12 +999,11 @@
                     <div class="catalog-item-content">
                         <span class="category">Novela Histórica</span>
                         <h3>El Código Inca</h3>
-                        <p>Memoria, quipu y resistencia cultural en la conquista del Perú. Una historia sobre la preservación de la identidad andina.</p>
-                        <a href="https://wa.me/51931177848?text=Info%20El%20Código%20Inca" class="read-more" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+                        <p>Memoria, quipu y resistencia cultural en la conquista del Perú.</p>
+                        <a href="https://wa.me/51931177848?text=Info%20El%20C%C3%B3digo%20Inca" class="read-more" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Book 2 -->
                 <div class="catalog-item">
                     <div class="catalog-item-image">
                         <img src="https://via.placeholder.com/250x350/C41E3A/FFFFFF?text=Dieciocho+Horas" alt="Dieciocho Horas de Luz">
@@ -885,12 +1011,11 @@
                     <div class="catalog-item-content">
                         <span class="category">Novela Contemporánea</span>
                         <h3>Dieciocho Horas de Luz</h3>
-                        <p>Historia familiar que explora las relaciones humanas en el contexto del Perú profundo y sus contradicciones.</p>
-                        <a href="https://wa.me/51931177848?text=Info%20Dieciocho%20Horas" class="read-more" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+                        <p>Historia familiar sobre relaciones humanas, contradicciones y heridas del Perú profundo.</p>
+                        <a href="https://wa.me/51931177848?text=Info%20Dieciocho%20Horas%20de%20Luz" class="read-more" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Book 3 -->
                 <div class="catalog-item">
                     <div class="catalog-item-image">
                         <img src="https://via.placeholder.com/250x350/2d2d2d/FFFFFF?text=El+Quipu+Negro" alt="El Quipu Negro">
@@ -898,12 +1023,11 @@
                     <div class="catalog-item-content">
                         <span class="category">Novela Histórica</span>
                         <h3>El Quipu Negro</h3>
-                        <p>Continuación de la saga incaica. Memoria y resistencia en tiempos de colonialismo y transformación social.</p>
-                        <a href="https://wa.me/51931177848?text=Info%20El%20Quipu%20Negro" class="read-more" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+                        <p>Memoria y resistencia en tiempos de colonialismo y transformación social.</p>
+                        <a href="https://wa.me/51931177848?text=Info%20El%20Quipu%20Negro" class="read-more" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Book 4 -->
                 <div class="catalog-item">
                     <div class="catalog-item-image">
                         <img src="https://via.placeholder.com/250x350/666666/FFFFFF?text=Filipillo" alt="Filipillo">
@@ -911,12 +1035,11 @@
                     <div class="catalog-item-content">
                         <span class="category">Novela Histórica</span>
                         <h3>Filipillo</h3>
-                        <p>La historia del lenguaraz que cambió el destino de un imperio. Traición, lealtad y supervivencia.</p>
-                        <a href="https://wa.me/51931177848?text=Info%20Filipillo" class="read-more" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+                        <p>La historia del lenguaraz que cambió el destino de un imperio.</p>
+                        <a href="https://wa.me/51931177848?text=Info%20Filipillo" class="read-more" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Book 5 -->
                 <div class="catalog-item">
                     <div class="catalog-item-image">
                         <img src="https://via.placeholder.com/250x350/8B0000/FFFFFF?text=La+Honra+Quebrada" alt="La Honra Quebrada">
@@ -924,109 +1047,175 @@
                     <div class="catalog-item-content">
                         <span class="category">Novela Social</span>
                         <h3>La Honra Quebrada</h3>
-                        <p>Drama familiar en el Perú contemporáneo. Las consecuencias de las decisiones y el peso de la tradición.</p>
-                        <a href="https://wa.me/51931177848?text=Info%20La%20Honra%20Quebrada" class="read-more" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+                        <p>Drama familiar en el Perú contemporáneo, tradición y consecuencias.</p>
+                        <a href="https://wa.me/51931177848?text=Info%20La%20Honra%20Quebrada" class="read-more" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Book 6 -->
                 <div class="catalog-item">
                     <div class="catalog-item-image">
-                        <img src="https://via.placeholder.com/250x350/D4AF37/1a1a1a?text=Cuentos+Andinos" alt="Cuentos Andinos">
+                        <img src="https://via.placeholder.com/250x350/D4AF37/1a1a1a?text=Cuentos+y+Poesía" alt="Cuentos y poesía">
                     </div>
                     <div class="catalog-item-content">
-                        <span class="category">Cuentos</span>
-                        <h3>Cuentos del Altiplano</h3>
-                        <p>Relatos cortos que capturan la esencia del Perú profundo, sus personajes y sus historias cotidianas.</p>
-                        <a href="https://wa.me/51931177848?text=Info%20Cuentos" class="read-more" target="_blank">Consultar <i class="fas fa-arrow-right"></i></a>
+                        <span class="category">Cuentos / Poesía</span>
+                        <h3>Cuentos y poemarios</h3>
+                        <p>Publicaciones breves por entregas para nuevos lectores de la editorial.</p>
+                        <a href="#cuentos-poesia" class="read-more">Ver secciones <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://wa.me/51931177848?text=Hola,%20quiero%20ver%20el%20catálogo%20completo" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Consultar Catálogo Completo
+
+            <div style="text-align:center; margin-top:3rem;">
+                <a href="https://wa.me/51931177848?text=Hola,%20quiero%20ver%20el%20cat%C3%A1logo%20completo%20de%20Novelas%20del%20Mundo" class="btn btn-primary" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Consultar catálogo completo
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Author Section -->
     <section class="about" id="autor">
         <div class="about-container">
             <div class="about-image">
-                <!-- FOTO DEL AUTOR CORREGIDA -->
                 <img src="SERGIO BLANCO Y NEGRO.jpg" alt="Sergio Esteban Flores Pinazo">
             </div>
             <div class="about-content">
                 <h2>El <span>Autor</span></h2>
                 <p>
-                    <strong>Sergio Esteban Flores Pinazo</strong> (Quipu Andino) es abogado, escritor y docente 
-                    de literatura con décadas de experiencia en el ámbito educativo. Nacido en Puquina, Moquegua y vivió por mas de 30 años entre Juliaca y Puno, hasta finalmente radicar en la actualidad en la preciosa ciudad blanca de Arequipa, Perú, 
-                    su obra explora la identidad andina, las fronteras morales y la complejidad del Perú contemporáneo.
+                    <strong>Sergio Esteban Flores Pinazo</strong> es abogado, escritor y docente de literatura.
+                    Nacido en Puquina, Moquegua, vivió por más de 30 años entre Juliaca y Puno, y actualmente
+                    radica en Arequipa, Perú.
                 </p>
                 <p>
-                    Con 14 novelas terminadas y un catálogo en constante crecimiento, su proyecto "Novelas por un Sol" 
-                    busca democratizar el acceso a la literatura peruana de calidad, eliminando las barreras económicas 
-                    que impiden a los lectores acceder a historias que hablan de su realidad.
+                    Su obra explora la identidad andina, las fronteras morales y la complejidad del Perú contemporáneo:
+                    personajes que sobreviven, desean, se equivocan y pagan el precio de sus decisiones.
                 </p>
                 <p>
-                    Su escritura combina el realismo social con la profundidad psicológica, creando personajes 
-                    complejos que enfrentan dilemas morales en contextos de pobreza, ambición y supervivencia.
+                    Con un catálogo amplio de novelas, cuentos y poemarios, este proyecto busca democratizar el acceso
+                    a literatura de calidad mediante publicaciones digitales, entregas por actos y contacto directo con lectores.
                 </p>
-                
+
                 <div class="stats">
                     <div class="stat-item">
                         <h3>14</h3>
-                        <p>Novelas Publicadas</p>
+                        <p>Novelas en catálogo</p>
                     </div>
                     <div class="stat-item">
-                        <h3>20+</h3>
-                        <p>Años de Experiencia</p>
+                        <h3>3</h3>
+                        <p>Formatos: novela, cuento y poesía</p>
                     </div>
                     <div class="stat-item">
                         <h3>100%</h3>
-                        <p>Compromiso Andino</p>
+                        <p>Lectura accesible</p>
                     </div>
+                </div>
+
+                <div class="button-row" style="margin-top:2rem;">
+                    <a href="https://wa.me/51931177848?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20el%20autor%20Sergio%20Esteban%20Flores%20Pinazo" class="btn btn-light" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Contactar al autor</a>
+                    <a href="#catalogo" class="btn btn-secondary"><i class="fas fa-layer-group"></i> Ver catálogo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Payment Section -->
     <section class="payment" id="comprar">
         <div class="container">
             <h2>Métodos de Pago</h2>
-            <p style="font-size: 1.2rem; color: var(--gris); margin-bottom: 2rem;">
-                Compra fácil y seguro. Acceso inmediato a tu descarga digital.
+            <p style="font-size:1.2rem; color:var(--gris); margin-bottom:2rem;">
+                Compra fácil y segura. El contacto y la entrega se realizan por WhatsApp.
             </p>
-            
+
             <div class="payment-methods">
                 <div class="payment-method">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Yape</h3>
                     <p>931 177 848</p>
                 </div>
-                
+
                 <div class="payment-method">
                     <i class="fas fa-qrcode"></i>
                     <h3>Plin</h3>
                     <p>931 177 848</p>
                 </div>
-                
+
                 <div class="payment-method">
                     <i class="fas fa-globe"></i>
                     <h3>Internacional</h3>
-                    <p>Ko-fi / Gumroad</p>
+                    <p>Consultar</p>
                 </div>
             </div>
-            
-            <div style="margin-top: 3rem; padding: 2rem; background: var(--blanco); border-radius: 5px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h3 style="margin-bottom: 1rem; color: var(--negro);">¿Cómo comprar?</h3>
-                <ol style="text-align: left; line-height: 2; color: var(--gris);">
-                    <li>Elige la novela o acto que deseas comprar</li>
-                    <li>Realiza el pago vía Yape o Plin al número <strong>931 177 848</strong></li>
-                    <li>Envía captura de pantalla al WhatsApp <strong>+51 931 177 848</strong></li>
-                    <li>Recibe tu PDF inmediatamente en tu correo o WhatsApp</li>
+
+            <div class="purchase-box">
+                <h3>¿Cómo comprar?</h3>
+                <ol>
+                    <li>Elige la novela, acto, cuento o poemario que deseas leer.</li>
+                    <li>Realiza el pago vía Yape o Plin al número <strong>931 177 848</strong>.</li>
+                    <li>Envía captura de pantalla al WhatsApp <strong>+51 931 177 848</strong>.</li>
+                    <li>Recibe tu PDF o enlace de lectura por WhatsApp.</li>
                 </ol>
-           
+                <div style="margin-top:1.5rem;">
+                    <a href="https://wa.me/51931177848?text=Hola,%20quiero%20comprar%20una%20publicaci%C3%B3n%20de%20Novelas%20del%20Mundo" class="btn btn-primary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Novelas del Mundo</h3>
+                <p>Editorial independiente para historias que merecen circular: novelas, cuentos y poesía al alcance de todos.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/51931177848" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Lectura</h3>
+                <p><a href="#la-culebra">La Culebra</a></p>
+                <p><a href="#leer">Leer Acto I gratis</a></p>
+                <p><a href="LA_CULEBRA_ACTO I GRATIS.pdf" download>Descargar Acto I</a></p>
+                <p><a href="#cuentos-poesia">Cuentos y poesía</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>WhatsApp: <a href="https://wa.me/51931177848" target="_blank" rel="noopener">+51 931 177 848</a></p>
+                <p>Yape / Plin: 931 177 848</p>
+                <p>Arequipa, Perú</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Proyecto</h3>
+                <p><a href="#catalogo">Catálogo editorial</a></p>
+                <p><a href="#autor">Autor</a></p>
+                <p><a href="#comprar">Cómo comprar</a></p>
+                <p>Depósito Legal N° 2026-05503</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Novelas del Mundo / Novelas por un Sol. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
