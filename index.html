@@ -341,15 +341,27 @@
     .reading-card:hover, .content-card:hover, .catalog-item:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
 
     .card-image {
-      height: 260px;
+      min-height: 260px;
       background: linear-gradient(135deg, var(--negro), var(--gris-oscuro));
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      padding: 1rem;
     }
-    .card-image img { width: 100%; height: 100%; object-fit: cover; }
-    .card-image.contain img { object-fit: contain; padding: 1rem; background: #111; }
+    .card-image img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      border-radius: 4px;
+    }
+    .card-image.contain img { object-fit: contain; padding: 0; background: transparent; }
+    .reading-section .card-image { min-height: 360px; background: #111; }
+    .reading-section .card-image img { max-height: none; }
+    .cover-card-image { min-height: 520px; background:#111; }
+    .catalog-item-image { padding:1rem; }
 
     .card-content { padding: 2rem; }
     .card-content h3, .reading-card h3 {
@@ -677,7 +689,7 @@
       <div class="book-showcase">
         <div class="book-cover">
           <div class="book-badge">POEMA 01</div>
-          <img src="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana_portada.png" alt="Portada de Cuando el Padre es Montaña">
+          <img src="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña_portada.png" alt="Portada de Cuando el Padre es Montaña" onerror="this.onerror=null;this.src='poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana_portada.png';">
         </div>
 
         <div class="book-info">
@@ -689,8 +701,8 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer poema</a>
-            <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana.pdf" class="btn btn-dark" download><i class="fas fa-download"></i> Descargar PDF</a>
+            <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer poema</a>
+            <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña.pdf" class="btn btn-dark" download><i class="fas fa-download"></i> Descargar PDF</a>
             <a href="https://wa.me/51931177848?text=Lee%20gratis%20Cuando%20el%20Padre%20es%20Monta%C3%B1a,%20un%20poema%20para%20los%20hombres%20que%20amaron%20trabajando." class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Compartir</a>
           </div>
         </div>
@@ -727,7 +739,7 @@
         </div>
 
         <div class="catalog-item">
-          <div class="catalog-item-image"><img src="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana_portada.png" alt="Cuando el Padre es Montaña"></div>
+          <div class="catalog-item-image"><img src="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña_portada.png" alt="Cuando el Padre es Montaña"></div>
           <div class="catalog-item-content">
             <span class="category">Poesía</span>
             <h3>Cuando el Padre es Montaña</h3>
