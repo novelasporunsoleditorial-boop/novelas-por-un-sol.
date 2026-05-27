@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Lago No Pregunta · Novelas del Mundo</title>
+  <meta name="description" content="Un amor entre orgullo, silencios y un país que aún aprende a mirarse. Cuento de Sergio Esteban Flores Pinazo." />
+  <meta property="og:title" content="El Lago No Pregunta · Novelas del Mundo" />
+  <meta property="og:description" content="Un amor entre orgullo, silencios y un país que aún aprende a mirarse." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root {
+      --navy:      #0d1b2e;
+      --navy-mid:  #112240;
+      --navy-lt:   #1a3358;
+      --gold:      #c9a84c;
+      --gold-lt:   #e8c97a;
+      --gold-pale: #f5e8c0;
+      --cream:     #fdf8f0;
+      --text:      #2a1f14;
+      --text-lt:   #5a4a38;
+      --white:     #ffffff;
+      --rule:      rgba(201,168,76,.35);
+    }
+
+    /* ─── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.125rem;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER / HERO ──────────────────────────────── */
+    .hero {
+      background: linear-gradient(175deg, var(--navy) 0%, var(--navy-mid) 55%, #1e3d66 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(201,168,76,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      margin-bottom: 2.5rem;
+    }
+    .brand-bar .rule-line {
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .6;
+    }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+    }
+    .brand-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      display: block;
+      margin-top: .15rem;
+    }
+
+    .series-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: .3rem 1.1rem;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ─── SUN ORNAMENT ───────────────────────────────── */
+    .sun-ornament {
+      width: 42px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    /* ─── TITLE BLOCK ────────────────────────────────── */
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--white);
+      text-shadow: 0 2px 24px rgba(0,0,0,.4);
+      margin-bottom: .5rem;
+    }
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-deco {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 .6rem;
+      opacity: .7;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: var(--gold-pale);
+      opacity: .9;
+      max-width: 460px;
+      margin: 1.2rem auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* ─── HERO IMAGE ─────────────────────────────────── */
+    .hero-img-wrap {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.55);
+    }
+    .hero-img-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(13,27,46,.7) 100%);
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .hero-img-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1;
+      padding: 1rem 1.2rem .8rem;
+      text-align: center;
+    }
+    .cuento-badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    /* ─── TAGS ───────────────────────────────────────── */
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: .85;
+    }
+    .tag-icon { font-size: .9rem; }
+
+    /* ─── AUTHOR LINE ────────────────────────────────── */
+    .author-hero {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .2rem;
+    }
+    .author-place {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .85rem;
+      color: var(--gold-pale);
+      opacity: .7;
+    }
+
+    /* ─── ACTION BUTTONS ─────────────────────────────── */
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      justify-content: center;
+      padding: 2rem 1.5rem 2.5rem;
+      background: var(--navy-mid);
+      border-bottom: 1px solid var(--rule);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .7rem 1.5rem;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt);
+    }
+    .btn-outline:hover { background: rgba(201,168,76,.1); transform: translateY(-1px); }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+    .btn-whatsapp:hover { background: #20b558; transform: translateY(-1px); }
+
+    /* ─── READING AREA ───────────────────────────────── */
+    .reading-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    /* section ornament */
+    .section-ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin: 2.8rem 0 2.2rem;
+      letter-spacing: .5rem;
+      opacity: .5;
+    }
+
+    /* story */
+    .story-body p {
+      margin-bottom: 1.4rem;
+      color: var(--text);
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      line-height: 1.9;
+    }
+
+    /* dialogue */
+    .story-body p.diag {
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--rule);
+      color: var(--text-lt);
+      font-style: italic;
+    }
+
+    /* standalone short lines (dramatic beats) */
+    .story-body p.beat {
+      font-weight: 500;
+      color: var(--text);
+      text-align: left;
+    }
+
+    /* first-letter drop cap */
+    .story-body .dropcap::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      font-weight: 900;
+      color: var(--gold);
+      float: left;
+      line-height: .78;
+      margin: .12em .12em 0 0;
+    }
+
+    /* poem */
+    .poem-block {
+      margin: 2.5rem 0;
+      padding: 1.8rem 2rem 1.8rem 2.4rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,168,76,.05);
+      border-radius: 0 4px 4px 0;
+    }
+    .poem-block p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.4vw, 1.15rem) !important;
+      line-height: 1.75 !important;
+      color: var(--text) !important;
+      margin-bottom: .5rem !important;
+    }
+    .poem-block p:last-child { margin-bottom: 0 !important; }
+
+    /* section break diamond */
+    .diamond {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin: 3rem 0;
+      opacity: .55;
+    }
+
+    /* ─── AUTHOR BIO FOOTER ──────────────────────────── */
+    .author-footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: var(--navy);
+      color: var(--gold-pale);
+    }
+    .author-footer .af-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .5;
+      margin: 0 auto 1.5rem;
+    }
+    .author-footer .af-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      letter-spacing: .06em;
+      margin-bottom: .25rem;
+    }
+    .author-footer .af-place {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .9rem;
+      color: var(--gold);
+      opacity: .75;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ─── QR BLOCK ───────────────────────────────────── */
+    .qr-block {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .6rem;
+      margin-top: .5rem;
+    }
+    .qr-block img {
+      width: 90px;
+      border: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 4px;
+      background: #fff;
+    }
+    .qr-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .75;
+    }
+
+    /* ─── SITE FOOTER ────────────────────────────────── */
+    .site-footer {
+      background: #07111e;
+      text-align: center;
+      padding: 1.2rem 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      color: rgba(201,168,76,.45);
+    }
+    .site-footer a {
+      color: var(--gold);
+      text-decoration: none;
+      opacity: .7;
+    }
+    .site-footer a:hover { opacity: 1; }
+
+    /* ─── BACK TO TOP ────────────────────────────────── */
+    .back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--navy-mid);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity .3s;
+      z-index: 99;
+    }
+    .back-to-top.visible { opacity: 1; }
+    .back-to-top:hover { background: var(--navy-lt); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 480px) {
+      .hero { padding: 2.5rem 1rem 3rem; }
+      .reading-wrap { padding: 2.5rem 1.2rem 4rem; }
+      .poem-block { padding: 1.2rem 1rem 1.2rem 1.4rem; }
+    }
+  </style>
+</head>
+<body id="top">
+
+<!-- ═══════════════════════════════════════ HERO ═══ -->
+<header class="hero">
+
+  <!-- Brand -->
+  <div class="brand-bar">
+    <span class="rule-line"></span>
+    <div>
+      <div class="brand-name">Novelas del Mundo</div>
+      <span class="brand-sub">Literatura que une</span>
+    </div>
+    <span class="rule-line"></span>
+  </div>
+
+  <!-- Sun ornament -->
+  <svg class="sun-ornament" viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 0 L33 10 L30 8 L27 10 Z" fill="#c9a84c" opacity=".9"/>
+    <path d="M30 8 Q30 28 5 35 Q17 26 30 28 Q43 26 55 35 Q30 28 30 8Z" fill="#c9a84c" opacity=".55"/>
+    <line x1="0" y1="35" x2="60" y2="35" stroke="#c9a84c" stroke-width="1" opacity=".4"/>
+  </svg>
+
+  <div class="series-badge">Cuentos que nos habitan</div>
+
+  <h1 class="hero-title">El Lago<br/><span>No Pregunta</span></h1>
+
+  <p class="hero-subtitle">
+    Un amor entre orgullo, silencios<br/>y un país que aún aprende a mirarse.
+  </p>
+
+  <!-- Cover image -->
+  <div class="hero-img-wrap">
+    <img src="ChatGPT_Image_26_may_2026__05_17_31_p_m_.png"
+         alt="El Lago No Pregunta — portada"
+         onerror="this.style.display='none'" />
+    <div class="hero-img-caption">
+      <span class="cuento-badge">Cuento 01 · Serie Diaria Gratuita</span>
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <div class="hero-tags">
+    <span class="tag"><span class="tag-icon">📍</span> Arequipa</span>
+    <span class="tag"><span class="tag-icon">🏔</span> Puno · Juliaca</span>
+    <span class="tag"><span class="tag-icon">❤</span> Amor real</span>
+    <span class="tag"><span class="tag-icon">🪪</span> Identidad</span>
+    <span class="tag"><span class="tag-icon">🌊</span> Lago Titicaca</span>
+  </div>
+
+  <p class="author-hero">Sergio Esteban Flores Pinazo</p>
+  <p class="author-place">Arequipa, Perú</p>
+
+</header>
+
+<!-- ═════════════════════════════════════ ACTIONS ═══ -->
+<nav class="actions" aria-label="Acciones del cuento">
+  <a href="index.html" class="btn btn-outline">← Volver al inicio</a>
+  <a href="el-lago-no-pregunta.pdf" download class="btn btn-gold">⬇ Descargar PDF</a>
+  <a href="https://wa.me/?text=Lee+gratis+%22El+Lago+No+Pregunta%22+de+Sergio+Flores+Pinazo+%E2%80%94+novelasporunsoleditorial-boop.github.io%2Fnovelas-por-un-sol%2F"
+     target="_blank" rel="noopener" class="btn btn-whatsapp">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.122 1.52 5.86L.057 23.882a.5.5 0 00.61.61l6.022-1.463A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.53-5.384-1.452l-.386-.23-3.997.97.987-3.997-.23-.386A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Compartir
+  </a>
+</nav>
+
+<!-- ═══════════════════════════════════ STORY TEXT ═══ -->
+<main class="reading-wrap" id="lectura">
+
+  <div class="story-body">
+
+    <p class="dropcap">En las calles de sillar blanco de Arequipa, donde el sol cae duro y el orgullo pesa casi tanto como la piedra, Sebastián aprendió desde niño que había amores permitidos y otros que debían esconderse.</p>
+
+    <p>Su madre hablaba del apellido como si fuera una herencia sagrada. Su abuelo repetía en cada almuerzo:</p>
+
+    <p class="diag">—Nosotros somos arequipeños de verdad.</p>
+
+    <p>Nadie explicaba qué significaba eso, exactamente. Pero la frase siempre venía acompañada de una mirada hacia la gente que llegaba desde Juliaca, desde Puno, desde las alturas donde el frío enseña a resistir antes que a soñar.</p>
+
+    <div class="diamond">✦</div>
+
+    <p>A Daniela la conoció en la universidad.</p>
+
+    <p>Hablaba con esa mezcla de dulzura y firmeza que tienen quienes crecieron peleándole al viento del altiplano. Cuando se reía, parecía que el mundo dejaba de tener ruido. Trabajaba en las mañanas, estudiaba en las noches, y jamás se quejaba —aunque Sebastián notó, con el tiempo, que eso no era resignación: era orgullo. Una forma del orgullo que él no conocía. El suyo siempre había necesitado público.</p>
+
+    <p>La primera vez que la llevó al centro histórico, Daniela miró las casonas antiguas con algo que no era exactamente admiración.</p>
+
+    <p class="diag">—Qué bonita es Arequipa —dijo—. Pero a veces siento que no nos quiere.</p>
+
+    <p>Él no supo qué responder.</p>
+
+    <p>Porque era cierto. Y porque él lo había sabido siempre sin haberlo pensado nunca.</p>
+
+    <div class="diamond">✦</div>
+
+    <p>El día que Sebastián decidió presentarla en casa eligió un domingo de marzo, cuando la luz en Arequipa lo hace todo parecer más amable. Compró flores. Llegó temprano para advertirle a su madre, aunque no supo bien de qué.</p>
+
+    <p class="diag">—Viene Daniela —dijo.</p>
+    <p class="diag">—¿La chica de la universidad?</p>
+    <p class="diag">—Sí.</p>
+
+    <p>Su madre asintió. Fue a la cocina.</p>
+
+    <p>Cuando Daniela llegó, la madre la recibió en la sala con una sonrisa que Sebastián conocía bien: la que usaba para las personas que venían a cobrar o a pedir algo. Cortés. Impenetrable.</p>
+
+    <p>Durante el almuerzo, sirvió café en tazas distintas: las de porcelana fina para Sebastián y para ella; la de loza cotidiana —la que quedaba en el fondo del aparador— para Daniela. No fue un acto calculado. Era peor que eso: fue automático.</p>
+
+    <p class="beat">Sebastián lo vio.</p>
+    <p class="beat">Y no dijo nada.</p>
+
+    <p>Después vinieron las preguntas suaves:</p>
+
+    <p class="diag">—¿Tus papás a qué se dedican?</p>
+
+    <p>Daniela respondió sin bajar la voz:</p>
+
+    <p class="diag">—Mi mamá vende ropa en Juliaca. Mi papá fue transportista.</p>
+
+    <p>Hubo un silencio pequeño. Pequeño, pero suficiente para romper algo que quizá no podría volver a armarse del mismo modo.</p>
+
+    <p>Luego su madre le ofreció más café a Daniela.</p>
+
+    <p>Amable. Impecable. En la misma taza de loza.</p>
+
+    <div class="diamond">✦</div>
+
+    <p>Esa noche caminaron por el puente Grau. Abajo, el río Chili rugía con esa rabia sorda que tienen los ríos cuando crecen solos.</p>
+
+    <p>Daniela no lloró. Los puneños aprenden temprano a aguantar. Pero cuando habló, su voz tenía una dureza que no era tristeza sino algo anterior a la tristeza: la certeza de reconocer algo que ya sabía.</p>
+
+    <p class="diag">—No quiero que pelees con tu familia por mí.</p>
+
+    <p class="diag">—No entiendes —dijo Sebastián—. El problema no eres tú.</p>
+
+    <p>Se quedó callado. Buscó la manera de terminar la frase y no encontró ninguna que fuera completamente honesta. Porque la verdad era que esa tarde, por un instante —un instante que duró lo que dura una taza de loza sobre la mesa—, él también había sentido algo incómodo. No vergüenza de Daniela. Algo más oscuro: el reflejo de lo que había heredado sin saberlo.</p>
+
+    <p class="diag">—¿Y entonces por qué duele tanto? —preguntó ella.</p>
+
+    <p>No hubo respuesta.</p>
+
+    <p>Solo el río abajo, rugiendo.</p>
+
+    <div class="diamond">✦</div>
+
+    <p>Pasaron los meses.</p>
+
+    <p>Hubo discusiones, silencios, puertas que se cerraban de formas distintas. Sebastián dejó de ir seguido a casa. Daniela empezó a dudar —no de él, sino de si quería pasar el resto de su vida siendo la que tiene que demostrar que merece estar en ciertos cuartos.</p>
+
+    <p>Amar se volvió cansancio.</p>
+
+    <p>Hasta que una madrugada, viajando hacia el lago, Daniela lo despertó cuando el cielo empezaba a cambiar de color sobre el agua inmensa.</p>
+
+    <p class="diag">—Mira —susurró.</p>
+
+    <p>El Titicaca estaba quieto. Recibía la luz sin preguntar de dónde venía.</p>
+
+    <p>Sebastián la miró a ella, no al lago. Miró su perfil contra el amanecer y pensó en la taza de loza y en su propio silencio y en todas las formas en que uno puede ser cómplice de algo sin levantar la voz.</p>
+
+    <p class="diag">—Perdona —dijo.</p>
+
+    <p>Ella no preguntó de qué.</p>
+
+    <p>Eso también era una respuesta.</p>
+
+    <div class="diamond">✦</div>
+
+    <p>Años después, Sebastián encontró entre sus papeles un poema que había escrito una noche sin intención de publicarlo. Lo leyó despacio, como si lo hubiera escrito otro:</p>
+
+    <div class="poem-block">
+      <p>No quiero un amor</p>
+      <p>que esconda tu apellido</p>
+      <p>como quien tapa una cicatriz.</p>
+      <p>&nbsp;</p>
+      <p>Te amo con las manos frías</p>
+      <p>de los terminales de Juliaca,</p>
+      <p>con el humo de los buses al amanecer,</p>
+      <p>con las polleras luchando contra el viento,</p>
+      <p>con la fuerza silenciosa</p>
+      <p>de quienes siempre tuvieron que demostrar</p>
+      <p>que merecían estar aquí.</p>
+      <p>&nbsp;</p>
+      <p>Yo nací entre sillar y orgullo.</p>
+      <p>Tú naciste entre heladas y resistencia.</p>
+      <p>&nbsp;</p>
+      <p>Y aun así,</p>
+      <p>cuando tomas mi mano,</p>
+      <p>el Perú deja de estar roto</p>
+      <p>por un instante.</p>
+    </div>
+
+    <p>Lo dobló. Lo guardó.</p>
+
+    <p>En el patio, su hija Killa corría entre las piedras volcánicas y gritaba algo en un idioma que mezclaba palabras sin preguntarse cuáles venían de dónde.</p>
+
+    <p>Sebastián la observó desde la sombra.</p>
+
+    <p>Pensó en la taza de loza.</p>
+
+    <p>Pensó en que nadie nace sabiendo lo que heredó.</p>
+
+    <p>Pensó en que reconocerlo, al menos, era el principio de algo.</p>
+
+    <p>Aunque no supiera exactamente de qué.</p>
+
+  </div><!-- /story-body -->
+
+  <div class="section-ornament">· · ·</div>
+
+</main><!-- /reading-wrap -->
+
+<!-- ════════════════════════════════ AUTHOR FOOTER ═══ -->
+<footer class="author-footer">
+  <div class="af-rule"></div>
+  <p class="af-name">Sergio Esteban Flores Pinazo</p>
+  <p class="af-place">Arequipa, Perú</p>
+
+  <div class="qr-block">
+    <img src="qr_web_novelas_del_mundo_png.jpg"
+         alt="QR — Novelas del Mundo"
+         onerror="this.style.display='none'" />
+    <span class="qr-label">Lee gratis en nuestra web</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════ SITE FOOTER ═══ -->
+<div class="site-footer">
+  <a href="https://novelasporunsoleditorial-boop.github.io/novelas-por-un-sol/" target="_blank" rel="noopener">
+    novelasporunsoleditorial-boop.github.io/novelas-por-un-sol
+  </a>
+  &nbsp;·&nbsp; © 2026 Novelas del Mundo
+</div>
+
+<!-- Back to top -->
+<a href="#top" class="back-to-top" id="backTop" aria-label="Volver arriba">↑</a>
+
+<script>
+  // Back-to-top visibility
+  const btn = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
