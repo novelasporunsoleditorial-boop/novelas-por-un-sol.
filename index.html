@@ -71,19 +71,16 @@
       align-items: center;
       gap: .75rem;
       text-decoration: none;
+      min-width: 260px;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 999px;
-      background: radial-gradient(circle at center, var(--dorado), #8f6c12);
-      color: var(--negro);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      box-shadow: 0 8px 18px rgba(0,0,0,.16);
+    .brand-logo {
+      height: 64px;
+      width: auto;
+      max-width: 330px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.18));
     }
 
     .logo {
@@ -98,6 +95,13 @@
 
     .logo span { color: var(--negro); font-weight: 400; }
     .brand-small { font-size: .72rem; color: var(--gris); text-transform: uppercase; letter-spacing: 1.6px; font-weight: 900; }
+    .hero-logo {
+      max-width: 430px;
+      width: 100%;
+      margin-bottom: 1.25rem;
+      border-radius: 4px;
+      box-shadow: 0 14px 38px rgba(0,0,0,.35);
+    }
 
     .nav-links {
       display: flex;
@@ -433,7 +437,7 @@
       gap: 5rem;
       align-items: center;
     }
-    .about-image img { width: 100%; border-radius: 5px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .about-image img { width: 100%; border-radius: 5px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); object-fit: cover; max-height: 720px; }
     .about-content h2 { font-family: var(--tipografia-titulos); font-size: 3rem; margin-bottom: 1.5rem; }
     .about-content h2 span { color: var(--rojo-andino); }
     .about-content p { font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; opacity: 0.92; }
@@ -499,9 +503,10 @@
       .payment-method { width: 100%; }
       .btn { width: 100%; }
       .author-badge { position: static; margin-top: 1rem; display: inline-block; }
+      .brand { min-width: auto; }
+      .brand-logo { height: 48px; max-width: 240px; }
       .brand-small { display: none; }
       .logo { font-size: 1.25rem; }
-      .brand-mark { width: 38px; height: 38px; }
       .section { padding: 4rem 1.2rem; }
       .hero-container { padding: 3rem 1.2rem; }
     }
@@ -511,12 +516,8 @@
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#inicio" class="brand">
-        <span class="brand-mark"><i class="fas fa-book-open"></i></span>
-        <span>
-          <span class="logo">NOVELAS <span>DEL MUNDO</span></span><br>
-          <span class="brand-small">Literatura que une</span>
-        </span>
+      <a href="#inicio" class="brand" aria-label="Novelas del Mundo">
+        <img class="brand-logo" src="assets/editorial/logotipos/logo_de_NOVELAS_DEL_MUNDO_editorial_fondo_negro.png" alt="Novelas del Mundo - Literatura que une" onerror="this.onerror=null;this.src='assets/editorial/logotipos/logo_de_NOVELAS_DEL_MUNDO_editorial_fondo_blanco.png';">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Inicio</a></li>
@@ -535,7 +536,8 @@
   <section class="hero" id="inicio">
     <div class="hero-container">
       <div class="hero-content">
-        <p class="hero-subtitle">Novelas del Mundo • Campaña Novelas por un Sol</p>
+        <img class="hero-logo" src="assets/editorial/logotipos/baner_NOVELAS_DEL_MUNDO_con_logo.png" alt="Novelas del Mundo - Literatura que une" onerror="this.onerror=null;this.src='assets/editorial/logotipos/logo_de_NOVELAS_DEL_MUNDO_editorial_fondo_negro.png';">
+        <p class="hero-subtitle">Campaña Novelas por un Sol</p>
         <h1>Literatura Peruana <span>Que No Pide Permiso</span></h1>
         <p class="hero-description">
           Editorial independiente que publica novelas, cuentos y poesía. Una biblioteca digital para leer gratis,
@@ -646,7 +648,7 @@
 
       <div class="two-grid">
         <article class="content-card">
-          <div class="card-image contain"><img src="cuentos/las-treinta-y-dos/las_treinta_y_dos_portada.png" alt="Portada de Las Treinta y Dos"></div>
+          <div class="card-image contain"><img src="cuentos/las-treinta-y-dos/las_treinta_y_dos_portada.png" alt="Portada de Las Treinta y Dos" loading="lazy" onerror="this.onerror=null;this.src='cuentos/las-treinta-y-dos/portada_las_treinta_y_dos.png';"></div>
           <div class="card-content">
             <span class="badge-free">Cuento 01</span>
             <h3>Las Treinta y Dos</h3>
@@ -659,7 +661,7 @@
         </article>
 
         <article class="content-card">
-          <div class="card-image contain"><img src="cuentos/el-lago-no-pregunta/el_lago_no_pregunta_portada.png" alt="Portada de El Lago No Pregunta"></div>
+          <div class="card-image contain"><img src="cuentos/el-lago-no-pregunta/el_lago_no_pregunta_portada.png" alt="Portada de El Lago No Pregunta" loading="lazy" onerror="this.onerror=null;this.src='cuentos/el-lago-no-pregunta/PORTADA DE EL LAGO NO PREGUNTA.png';"></div>
           <div class="card-content">
             <span class="badge-free">Cuento 02</span>
             <h3>El Lago No Pregunta</h3>
@@ -701,7 +703,7 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer poema</a>
+            <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Leer poema</a>
             <a href="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña.pdf" class="btn btn-dark" download><i class="fas fa-download"></i> Descargar PDF</a>
             <a href="https://wa.me/51931177848?text=Lee%20gratis%20Cuando%20el%20Padre%20es%20Monta%C3%B1a,%20un%20poema%20para%20los%20hombres%20que%20amaron%20trabajando." class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Compartir</a>
           </div>
@@ -729,7 +731,7 @@
         </div>
 
         <div class="catalog-item">
-          <div class="catalog-item-image"><img src="cuentos/las-treinta-y-dos/las_treinta_y_dos_portada.png" alt="Las Treinta y Dos"></div>
+          <div class="catalog-item-image"><img src="cuentos/las-treinta-y-dos/las_treinta_y_dos_portada.png" alt="Las Treinta y Dos" loading="lazy" onerror="this.onerror=null;this.src='cuentos/las-treinta-y-dos/portada_las_treinta_y_dos.png';"></div>
           <div class="catalog-item-content">
             <span class="category">Cuentos que nos habitan</span>
             <h3>Las Treinta y Dos</h3>
@@ -739,7 +741,17 @@
         </div>
 
         <div class="catalog-item">
-          <div class="catalog-item-image"><img src="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña_portada.png" alt="Cuando el Padre es Montaña"></div>
+          <div class="catalog-item-image"><img src="cuentos/el-lago-no-pregunta/el_lago_no_pregunta_portada.png" alt="El Lago No Pregunta" loading="lazy" onerror="this.onerror=null;this.src='cuentos/el-lago-no-pregunta/PORTADA DE EL LAGO NO PREGUNTA.png';"></div>
+          <div class="catalog-item-content">
+            <span class="category">Cuentos que nos habitan</span>
+            <h3>El Lago No Pregunta</h3>
+            <p>Amor, identidad y silencios entre Arequipa, Puno y Juliaca.</p>
+            <a href="#cuentos" class="btn btn-primary"><i class="fas fa-feather"></i> Ver cuentos</a>
+          </div>
+        </div>
+
+        <div class="catalog-item">
+          <div class="catalog-item-image"><img src="poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montaña_portada.png" alt="Cuando el Padre es Montaña" loading="lazy" onerror="this.onerror=null;this.src='poesia/cuando-el-padre-es-montana/cuando_el_padre_es_montana_portada.png';"></div>
           <div class="catalog-item-content">
             <span class="category">Poesía</span>
             <h3>Cuando el Padre es Montaña</h3>
@@ -760,7 +772,7 @@
   <section class="about" id="autor">
     <div class="about-container">
       <div class="about-image">
-        <img src="SERGIO BLANCO Y NEGRO.jpg" alt="Sergio Esteban Flores Pinazo">
+        <img src="perfil.jpg" alt="Sergio Esteban Flores Pinazo" onerror="this.onerror=null;this.src='SERGIO BLANCO Y NEGRO.jpg';">
       </div>
       <div class="about-content">
         <h2>El <span>Autor</span></h2>
@@ -813,7 +825,7 @@
   <footer id="contacto">
     <div class="footer-container">
       <div class="footer-section">
-        <h3>Novelas del Mundo</h3>
+        <img src="assets/editorial/logotipos/logo_de_NOVELAS_DEL_MUNDO_editorial_fondo_negro.png" alt="Novelas del Mundo" style="max-width:240px;margin-bottom:1rem;" onerror="this.style.display='none';"><h3>Novelas del Mundo</h3>
         <p>Editorial independiente para historias que merecen circular: novelas, cuentos y poesía al alcance de todos.</p>
         <div class="social-links">
           <a href="https://wa.me/51931177848" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
