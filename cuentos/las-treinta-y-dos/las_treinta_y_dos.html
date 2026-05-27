@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las Treinta y Dos · Sergio Esteban Flores Pinazo · Novelas del Mundo</title>
+  <meta name="description" content="Un cuento de Sergio Esteban Flores Pinazo. Huamanga, Ayacucho. Cuentos que nos habitan · Cuento 01. Novelas del Mundo / Novelas por un Sol Editorial." />
+  <meta property="og:title" content="Las Treinta y Dos · Sergio Esteban Flores Pinazo" />
+  <meta property="og:description" content="Un niño de nueve años sale solo a las seis de la mañana a visitar las treinta y tres iglesias de Huamanga. Llega a la treinta y dos." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── VARIABLES ──────────────────────────────────────────────── */
+    :root {
+      --ink:        #0f1923;
+      --deep-blue:  #1a2e45;
+      --mid-blue:   #243d5a;
+      --gold:       #c9a84c;
+      --gold-light: #e4c97e;
+      --white:      #f5f0e8;
+      --cream:      #ede8dd;
+      --red-andino: #8b2020;
+      --gray-text:  #7a8490;
+      --separator:  rgba(201,168,76,0.35);
+      --max-w:      760px;
+    }
+
+    /* ── RESET ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--ink);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ── GRAIN OVERLAY ──────────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      background-size: 200px;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ── TOP NAVIGATION ─────────────────────────────────────────── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(15,25,35,0.97) 0%, rgba(15,25,35,0.0) 100%);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-brand::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .nav-back {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.25s;
+    }
+    .nav-back:hover { color: var(--white); }
+    .nav-back i { font-size: 0.65rem; }
+
+    /* ── HERO ───────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 1.5rem 5rem;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(15,25,35,0.30) 0%,
+          rgba(15,25,35,0.55) 40%,
+          rgba(15,25,35,0.92) 75%,
+          var(--ink) 100%),
+        url('las_treinta_y_dos_portada.png') center center / cover no-repeat;
+      background-color: var(--deep-blue);
+    }
+    /* Fallback decorative gradient when image is absent */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(139,32,32,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 25%, rgba(26,46,69,0.8) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 680px;
+      animation: fadeUp 1.1s ease both;
+    }
+    .hero-serie {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .hero-serie::before,
+    .hero-serie::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 32px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .hero-subtitle {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+      color: rgba(245,240,232,0.55);
+      margin-bottom: 2.4rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-author-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 2.8rem;
+    }
+    .hero-author {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+    }
+    .hero-pen {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: var(--gray-text);
+      letter-spacing: 0.08em;
+    }
+    .hero-location {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
+    }
+
+    /* ── HERO BUTTONS ───────────────────────────────────────────── */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(245,240,232,0.3);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-whatsapp {
+      background: transparent;
+      color: #3fc75e;
+      border: 1px solid rgba(63,199,94,0.35);
+    }
+    .btn-whatsapp:hover { background: rgba(63,199,94,0.1); border-color: #3fc75e; }
+
+    /* ── STORY CONTAINER ────────────────────────────────────────── */
+    .story-wrapper {
+      background: linear-gradient(to bottom, var(--ink) 0%, #0d1820 100%);
+      padding: 0 1.5rem;
+    }
+    .story-body {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem 0 6rem;
+    }
+
+    /* ── DECORATIVE RULE ────────────────────────────────────────── */
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 3.5rem 0;
+    }
+    .rule::before, .rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--separator), transparent);
+    }
+    .rule-symbol {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 0.4em;
+      opacity: 0.7;
+    }
+
+    /* ── TYPOGRAPHY ─────────────────────────────────────────────── */
+    .story-body p {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: rgba(245,240,232,0.88);
+      margin-bottom: 1.4em;
+      text-align: justify;
+      text-indent: 2em;
+      hyphens: auto;
+    }
+    .story-body p.no-indent { text-indent: 0; }
+    .story-body p:first-of-type { text-indent: 0; }
+
+    /* Drop cap */
+    .dropcap::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.8em;
+      font-weight: 900;
+      line-height: 0.78;
+      float: left;
+      margin-right: 0.08em;
+      margin-top: 0.08em;
+      color: var(--gold);
+    }
+
+    /* Dialogue */
+    .dialogue {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.05rem !important;
+      color: rgba(245,240,232,0.75) !important;
+      text-indent: 2em !important;
+      margin: 0.4em 0 !important;
+    }
+
+    /* Italics inline */
+    em {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      color: rgba(245,240,232,0.78);
+    }
+
+    /* Bold accent */
+    strong {
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* Counting verses */
+    .verse-count {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(201,168,76,0.7);
+      text-align: center;
+      display: block;
+      margin: 1.6rem 0;
+      letter-spacing: 0.25em;
+      text-indent: 0 !important;
+    }
+
+    /* Closing line */
+    .closing-line {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(245,240,232,0.6);
+      text-align: center;
+      text-indent: 0 !important;
+      margin: 1.2rem 0 !important;
+    }
+
+    /* ── SECTION SCENES ─────────────────────────────────────────── */
+    .scene { margin-bottom: 0.5rem; }
+
+    /* ── FOOTNOTE / LIST IN STORY ───────────────────────────────── */
+    .church-list {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(245,240,232,0.6);
+      border-left: 2px solid var(--separator);
+      padding: 0.8rem 0 0.8rem 1.4rem;
+      margin: 1.6rem 0 !important;
+      text-indent: 0 !important;
+      line-height: 1.7;
+    }
+
+    /* ── COLOPHON / FOOTER ──────────────────────────────────────── */
+    .story-end {
+      text-align: center;
+      padding: 2rem 0 0;
+    }
+    .story-end .fin {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-block;
+      position: relative;
+      padding: 0 1.5rem;
+    }
+    .story-end .fin::before,
+    .story-end .fin::after {
+      content: '';
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 40px; height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .story-end .fin::before { right: 100%; }
+    .story-end .fin::after  { left: 100%; }
+    .story-end .author-credit {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-top: 1.2rem;
+    }
+
+    /* ── QR / CTA SECTION ───────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--deep-blue) 0%, #0e1c2c 100%);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 5rem 1.5rem;
+    }
+    .cta-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .cta-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .cta-text h2 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+    .cta-text p {
+      font-size: 0.92rem;
+      color: var(--gray-text);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+    .cta-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .cta-qr img {
+      width: 120px; height: 120px;
+      border: 2px solid rgba(201,168,76,0.35);
+      padding: 6px;
+      background: var(--white);
+      border-radius: 3px;
+    }
+    .cta-qr-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.55);
+      text-align: center;
+    }
+
+    /* ── SITE FOOTER ────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--ink);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(245,240,232,0.06);
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    .footer-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 1.6rem;
+    }
+    .footer-legal {
+      font-size: 0.7rem;
+      color: rgba(122,132,144,0.6);
+      line-height: 1.8;
+    }
+
+    /* ── PROGRESS BAR ───────────────────────────────────────────── */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--red-andino), var(--gold));
+      width: 0%;
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+
+    /* ── SCROLL-TO-TOP ──────────────────────────────────────────── */
+    #scrollTop {
+      position: fixed;
+      bottom: 2rem; right: 1.5rem;
+      width: 42px; height: 42px;
+      background: var(--deep-blue);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 150;
+    }
+    #scrollTop.visible { opacity: 1; pointer-events: all; }
+    #scrollTop:hover { transform: translateY(-3px); background: var(--mid-blue); }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .site-nav { padding: 0 1rem; }
+      .hero { padding-bottom: 4rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .cta-inner { grid-template-columns: 1fr; }
+      .cta-qr { flex-direction: row; gap: 1.2rem; align-items: center; }
+      .story-body p { font-size: 1rem; }
+    }
+    @media (max-width: 400px) {
+      .hero-title { font-size: 3rem; }
+      .nav-brand span { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- READING PROGRESS -->
+<div id="progress"></div>
+
+<!-- ── NAVIGATION ──────────────────────────────────────────────────────────── -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <span>Novelas del Mundo</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <i class="fa-solid fa-arrow-left"></i>
+    Inicio
+  </a>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <div class="hero-serie">Cuentos que nos habitan &nbsp;·&nbsp; Cuento 01</div>
+
+    <h1 class="hero-title">Las<br>Treinta<br>y Dos</h1>
+
+    <p class="hero-subtitle">un cuento</p>
+
+    <div class="hero-author-block">
+      <span class="hero-author">Sergio Esteban Flores Pinazo</span>
+      <span class="hero-pen">El contador de pasos</span>
+      <span class="hero-location">Huamanga · Ayacucho</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#cuento" class="btn btn-primary">
+        <i class="fa-solid fa-book-open-reader"></i>
+        Leer ahora
+      </a>
+      <a href="las_treinta_y_dos.pdf" download class="btn btn-outline">
+        <i class="fa-solid fa-file-pdf"></i>
+        Descargar PDF
+      </a>
+      <a id="btn-whatsapp" href="#" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+        Compartir
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY ────────────────────────────────────────────────────────────────── -->
+<main class="story-wrapper" id="cuento">
+<article class="story-body">
+
+  <!-- ESCENA I -->
+  <div class="scene fade-in">
+    <p class="dropcap">A las seis de la mañana, la Plaza de Armas de Huamanga todavía pertenece a los que viven ahí de verdad.</p>
+    <p>No a los que llegan después con mochilas o cámaras o preguntas. A los otros: los que cruzan sin mirar, los que conocen el nombre de cada paloma, los que se sientan en los bancos de piedra rosa con la certeza de quien sabe que ese lugar les fue prometido desde mucho antes de nacer. La catedral vigila todo desde su fachada barroca color canela, sin parpadear, como siempre.</p>
+    <p>Abelito llegó corriendo.</p>
+    <p>No por apuro. Por costumbre. Tenía nueve años y la costumbre de llegar corriendo a todos lados era ya parte de su cuerpo, como las rodillas raspadas o el flequillo que su mamá nunca conseguía peinarle del todo.</p>
+    <p>En el bolsillo de la casaca azul llevaba una hoja doblada en cuatro. La había escrito la noche anterior con letra apretada, tratando de que todo cupiera en una sola página. No quería llevar dos. Le parecía que si necesitaba dos páginas, entonces ya no era lo mismo. No funcionaría igual.</p>
+    <p>Se sentó en el borde de la pileta. Sacó la hoja. La leyó aunque ya se la sabía de memoria:</p>
+    <p class="church-list">Catedral de Huamanga. Santo Domingo. San Francisco de Asís. Santa Clara. La Merced. San Agustín. Santa Teresa. La Compañía de Jesús…</p>
+    <p>Treinta y tres nombres. Los había contado tres veces la noche anterior, después de que el doctor Huamaní salió del cuarto de su mamá con esa cara que los médicos ponen cuando no quieren decir lo que están pensando. Treinta y tres era un número serio. No era un número que uno pudiera ignorar. Tenía el mismo peso que el nombre de Dios en las oraciones que su abuela Domitila rezaba de rodillas cada mañana.</p>
+    <p class="dialogue">—Si visitas las treinta y tres iglesias en un solo día —le había dicho su abuela esa tarde, mientras le trenzaba el cabello con manos que olían a hierbabuena—, la Virgen tiene que escucharte. Es una promesa antigua. Más vieja que las iglesias mismas.</p>
+    <p>Abelito no le preguntó si era verdad. Algunas cosas no se preguntan.</p>
+    <p>Dobló la hoja. Se la guardó. Miró el cielo azul intenso de Ayacucho, ese azul que parece pintado por alguien que nunca ha tenido miedo.</p>
+    <p class="dialogue">—Empieza —se dijo.</p>
+    <p class="no-indent">Y empezó.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA II -->
+  <div class="scene fade-in">
+    <p>La primera iglesia estaba abierta. Adentro, una mujer de pollera morada y manos grandes como palas permanecía sentada en la banca del frente. No rezaba. Solo estaba ahí, con los ojos cerrados y la respiración quieta, como si hubiera llegado a un acuerdo con el silencio.</p>
+    <p>Abelito no entró del todo. Se quedó en el umbral, dejando que sus ojos se acostumbraran a la penumbra dorada. El olor era el mismo de siempre: cera, flores viejas y algo más que no tenía nombre, pero que él reconocía en el pecho.</p>
+    <p>Miró el altar.</p>
+    <p>Pensó en su mamá.</p>
+    <p>No rezó en voz alta. No sabía muy bien cómo se rezaba en casos como este. Sabía algunas oraciones, sí, pero no estaba seguro de que sirvieran para lo que necesitaba. Así que solo miró. Y dejó que lo que sentía se quedara ahí, en el aire entre él y la imagen de la Virgen con su manto azul.</p>
+    <p class="dialogue">—Una —dijo en voz baja.</p>
+    <p class="no-indent">Y salió.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA III -->
+  <div class="scene fade-in">
+    <p>La cuarta iglesia estaba cerrada.</p>
+    <p>Se quedó parado frente a la puerta un rato más de lo necesario. Miró la cadena. El candado. Tocó la madera tallada como si eso pudiera cambiar algo. Era una madera oscura, antiquísima, que había sobrevivido terremotos y guerras y el olvido.</p>
+    <p>No cambió nada.</p>
+    <p>Pensó en tacharla de la lista. Pero no llevaba lápiz. Y aunque lo hubiera tenido, no le gustaba la idea de tachar. Tachar era borrar. Y borrar era decir que algo no había existido.</p>
+    <p class="dialogue">—Cuatro —dijo igual.</p>
+    <p class="no-indent">El candado no lo miró. Las cosas de metal nunca miran.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA IV -->
+  <div class="scene fade-in">
+    <p>A las nueve de la mañana tenía doce iglesias.</p>
+    <p>El cansancio empezó en los tobillos y fue subiendo despacio, como el agua que sube por un terrón de azúcar. No era tanto el caminar. Era el ritmo. Ir de una a otra sin detenerse más de lo justo. Como si existiera una ventana de tiempo que no se podía desperdiciar, aunque nadie le hubiera explicado cuánto duraba esa ventana.</p>
+    <p>En la número trece había un hombre barriendo con una escoba de ramas.</p>
+    <p class="dialogue">—¿Está abierta? —preguntó Abelito.</p>
+    <p>El hombre lo miró de pies a cabeza.</p>
+    <p class="dialogue">—Siempre está abierta —dijo, con la voz de quien ha respondido eso mil veces y sabe que la pregunta viene del mismo lugar en todos.</p>
+    <p>Abelito entró. Esta vez caminó hasta el centro. Se sentó en una banca de madera negra que crujió bajo su peso como si se quejara de algo muy antiguo. El frío era distinto ahí adentro. No de temperatura. De otra cosa. Como si el tiempo pasara más lento entre esas paredes y el aire guardara todas las palabras que se le habían dicho a Dios en cuatrocientos años.</p>
+    <p>Se quedó más tiempo que en las otras.</p>
+    <p>Cuando salió, el sol le pegó en la cara como una palmada amistosa.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA V -->
+  <div class="scene fade-in">
+    <p>A las once tenía veinticuatro.</p>
+    <p>Se sentó en un banco de la plaza Sucre. Sacó la hoja. Los nombres que le faltaban eran nueve. Nueve era manejable. Nueve era un número que un niño con buenas piernas podía vencer antes de que el sol se cayera del cielo.</p>
+    <p>Pero las piernas ya no eran tan buenas.</p>
+    <p>Comió el pan que llevaba en el bolsillo. Lo masticó despacio, mirando a las palomas disputarse las migajas de un turista distraído. Pensó en su mamá. En cómo, la noche anterior, cuando el doctor ya se había ido y la casa quedó llena de ese silencio particular que dejan las malas noticias, ella lo había llamado desde el cuarto.</p>
+    <p class="dialogue">—Ven aquí, Abelito.</p>
+    <p>Él se acercó. Ella tenía la mano extendida sobre la sábana, como una hoja caída.</p>
+    <p class="dialogue">—¿Tienes miedo? —le preguntó ella.</p>
+    <p>Él dijo que no. Ella sonrió. Las dos cosas eran mentira y las dos cosas eran verdad al mismo tiempo, y eso era algo que él entendía sin poder explicarlo.</p>
+    <p>Guardó la hoja. Se puso de pie.</p>
+    <p>Nueve iglesias. El sol todavía era suyo.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA VI -->
+  <div class="scene fade-in">
+    <p>La número veintisiete tenía una misa.</p>
+    <p>Se quedó en la puerta. No quería interrumpir. Desde afuera escuchó una voz grave que hablaba de la fe como quien habla del pan: como algo cotidiano y necesario y sin adornos. Escuchó las respuestas del grupo, un murmullo que vibraba en el pecho aunque uno estuviera de pie en la vereda.</p>
+    <p>No entendió todas las palabras.</p>
+    <p>Pero entendió lo que importaba.</p>
+    <p>Cuando la misa terminó y la gente empezó a salir, una señora mayor lo miró al pasar. Tenía ojos pequeños y brillantes como semillas de quinua.</p>
+    <p class="dialogue">—¿Estás esperando a alguien, hijo?</p>
+    <p class="dialogue">—No, señora —respondió Abelito—. Estoy visitando las iglesias.</p>
+    <p>La señora asintió como si eso fuera la cosa más natural del mundo. Como si los niños solos visitaran treinta y tres iglesias todos los días.</p>
+    <p class="dialogue">—Que te vaya bien —dijo.</p>
+    <p class="no-indent">Y siguió caminando.</p>
+    <p class="dialogue">—Veintisiete —dijo Abelito.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA VII — La iglesia vacía -->
+  <div class="scene fade-in">
+    <p>La treinta y dos estaba vacía.</p>
+    <p>Completamente vacía. Ni una sola persona. Ni el hombre de la escoba ni la señora de pollera ni el turista perdido ni el sacerdote apurado. Solo el silencio, que ahí adentro tenía un peso y una forma distintos. Un silencio con historia.</p>
+    <p>Abelito entró despacio. Sus pasos sonaron más de lo que debían. Caminó por el pasillo central, mirando los arcos de piedra tallada que se repetían hacia el altar como un espejo mirándose en otro espejo. Las paredes guardaban pinturas viejas, figuras de santos con ojos que miraban desde el dolor hacia algo que estaba más allá del dolor.</p>
+    <p>Se sentó en la primera banca.</p>
+    <p>Por primera vez en todo el día, no dijo el número de inmediato.</p>
+    <p>Se quedó ahí, quieto, con las manos apoyadas en las rodillas y la lista doblada en el bolsillo y las piernas que ya casi no le dolían, porque el cuerpo a veces deja de avisar cuando algo importa mucho.</p>
+    <p>Pensó en su abuela Domitila. En cómo siempre decía que las iglesias de Huamanga no eran solo edificios. Que eran la memoria de la gente. Que dentro de cada una vivían todos los que habían entrado a pedir algo, y que ese deseo acumulado tenía un peso, una temperatura, una presencia.</p>
+    <p>Lo creyó. En ese momento, lo creyó del todo.</p>
+    <p>Sacó la lista.</p>
+    <p>La abrió.</p>
+    <p>Treinta y dos nombres tachados en su mente. Uno solo sin marcar.</p>
+    <p>La dobló otra vez.</p>
+    <p class="dialogue">—Treinta y dos —dijo.</p>
+    <p class="no-indent">Y salió.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA VIII — La detención -->
+  <div class="scene fade-in">
+    <p>La última iglesia estaba a cuatro cuadras.</p>
+    <p>No era lejos. Podía llegar en menos de diez minutos. El sol empezaba a caer hacia el costado de los cerros, tiñendo Huamanga de ese naranja que hace que las fachadas coloniales parezcan brasas.</p>
+    <p>Caminó dos cuadras.</p>
+    <p>Se detuvo.</p>
+    <p>No por cansancio.</p>
+    <p>Por otra cosa que no tenía nombre todavía.</p>
+    <p>Miró hacia adelante. No se veía la iglesia aún. Pero sabía que estaba ahí, esperando, como habían esperado todas. Como siempre habían esperado.</p>
+    <p>Se quedó quieto en mitad de la vereda. La gente pasaba a su alrededor sin mirarlo, cada uno dentro de su propio movimiento. Una señora con bolsas del mercado. Dos estudiantes con mochilas. Un hombre en bicicleta que hizo sonar el timbre sin necesidad.</p>
+    <p>Abelito no se movió.</p>
+    <p>Pensó en el recorrido entero. En la mañana fría. En la plaza todavía dormida. En la señora de la primera iglesia con las manos juntas. En el hombre de la escoba. En la puerta cerrada que contó igual. En la misa desde la vereda. En el frío particular de la número trece.</p>
+    <p>Pensó en su mamá.</p>
+    <p>En la respiración de la noche anterior. No rápida. No lenta. Irregular. Como si el cuerpo estuviera tanteando, probando, buscando el ritmo justo. Como si respirar fuera algo que se pudiera olvidar y hubiera que volver a aprender.</p>
+    <p>Pensó en eso.</p>
+    <p>En contar.</p>
+    <span class="verse-count">Uno. &nbsp; Dos. &nbsp; Tres.</span>
+    <p>Como si contar ayudara a que las cosas se mantuvieran en su lugar.</p>
+    <p>Miró la calle.</p>
+    <p>La última iglesia lo esperaba cuatro cuadras más allá.</p>
+    <p>Treinta y tres era el número. El número completo. El número que su abuela había pronunciado con esa voz de las cosas que no se discuten. Y él había salido a las seis de la mañana con ese número en el bolsillo como una llave.</p>
+    <p>Pero ahora, parado en mitad de la vereda con las piernas cansadas y el pan ya lejos y el sol cayendo, pensó en lo que significaba llegar a la última. En cruzar esa puerta. En decir treinta y tres.</p>
+    <p>Y si lo decía…</p>
+    <p>No terminó la idea.</p>
+    <p>No le gustó cómo sonaba en su cabeza.</p>
+    <p>Porque si llegaba a la treinta y tres, si completaba la promesa, si la Virgen lo escuchaba como había dicho su abuela… entonces eso significaba que era verdad. Que funcionaba. Que había algo del otro lado capaz de responder.</p>
+    <p>Y si era verdad…</p>
+    <p>Entonces el miedo también era verdad.</p>
+    <p>Miró sus manos. No estaban temblando. Eso le pareció extraño. Pensó que deberían estar temblando. Pero no. Estaban normales, con la suciedad de un día entero caminando, con una pequeña costra en el nudillo del pulgar derecho de cuando se cayó el martes pasado.</p>
+    <p>Manos de niño que ha caminado mucho.</p>
+    <p>Respiró hondo.</p>
+    <p>Una vez.</p>
+    <p>Otra.</p>
+    <p>Dio un paso hacia adelante.</p>
+    <p>Se detuvo.</p>
+    <p>No completó el paso.</p>
+    <p>Quedó a la mitad: con un pie adelante y otro atrás. Como alguien que ha comenzado algo que la cabeza no termina de autorizar.</p>
+    <p><em>Treinta y dos</em>, pensó. <em>Treinta y dos también es mucho. Treinta y dos es casi todo.</em> Treinta y dos es un niño de nueve años que salió solo a las seis de la mañana y recorrió cada rincón de esta ciudad que huele a piedra y copal y memoria. Treinta y dos es haber entrado en el frío de iglesias que tienen más años que el nombre de cualquier persona viva. Treinta y dos es haberse detenido frente a una puerta cerrada y haberla contado igual, porque las cosas cerradas también existen.</p>
+    <p class="closing-line"><em>Treinta y dos es suficiente para que alguien escuche.</em></p>
+    <p class="no-indent" style="text-align:center;">¿No?</p>
+    <p>La pregunta se quedó en el aire de la tarde.</p>
+    <p>Nadie respondió.</p>
+    <p>Pero el silencio fue amable.</p>
+    <p>Abelito juntó los dos pies.</p>
+    <p>Miró hacia adelante una vez más.</p>
+    <p>Luego se dio vuelta.</p>
+    <p>Y empezó a caminar de regreso.</p>
+    <p>No se apuró. No corrió. Caminó como caminan las personas que han tomado una decisión y saben que es suya.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA IX — La plaza al atardecer -->
+  <div class="scene fade-in">
+    <p>Cuando llegó a la Plaza de Armas, el cielo era de ese rosado que solo dura diez minutos y que hace que la gente levante la cabeza sin saber por qué.</p>
+    <p>Se sentó en el borde de la pileta. El mismo lugar de la mañana. El agua sonaba igual. Las palomas eran otras o eran las mismas —era difícil saberlo.</p>
+    <p>Sacó la hoja por última vez.</p>
+    <p>La abrió.</p>
+    <p>Los treinta y tres nombres estaban ahí. Treinta y dos marcados en su mente. Uno solo intacto.</p>
+    <p>Lo miró un rato.</p>
+    <p>No lo tachó.</p>
+    <p>No lo borró.</p>
+    <p>No cambió nada.</p>
+    <p>Lo dejó así.</p>
+    <p>Dobló la hoja con cuidado, como se dobla algo que todavía sirve. Se la guardó en el bolsillo, junto al pecho.</p>
+    <p>Se quedó un momento mirando el agua de la pileta, donde el cielo rosado se reflejaba partido en mil pedazos que el movimiento juntaba y volvía a separar sin descanso.</p>
+    <p>Luego se levantó.</p>
+    <p>Y se fue a casa.</p>
+  </div>
+
+  <div class="rule"><span class="rule-symbol">✦ · · · ✦</span></div>
+
+  <!-- ESCENA X — La noche, el cuarto de mamá -->
+  <div class="scene fade-in">
+    <p>Esa noche, en el cuarto de su mamá, la luz era suave y amarilla.</p>
+    <p>Ella estaba despierta. Lo miró cuando él entró.</p>
+    <p class="dialogue">—¿Dónde estuviste todo el día? —preguntó.</p>
+    <p class="dialogue">—Caminando —dijo él.</p>
+    <p>Ella asintió. No preguntó más. Las madres a veces saben cuándo no hay que preguntar más.</p>
+    <p>Abelito arrimó la silla a la cama. Se sentó.</p>
+    <p>Escuchó la respiración de su mamá.</p>
+    <p>No rápida. No lenta. Esta noche era más pareja. Como si algo hubiera encontrado el ritmo que andaba buscando.</p>
+    <p>Él lo escuchó.</p>
+    <span class="verse-count">Uno. &nbsp; Dos. &nbsp; Tres.</span>
+    <p>Contó en silencio, como siempre, como si contar fuera una manera de sostener algo en el aire.</p>
+    <p>Después de un rato, su mamá cerró los ojos. La mano que descansaba sobre la sábana se relajó, los dedos apenas abiertos, como una flor que no tiene apuro.</p>
+    <p>Abelito se quedó ahí.</p>
+    <p>Quieto.</p>
+    <p>Pensó en la treinta y tres.</p>
+    <p>En la puerta que no había cruzado.</p>
+    <p>No le pareció una falta.</p>
+    <p>Apoyó la cabeza en el borde de la cama.</p>
+    <p>Cerró los ojos.</p>
+    <p>Afuera, Huamanga seguía siendo la misma ciudad de siempre: sus treinta y tres iglesias de pie en la oscuridad, sus calles de piedra que guardan el eco de cuatrocientos años, su cielo que de noche se llena de estrellas como si alguien las hubiera puesto ahí a propósito, una por una, sin apuro, sin miedo a quedarse sin números.</p>
+    <p class="closing-line"><em>Treinta y dos ya era casi todo</em> —pensó Abelito.</p>
+    <p>Cerró los ojos.</p>
+    <p>Y no supo si faltaba algo.</p>
+  </div>
+
+  <!-- FIN -->
+  <div class="story-end fade-in" style="margin-top:3.5rem;">
+    <div class="fin">F &nbsp; I &nbsp; N</div>
+    <p class="author-credit">Sergio Esteban Flores Pinazo &nbsp;·&nbsp; Quipu Andino &nbsp;·&nbsp; 2026</p>
+  </div>
+
+</article>
+</main>
+
+<!-- ── CTA / QR ─────────────────────────────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-text fade-in">
+      <h2>Más cuentos<br>y <em>poemas</em><br>te esperan.</h2>
+      <p>Novelas del Mundo reúne literatura contemporánea peruana que viaja por el mundo y regresa con nuevas historias. Entra a la biblioteca y encuentra el siguiente cuento que te habitará.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a href="index.html#biblioteca" class="btn btn-primary">
+          <i class="fa-solid fa-books"></i>
+          Biblioteca de cuentos
+        </a>
+        <a href="index.html" class="btn btn-outline">
+          <i class="fa-solid fa-house"></i>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+    <div class="cta-qr fade-in">
+      <img src="qr_web_novelas_del_mundo.png" alt="QR Novelas del Mundo" />
+      <span class="cta-qr-label">Escanea<br>y comparte</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-logo">Novelas del Mundo</div>
+  <div class="footer-tagline">Literatura que une</div>
+  <p class="footer-legal">
+    Novelas por un Sol Editorial &nbsp;·&nbsp; Quipu Andino<br>
+    © 2026 Sergio Esteban Flores Pinazo. Todos los derechos reservados.<br>
+    Calle Teniente Alcántara 212–B · Guardia Civil · Paucarpata · Arequipa · Perú<br>
+    Impreso en Perú / Distribución Digital
+  </p>
+</footer>
+
+<!-- ── SCROLL TO TOP ─────────────────────────────────────────────────────────── -->
+<button id="scrollTop" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<script>
+  /* ── WhatsApp share ─────────────────────────────────────────── */
+  const waText = encodeURIComponent(
+    '📖 «Las Treinta y Dos» — un cuento de Sergio Esteban Flores Pinazo.\n' +
+    'Un niño de nueve años y la promesa más difícil de cumplir.\n' +
+    'Lee gratis en Novelas del Mundo · Novelas por un Sol Editorial:\n' +
+    window.location.href
+  );
+  document.getElementById('btn-whatsapp').href =
+    'https://wa.me/?text=' + waText;
+
+  /* ── Reading progress ───────────────────────────────────────── */
+  const bar = document.getElementById('progress');
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    const max  = document.documentElement.scrollHeight - window.innerHeight;
+    const pct  = max > 0 ? (window.scrollY / max) * 100 : 0;
+    bar.style.width = pct + '%';
+    scrollBtn.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+
+  /* ── Intersection Observer (fade-in) ───────────────────────── */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
