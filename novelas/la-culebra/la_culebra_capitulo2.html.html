@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Culebra — Capítulo 2: La Frontera es una Línea de Tiza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --negro:#080705;
+  --negro2:#0e0c09;
+  --dorado:#c8903a;
+  --dorado2:#e8b860;
+  --dorado3:#8a6a3a;
+  --crema:#f2ead8;
+  --crema2:#d8c8a8;
+  --crema3:#b8a888;
+  --gris:#988870;
+  --linea:#1e1a10;
+  --linea2:#2a2418;
+  --azul-lago:#1a3a5a;
+  --agua:#2a5878;
+}
+html{background:var(--negro);}
+body{
+  background:var(--negro);
+  color:var(--crema);
+  font-family:'EB Garamond',serif;
+  max-width:920px;
+  margin:0 auto;
+  overflow-x:hidden;
+}
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:999;opacity:0.5;
+}
+
+/* ── HEADER ── */
+.site-header{
+  padding:20px 64px;display:flex;
+  justify-content:space-between;align-items:center;
+  border-bottom:0.5px solid var(--linea);
+}
+.sh-left{font-size:9.5px;letter-spacing:0.42em;color:#2e2818;text-transform:uppercase;}
+.sh-right{
+  font-size:9.5px;letter-spacing:0.3em;color:var(--dorado3);
+  text-transform:uppercase;border:0.5px solid var(--linea2);padding:4px 14px;
+}
+
+/* ── ILUSTRACIÓN (bloque) ── */
+.illus{
+  width:100%;overflow:hidden;
+  border-top:0.5px solid var(--linea);
+  border-bottom:0.5px solid var(--linea);
+  position:relative;background:var(--negro);
+}
+.illus svg{display:block;width:100%;}
+/* Ilustración hero más alta */
+.illus-hero{min-height:500px;}
+/* Ilustraciones internas más compactas */
+.illus-mid{min-height:280px;}
+
+/* ── CABECERA ── */
+.chapter-head{padding:56px 64px 0;}
+.parte-label{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.parte-line{width:38px;height:1px;background:var(--dorado);}
+.parte-text{font-size:10px;letter-spacing:0.45em;color:var(--dorado);text-transform:uppercase;}
+.ch-num{
+  font-family:'Playfair Display',serif;font-size:13px;font-weight:400;
+  letter-spacing:0.35em;color:var(--dorado3);text-transform:uppercase;margin-bottom:10px;
+}
+.ch-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,5.5vw,68px);font-weight:900;
+  color:var(--crema);line-height:0.92;letter-spacing:-0.02em;margin-bottom:6px;
+}
+.ch-sub{
+  font-family:'Cormorant Garamond',serif;font-size:19px;
+  font-style:italic;color:var(--dorado);letter-spacing:0.04em;margin-bottom:40px;
+}
+.ch-div{display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+.ch-div-line{flex:1;height:0.5px;background:var(--linea);}
+.ch-div-dot{width:5px;height:5px;border-radius:50%;background:var(--dorado3);}
+
+/* ── CUERPO ── */
+.body{padding:0 64px;}
+.dropcap-wrap{margin-bottom:24px;font-size:18.5px;line-height:1.88;color:var(--gris);}
+.dropcap{
+  float:left;font-family:'Playfair Display',serif;
+  font-size:108px;font-weight:900;line-height:0.72;
+  color:var(--dorado);margin-right:6px;margin-top:10px;
+}
+.p{font-size:18px;line-height:1.92;color:var(--gris);text-indent:2.2em;margin-bottom:22px;}
+.p b{color:var(--crema2);font-weight:500;}
+.p em{font-style:italic;color:var(--crema3);}
+.p .nm{color:var(--crema2);}
+.d{
+  font-size:18px;line-height:1.92;color:var(--crema3);
+  font-style:italic;font-family:'Cormorant Garamond',serif;
+  margin-bottom:0;text-indent:0;
+}
+.ac{font-size:16.5px;line-height:1.88;color:#5a4e36;font-style:italic;margin-bottom:0;text-indent:0;}
+
+/* Separadores */
+.sep{display:flex;align-items:center;justify-content:center;gap:18px;padding:48px 0;}
+.sep-line{width:60px;height:0.5px;background:var(--linea2);}
+.sep-mark{font-family:'Playfair Display',serif;font-size:22px;color:#2e2416;letter-spacing:0.25em;}
+
+/* Cita lateral */
+.pq{border-left:2px solid var(--dorado);padding:6px 0 6px 24px;margin:36px 0;}
+.pq-t{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--crema2);line-height:1.55;}
+.pq-t span{color:var(--dorado);}
+
+/* Clímax */
+.climax{
+  text-align:center;padding:44px 80px;margin:8px -64px;
+  background:var(--negro2);
+  border-top:0.5px solid var(--linea);border-bottom:0.5px solid var(--linea);
+}
+.climax-t{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;font-weight:300;color:var(--dorado);line-height:1.45;}
+.climax-a{font-size:10px;letter-spacing:0.38em;color:#3a2e1a;text-transform:uppercase;margin-top:18px;}
+
+/* Datos */
+.datos{border:0.5px solid var(--linea2);background:#0b0907;padding:30px 36px;margin:36px 0;position:relative;}
+.datos::before{
+  content:attr(data-label);position:absolute;top:-9px;left:22px;
+  font-size:9px;letter-spacing:0.42em;color:var(--dorado3);
+  background:#0b0907;padding:0 10px;text-transform:uppercase;
+}
+.dr{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:0.5px solid var(--linea);}
+.dr:last-child{border-bottom:none;padding-top:14px;}
+.dl{font-size:16px;color:var(--gris);}
+.dv{font-family:'Playfair Display',serif;font-size:17px;color:var(--crema3);letter-spacing:0.04em;}
+.dv.v{color:#6a9848;}.dv.r{color:#a84828;}.dv.t{color:var(--crema2);font-size:20px;font-weight:700;}
+
+/* Diálogo en bloque */
+.db{
+  background:var(--negro2);border:0.5px solid var(--linea);
+  border-left:2px solid #3a2e1a;padding:26px 32px;margin:32px 0;
+}
+.db .d{margin-bottom:10px;font-size:18px;}
+.db .d:last-child{margin-bottom:0;}
+.db .ac{color:#4a3e28;margin:8px 0;font-size:16px;}
+.db-foot{
+  font-size:10px;letter-spacing:0.28em;color:#3a2e18;text-transform:uppercase;
+  margin-top:16px;padding-top:14px;border-top:0.5px solid var(--linea);
+}
+
+/* Nota / recuadro */
+.nota{padding:22px 28px;border:0.5px solid var(--linea);background:#0a0907;margin:28px 0;}
+.nota-label{font-size:9px;letter-spacing:0.42em;color:var(--dorado3);text-transform:uppercase;margin-bottom:10px;}
+.nota-t{font-size:15px;color:#5a4e36;line-height:1.78;font-style:italic;}
+.nota-t em{font-style:normal;color:#7a6848;}
+
+/* Flashback / memoria */
+.fb{
+  border:0.5px solid var(--linea2);border-left:2px solid #2e2010;
+  background:#0a0806;padding:28px 34px;margin:36px 0;position:relative;
+}
+.fb-label{
+  position:absolute;top:-9px;left:22px;font-size:9px;
+  letter-spacing:0.42em;color:#3a2e18;background:#0a0806;
+  padding:0 10px;text-transform:uppercase;
+}
+.fb .p{font-size:17px;color:#6a5e48;text-indent:0;margin-bottom:16px;}
+.fb .p em{color:#8a7858;}
+
+/* Escena-marker */
+.scene-tag{
+  display:flex;align-items:center;gap:12px;margin:0 0 28px;
+}
+.scene-tag-line{flex:1;height:0.5px;background:var(--linea);}
+.scene-tag-text{font-size:9.5px;letter-spacing:0.42em;color:#3a2e18;text-transform:uppercase;white-space:nowrap;}
+
+/* Pie y cierre */
+.ch-foot{padding:0 64px;margin-top:64px;}
+.ch-foot-inner{border-top:0.5px solid var(--linea);padding:24px 0;display:flex;justify-content:space-between;align-items:center;}
+.foot-book{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--dorado3);letter-spacing:0.08em;text-transform:uppercase;}
+.foot-auth{font-size:10.5px;color:#3a2e18;letter-spacing:0.14em;text-transform:uppercase;margin-top:4px;}
+.foot-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#1a1508;line-height:1;}
+.cont{text-align:center;padding:64px;border-top:0.5px solid var(--linea);}
+.cont-orn{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:28px;}
+.cont-orn-line{width:70px;height:0.5px;background:#2a2010;}
+.cont-tit{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--dorado);margin-bottom:10px;letter-spacing:0.02em;}
+.cont-sub{font-size:10px;letter-spacing:0.42em;color:#3a2e18;text-transform:uppercase;}
+
+.sp32{height:32px;}.sp48{height:48px;}
+
+@media(max-width:640px){
+  .site-header,.chapter-head,.body,.ch-foot{padding-left:28px;padding-right:28px;}
+  .ch-title{font-size:36px;}
+  .climax{margin:8px -28px;padding:36px 28px;}
+  .climax-t{font-size:22px;}
+  .dropcap{font-size:80px;}
+  .p,.d{font-size:16.5px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="sh-left">Novelas por un Sol &ensp;·&ensp; Quipu Andino &ensp;·&ensp; 2026</span>
+  <span class="sh-right">Parte I &ensp;·&ensp; Cap. 2</span>
+</header>
+
+
+<!-- ════════════════════════════════════════════════════════
+     ILUSTRACIÓN HERO — ARTEMIO CAMINANDO AL TERMINAL SUR
+     4:45am · Juliaca · bolso verde · oscuridad y frío
+     ════════════════════════════════════════════════════════ -->
+<div class="illus illus-hero">
+<svg viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="height:520px;">
+  <defs>
+    <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e18"/>
+      <stop offset="55%" stop-color="#0c0e14"/>
+      <stop offset="100%" stop-color="#080705"/>
+    </linearGradient>
+    <!-- Luna y estrellas de madrugada -->
+    <radialGradient id="h-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d8d0b8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#d8d0b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="h-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0cca0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <!-- Calle iluminada por farola -->
+    <radialGradient id="h-lamp" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#e8b840" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#c89020" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="h-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#080705"/>
+    </linearGradient>
+    <radialGradient id="h-vig" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#050404" stop-opacity="0.88"/>
+    </radialGradient>
+    <linearGradient id="h-road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#181410"/>
+      <stop offset="100%" stop-color="#0e0c08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cielo de madrugada -->
+  <rect width="920" height="520" fill="url(#h-sky)"/>
+
+  <!-- Estrellas -->
+  <circle cx="80"  cy="40"  r="1"   fill="#c8c0a8" opacity="0.55"/>
+  <circle cx="160" cy="25"  r="1.2" fill="#c8c0a8" opacity="0.50"/>
+  <circle cx="250" cy="55"  r="1"   fill="#c8c0a8" opacity="0.45"/>
+  <circle cx="340" cy="18"  r="1"   fill="#c8c0a8" opacity="0.55"/>
+  <circle cx="430" cy="38"  r="1.2" fill="#c8c0a8" opacity="0.48"/>
+  <circle cx="540" cy="12"  r="1"   fill="#c8c0a8" opacity="0.52"/>
+  <circle cx="620" cy="44"  r="1"   fill="#c8c0a8" opacity="0.45"/>
+  <circle cx="720" cy="28"  r="1.2" fill="#c8c0a8" opacity="0.50"/>
+  <circle cx="810" cy="52"  r="1"   fill="#c8c0a8" opacity="0.46"/>
+  <circle cx="880" cy="20"  r="1"   fill="#c8c0a8" opacity="0.54"/>
+  <circle cx="110" cy="72"  r="0.8" fill="#c8c0a8" opacity="0.35"/>
+  <circle cx="380" cy="65"  r="0.8" fill="#c8c0a8" opacity="0.32"/>
+  <circle cx="680" cy="70"  r="0.8" fill="#c8c0a8" opacity="0.34"/>
+
+  <!-- Luna creciente -->
+  <circle cx="760" cy="68" r="28" fill="#c8c0a0" opacity="0.88"/>
+  <circle cx="772" cy="62" r="24" fill="#0c0e14"/>
+  <!-- Halo lunar -->
+  <ellipse cx="760" cy="68" rx="55" ry="55" fill="url(#h-glow)"/>
+
+  <!-- Montaña Juliaca en silueta — altiplano -->
+  <path d="M0 200 Q60 180 120 190 Q180 165 240 178 Q320 155 380 168 Q460 148 520 162 Q600 142 660 158 Q730 148 800 160 Q860 152 920 165 L920 240 L0 240 Z" fill="#0e0c0a" opacity="0.9"/>
+  <path d="M0 220 Q100 208 200 215 Q350 205 460 218 Q600 208 720 215 Q830 208 920 212 L920 240 L0 240 Z" fill="#0c0a08"/>
+
+  <!-- Calle Jr. Manco Cápac — adoquín -->
+  <rect x="0" y="340" width="920" height="180" fill="url(#h-road)"/>
+  <!-- Líneas de adoquín -->
+  <line x1="0" y1="355" x2="920" y2="355" stroke="#141008" stroke-width="0.5"/>
+  <line x1="0" y1="370" x2="920" y2="370" stroke="#141008" stroke-width="0.5"/>
+  <line x1="0" y1="385" x2="920" y2="385" stroke="#141008" stroke-width="0.4"/>
+  <line x1="0" y1="400" x2="920" y2="400" stroke="#141008" stroke-width="0.4"/>
+  <!-- Lineas verticales de adoquín cada 60px -->
+  <line x1="60"  y1="340" x2="60"  y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="120" y1="340" x2="120" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="180" y1="340" x2="180" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="240" y1="340" x2="240" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="300" y1="340" x2="300" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="360" y1="340" x2="360" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="420" y1="340" x2="420" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="480" y1="340" x2="480" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="540" y1="340" x2="540" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="600" y1="340" x2="600" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="660" y1="340" x2="660" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="720" y1="340" x2="720" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="780" y1="340" x2="780" y2="520" stroke="#141008" stroke-width="0.4"/>
+  <line x1="840" y1="340" x2="840" y2="520" stroke="#141008" stroke-width="0.4"/>
+
+  <!-- Veredas a los lados -->
+  <rect x="0" y="310" width="140" height="30" fill="#121008" stroke="#1a1608" stroke-width="0.5"/>
+  <rect x="780" y="310" width="140" height="30" fill="#121008" stroke="#1a1608" stroke-width="0.5"/>
+
+  <!-- FAROLA — única fuente de luz en la calle -->
+  <line x1="650" y1="90" x2="650" y2="320" stroke="#282418" stroke-width="3" stroke-linecap="round"/>
+  <path d="M650 90 Q660 85 685 88 Q690 92 685 96 Q660 94 650 90 Z" fill="#282418"/>
+  <!-- Bombilla fundida — solo el poste, sin luz -->
+  <ellipse cx="686" cy="92" rx="6" ry="4" fill="#1e1c14" stroke="#2a2818" stroke-width="0.5"/>
+  <!-- Sombra de que la farola está fundida — texto sutil -->
+  <text x="700" y="88" font-family="'EB Garamond',serif" font-size="8" fill="#2a2010" opacity="0.5" letter-spacing="1">fundida</text>
+
+  <!-- Edificios / casas aledañas — siluetas -->
+  <!-- Izquierda -->
+  <rect x="0"   y="200" width="90"  height="140" fill="#0e0c08"/>
+  <rect x="0"   y="180" width="90"  height="25"  fill="#121008"/>
+  <rect x="95"  y="220" width="70"  height="120" fill="#0c0a06"/>
+  <rect x="168" y="235" width="60"  height="105" fill="#0e0c08"/>
+  <!-- Ventanas con velas / luz interior tenue -->
+  <rect x="18"  y="210" width="18" height="14" rx="1" fill="#1e1a0c" opacity="0.6"/>
+  <rect x="48"  y="210" width="18" height="14" rx="1" fill="#241e10" opacity="0.5"/>
+  <rect x="18"  y="238" width="18" height="14" rx="1" fill="#1c1808" opacity="0.4"/>
+  <rect x="105" y="248" width="16" height="12" rx="1" fill="#201c0c" opacity="0.5"/>
+  <!-- Derecha -->
+  <rect x="810" y="210" width="110" height="130" fill="#0e0c08"/>
+  <rect x="810" y="188" width="110" height="26"  fill="#121008"/>
+  <rect x="730" y="225" width="75"  height="115" fill="#0c0a06"/>
+  <rect x="820" y="224" width="20" height="14" rx="1" fill="#1e1a0c" opacity="0.6"/>
+  <rect x="856" y="224" width="20" height="14" rx="1" fill="#201c0c" opacity="0.5"/>
+  <rect x="820" y="252" width="20" height="14" rx="1" fill="#1c1808" opacity="0.4"/>
+  <rect x="740" y="248" width="18" height="12" rx="1" fill="#1e1a0c" opacity="0.45"/>
+
+  <!-- CASIO F-91W — reloj digital flotando (elemento narrativo) -->
+  <rect x="56" y="420" width="88" height="44" rx="4" fill="#0e0c08" stroke="#2a2418" stroke-width="0.8"/>
+  <rect x="60" y="424" width="80" height="36" rx="3" fill="#101410" stroke="#1e2018" stroke-width="0.5"/>
+  <!-- Display digital -->
+  <rect x="65" y="429" width="70" height="26" rx="2" fill="#182818"/>
+  <!-- Números 4:45 en display -->
+  <text x="100" y="448" text-anchor="middle" font-family="monospace" font-size="16" fill="#40d860" letter-spacing="3" opacity="0.9">4:45</text>
+  <text x="44"  y="440" font-family="sans-serif" font-size="7" fill="#3a2e18" letter-spacing="1">CASIO</text>
+  <text x="44"  y="450" font-family="sans-serif" font-size="6" fill="#2a2010" letter-spacing="0.5">F-91W</text>
+  <!-- Correa rajada pegada con pegamento -->
+  <rect x="44"  y="428" width="14" height="16" rx="2" fill="#1a1610" stroke="#241e10" stroke-width="0.5"/>
+  <rect x="144" y="428" width="14" height="16" rx="2" fill="#1a1610" stroke="#241e10" stroke-width="0.5"/>
+  <!-- Línea de rotura y pegamento -->
+  <line x1="44" y1="435" x2="58" y2="435" stroke="#382e18" stroke-width="0.6"/>
+  <path d="M50 433 Q52 430 54 433 Q52 436 50 433 Z" fill="#c8a030" opacity="0.4"/>
+
+  <!-- ARTEMIO caminando de perfil, bolso verde, calle oscura -->
+  <!-- Sombra en el piso -->
+  <ellipse cx="420" cy="490" rx="52" ry="10" fill="#040302" opacity="0.7"/>
+  <!-- Piernas caminando — paso izquierdo adelante -->
+  <path d="M408 410 Q402 448 396 480" stroke="#181610" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <path d="M428 412 Q436 452 444 482" stroke="#1a1810" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <!-- Zapatos / zapatillas -->
+  <ellipse cx="393" cy="482" rx="26" ry="9" fill="#1c1a10" stroke="#262410" stroke-width="0.5"/>
+  <rect x="369" y="472" width="48" height="12" rx="5" fill="#201e12" stroke="#2c2818" stroke-width="0.4"/>
+  <ellipse cx="446" cy="482" rx="26" ry="9" fill="#1c1a10" stroke="#262410" stroke-width="0.5"/>
+  <rect x="422" y="472" width="48" height="12" rx="5" fill="#201e12" stroke="#2c2818" stroke-width="0.4"/>
+  <!-- Torso — chompa de alpaca encima de camisa -->
+  <path d="M390 288 Q394 270 420 264 Q450 258 468 264 Q488 270 490 288 L496 410 Q470 420 432 421 Q402 420 384 410 Z" fill="#2a2418"/>
+  <!-- Textura de tejido de alpaca — líneas horizontales sutiles -->
+  <line x1="390" y1="296" x2="490" y2="296" stroke="#322c1c" stroke-width="0.6" opacity="0.5"/>
+  <line x1="390" y1="308" x2="490" y2="308" stroke="#322c1c" stroke-width="0.6" opacity="0.4"/>
+  <line x1="390" y1="320" x2="490" y2="320" stroke="#322c1c" stroke-width="0.6" opacity="0.4"/>
+  <line x1="390" y1="332" x2="490" y2="332" stroke="#322c1c" stroke-width="0.6" opacity="0.4"/>
+  <line x1="390" y1="344" x2="490" y2="344" stroke="#322c1c" stroke-width="0.6" opacity="0.35"/>
+  <line x1="390" y1="356" x2="490" y2="356" stroke="#322c1c" stroke-width="0.6" opacity="0.35"/>
+  <line x1="390" y1="368" x2="490" y2="368" stroke="#322c1c" stroke-width="0.6" opacity="0.3"/>
+  <!-- Brazos -->
+  <!-- Brazo derecho (atrás, balanceo) -->
+  <path d="M490 300 Q510 340 508 380" stroke="#221e14" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- Brazo izquierdo (adelante, sosteniendo el bolso) -->
+  <path d="M390 300 Q364 340 358 385" stroke="#221e14" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- BOLSO VERDE ADIDAS (falso) — en mano izquierda -->
+  <rect x="320" y="368" width="68" height="50" rx="4" fill="#1e3820" stroke="#2a4828" stroke-width="0.6"/>
+  <!-- Stripes Adidas falsas -->
+  <line x1="332" y1="368" x2="326" y2="418" stroke="#3a5838" stroke-width="2.5"/>
+  <line x1="342" y1="368" x2="336" y2="418" stroke="#3a5838" stroke-width="2.5"/>
+  <line x1="352" y1="368" x2="346" y2="418" stroke="#3a5838" stroke-width="2.5"/>
+  <!-- Logo Adidas (trébol invertido — falso) -->
+  <text x="370" y="390" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2a4828" letter-spacing="1">adidas</text>
+  <!-- Cremallera del bolso -->
+  <line x1="320" y1="374" x2="388" y2="374" stroke="#4a6848" stroke-width="1"/>
+  <!-- Asa del bolso -->
+  <path d="M330 368 Q354 355 382 368" stroke="#2a4828" stroke-width="3" fill="none"/>
+  <!-- Mano sujetando el bolso -->
+  <ellipse cx="354" cy="392" rx="16" ry="10" fill="#2a2018" opacity="0.8"/>
+
+  <!-- Cabeza / perfil de Artemio -->
+  <ellipse cx="444" cy="226" rx="48" ry="50" fill="#2e2418"/>
+  <!-- Cabello -->
+  <path d="M398 218 Q400 188 420 178 Q432 172 444 171 Q456 172 468 178 Q488 188 490 218 L487 206 Q478 182 458 174 Q450 170 444 170 Q438 170 430 174 Q410 182 401 206 Z" fill="#1a1208"/>
+  <!-- Frente -->
+  <path d="M400 206 Q402 185 420 176 Q432 170 444 169 Q456 170 468 176 Q486 185 488 206" fill="#281e14" opacity="0.5"/>
+  <!-- Perfil — cara mirando hacia la derecha (al frente del camino) -->
+  <!-- Ojo izquierdo en perfil -->
+  <ellipse cx="432" cy="216" rx="7" ry="5.5" fill="#1a1208"/>
+  <ellipse cx="432" cy="216" rx="4"  ry="3.5" fill="#120e06"/>
+  <circle  cx="433" cy="215" r="1.5" fill="#3a2c18"/>
+  <!-- Nariz perfil -->
+  <path d="M455 228 Q462 240 458 252 Q455 255 450 252" stroke="#201808" stroke-width="1.5" fill="none"/>
+  <!-- Boca apretada — seria -->
+  <path d="M434 258 Q444 262 452 258" stroke="#1a1208" stroke-width="1.5" fill="none"/>
+  <!-- Ceja -->
+  <path d="M420 208 Q432 203 444 206" stroke="#1a1208" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <!-- Hueco del incisivo visible en perfil -->
+  <rect x="442" y="260" width="4" height="3" rx="1" fill="#0a0806"/>
+  <!-- Mandíbula apretada, tensión -->
+  <path d="M420 265 Q430 274 440 272 Q452 270 456 264" fill="#281e12" opacity="0.4"/>
+  <!-- Cuello -->
+  <rect x="428" y="268" width="28" height="22" rx="4" fill="#272018"/>
+  <!-- Aliento visible — vapor en el aire frío de Juliaca -->
+  <path d="M438 256 Q426 246 420 235 Q415 224 418 218" stroke="#d8d0c0" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M436 258 Q424 248 419 237" stroke="#d8d0c0" stroke-width="0.6" fill="none" opacity="0.2"/>
+
+  <!-- MUJER LAVANDO ROPA en balde (al fondo izquierda) -->
+  <ellipse cx="90" cy="362" rx="18" ry="12" fill="#1a1810" stroke="#222018" stroke-width="0.5"/>
+  <path d="M72 348 Q78 340 90 338 Q102 340 108 348 L110 362 L70 362 Z" fill="#201c14"/>
+  <!-- Vapor del agua fría en altiplano -->
+  <path d="M80 338 Q78 328 82 320" stroke="#c8c0b0" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M90 336 Q88 326 92 318" stroke="#c8c0b0" stroke-width="0.6" fill="none" opacity="0.2"/>
+  <path d="M100 338 Q98 328 102 322" stroke="#c8c0b0" stroke-width="0.6" fill="none" opacity="0.25"/>
+
+  <!-- PERROS FLACOS buscando basura (al fondo derecha) -->
+  <!-- Perro 1 -->
+  <path d="M756 370 Q768 362 780 365 Q782 370 778 374 Q770 376 758 374 Z" fill="#141008" opacity="0.7"/>
+  <ellipse cx="784" cy="368" rx="6" ry="4.5" fill="#141008" opacity="0.7"/>
+  <line x1="766" y1="374" x2="764" y2="382" stroke="#141008" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="772" y1="374" x2="770" y2="383" stroke="#141008" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="778" y1="374" x2="780" y2="382" stroke="#141008" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- MONTÍCULO DE BASURA no recogida (fondo) -->
+  <path d="M830 310 Q850 296 875 302 Q892 310 888 322 Q870 328 848 324 Q828 318 830 310 Z" fill="#141008" opacity="0.6"/>
+  <path d="M848 298 Q854 290 860 294 Q858 302 848 298 Z" fill="#181208" opacity="0.5"/>
+
+  <!-- Niño con uniforme esperando combi escolar (fondo izquierda) -->
+  <ellipse cx="186" cy="316" rx="8"  ry="8"  fill="#181210"/>
+  <rect    x="179" y="324"  width="14" height="18" rx="3" fill="#1a1810"/>
+  <!-- Mochila pequeña -->
+  <rect x="190" y="326" width="8" height="12" rx="2" fill="#1e1c10"/>
+
+  <!-- Capas de atmósfera y niebla baja de altiplano -->
+  <rect x="0" y="240" width="920" height="60" fill="#0a0d14" opacity="0.25"/>
+  <path d="M0 260 Q230 252 460 256 Q690 260 920 252 L920 275 Q690 270 460 274 Q230 270 0 275 Z" fill="#0c0e16" opacity="0.18"/>
+
+  <!-- Vignette -->
+  <rect width="920" height="520" fill="url(#h-vig)"/>
+  <!-- Fusión inferior -->
+  <rect x="0" y="390" width="920" height="130" fill="url(#h-bot)"/>
+
+  <!-- Texto de escena -->
+  <text x="460" y="510" text-anchor="middle" font-family="'EB Garamond',serif" font-size="10" fill="#3a2e18" letter-spacing="3" opacity="0.65">JULIACA &ensp;·&ensp; 4:45 A.M. &ensp;·&ensp; FEBRERO 2000</text>
+</svg>
+</div><!-- /hero -->
+
+
+<!-- ════════════════════════════════════════════════════════
+     CABECERA DEL CAPÍTULO
+     ════════════════════════════════════════════════════════ -->
+<div class="chapter-head">
+  <div class="parte-label">
+    <div class="parte-line"></div>
+    <div class="parte-text">Parte I &ensp;·&ensp; Hambre</div>
+  </div>
+  <div class="ch-num">Capítulo dos</div>
+  <h1 class="ch-title">La Frontera es<br>una Línea de Tiza</h1>
+  <div class="ch-sub">Juliaca &ensp;·&ensp; Desaguadero &ensp;·&ensp; La Paz &ensp;·&ensp; Febrero, año 2000</div>
+  <div class="ch-div">
+    <div class="ch-div-line"></div>
+    <div class="ch-div-dot"></div>
+    <div class="ch-div-line"></div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     CUERPO
+     ════════════════════════════════════════════════════════ -->
+<div class="body">
+
+<!-- ══ ESCENA 1: LA MADRUGADA ══ -->
+<div class="dropcap-wrap">
+  <span class="dropcap">C</span>uatro y cuarenta y cinco de la madrugada. El reloj Casio F-91W —dieciséis soles en el Mercado Túpac Amaru, tres años de uso, correa rajada que Artemio pegó con UHU Glue reempacado en tubo falso, porque incluso el pegamento es falso en una economía donde lo falso sostiene lo real con fuerza suficiente para que la ilusión dure hasta que no dura— parpadea números verdes en la oscuridad del cuarto.
+</div>
+
+<p class="p">Artemio despierta treinta segundos antes de que suene la alarma. No porque la configuró —no la configuró— sino porque el cuerpo sabe. Cuerpo que cargó sacos de cemento Andino —cincuenta kilos cada uno, ocho horas diarias, doce soles por hora— durante cuatro años, memorizó qué hora es la hora de levantarse antes de que la historia personal se vuelva condena generacional. <b>Esta es esa hora.</b></p>
+
+<p class="p">Se levanta. Se viste en la oscuridad. Pantalón jean Topitop —talla equivocada, cintura que aprieta, pero que dejó de apretar hace seis meses cuando empezó a comer menos para ahorrar más—; camisa a cuadros sin marca —diez soles en mercado ambulante—; chompa de lana de alpaca —regalo de su madre hace cinco años, única prenda real en guardarropa de falsificaciones.</p>
+
+<p class="p">Del cajón saca la piedra de Puquina. Negra con vetas rojas. Treinta y dos gramos. Su madre se la dio hace veinte años diciéndole en aymara que Artemio apenas entendía: <em>Akax chhijjxatasktwa.</em> Esto te protegerá. O quizás dijo: <em>Akax chhijjxaraskitwa.</em> Esto te marcará. Diferencia de una sílaba que su madre murió sin aclarar. <b>La guarda en el bolsillo y siente un peso pequeño que se vuelve enorme cuando piensas demasiado en él.</b></p>
+
+<p class="p">Roxana finge dormir —respiración demasiado regular, demasiado controlada— para evitar la conversación que ambos saben terminaría en ella pidiéndole que no vaya, o pidiéndole que vaya rápido. Y Artemio no sabe cuál de las dos le duele más. Se inclina. Besa la frente de Roxana. Piel fría. Olor a jabón Bolívar mezclado con olor a preocupación que no tiene precio de mercado.</p>
+
+<p class="p">Se va sin despedida, porque la despedida haría real lo que ambos fingen que no es real. Afuera, Juliaca arde de frío —expresión que suena contradictoria hasta que vives en ciudad donde el clima quema la piel expuesta en treinta segundos, donde la temperatura no es ausencia de calor sino presencia activa de algo más viejo que la civilización. Camina hacia el Jr. Manco Cápac. <b>La decisión está tomada. O la pobreza eligió por él. Distinción técnica que filósofos debaten en universidades con calefacción mientras los pobres caminan en la oscuridad hacia fronteras que no deberían cruzar.</b></p>
+
+
+<!-- ══ ESCENA 2: TERMINAL SUR ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Terminal Sur &ensp;·&ensp; 5:15 a.m.</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p">Terminal Sur huele a tres cosas en orden exacto de intensidad olfativa —porque la pobreza tiene jerarquía hasta en olores—: diésel quemado de combis Toyota Hiace modelo noventa y ocho que el gobierno japonés donó a Perú en un programa de cooperación técnica que terminó siendo japoneses deshaciéndose de vehículos que ya no pasaban la inspección en Tokio; kerosén de vendedoras de café que calientan el agua en cocinas Primus portátiles porque la conexión eléctrica cuesta cien soles mensuales que nadie paga; humanidad acumulada de mil personas esperando combis que los lleven a fronteras donde la ley peruana termina y la ley boliviana empieza, y entre ambas existe un vacío donde la única ley es la del que tiene dólares para pagar el paso.</p>
+
+<p class="p">Artemio llega a las cinco y cuarto. Quince minutos antes de la salida programada porque llegar temprano es la diferencia entre asiento de ventana —donde puede vomitar afuera si el mareo aprieta— y asiento del medio —donde vomita sobre las piernas de señora con aguayo lleno de quesos.</p>
+
+<p class="p">La combi espera. Motor apagado. Chasis inclinado hacia la izquierda —suspensión rota, reparada tres veces con repuestos chinos que duran la mitad pero cuestan la cuarta parte. Parabrisas con dos calcomanías: <em>"Virgen de Copacabana protégenos"</em> junto a <em>"Cuidado, retrocedo sin mirar"</em>, que es la honestidad brutal de un chofer que prefiere advertir a disculparse.</p>
+
+<div class="db">
+  <p class="d">—Desaguadero —dice Artemio.</p>
+  <p class="ac">No pregunta. Afirma. Porque preguntar revela duda, y la duda revela que es la primera vez, y la primera vez te marca como objetivo de sobreprecio.</p>
+  <p class="d">—Quince soles. Salimos a las cinco y media.</p>
+  <p class="ac">Artemio paga. Sube.</p>
+  <div class="db-foot">Terminal Sur &ensp;·&ensp; El chofer que lleva treinta años en la ruta</div>
+</div>
+
+<p class="p">Los pasajeros se acomodan con la coreografía de gente que hace este viaje cada semana: señora con pollera azul eléctrico y aguayo lleno de quesos Paria que va a vender en La Paz como "artesanales" cuando vienen de fábrica en Ayaviri; joven con caja de parlantes Xion —marca china que suena como traducción Google de "eXcellence in Sound"— que va a vender como Sony porque en el altiplano lo que importa no es qué ES sino qué PARECE; pareja de ancianos que no hablan, solo se toman de la mano con dedos entrelazados con la fuerza de gente que sobrevivió cincuenta años juntos, no porque se aman extraordinariamente, sino porque soltar duele más que sostener. Y Artemio. El único con bolso vacío. El único con sudor helado en febrero.</p>
+
+<p class="p">Motor arranca. Radio enciende. Los Kjarkas: <em>"Llorando se fue".</em> Canción que su madre cantaba lavando ropa ajena. Canción que Roxana tararea cuando cree que Artemio no escucha. Canción que dentro de seis años va a sonar en el altavoz de la comisaría de Yura mientras Artemio espera en celda provisional.</p>
+
+<p class="p">Combi arranca. Artemio apoya la cabeza en la ventana y mira afuera: Juliaca despierta —mujer lavando ropa en balde de plástico con agua que humea porque el agua fría en el altiplano produce vapor al contacto con el aire más helado; perros flacos buscando basura en el montículo que la municipalidad prometió recoger hace tres semanas; niño con uniforme esperando combi escolar que llegará veinte minutos tarde, como llega todos los días, porque la puntualidad es privilegio de países donde el tiempo vale más que aquí.</p>
+
+<div class="datos" data-label="Lo que Artemio cuenta en la combi">
+  <div class="dr"><span class="dl">Cartuchos HP 564XL a comprar</span><span class="dv">75 unidades</span></div>
+  <div class="dr"><span class="dl">Costo por cartucho en Bolivia</span><span class="dv">USD 4.00</span></div>
+  <div class="dr"><span class="dl">Precio de venta en Juliaca</span><span class="dv v">USD 12.00</span></div>
+  <div class="dr"><span class="dl">Ganancia bruta por cartucho</span><span class="dv">USD 8.00</span></div>
+  <div class="dr"><span class="dl">Mordida en frontera (precio estandarizado)</span><span class="dv r">USD 15.00</span></div>
+  <div class="dr"><span class="dl">50 % para Justino Apaza</span><span class="dv r">&minus; mitad</span></div>
+  <div class="dr"><span class="dl">Para Artemio, primera estimación</span><span class="dv t">S/ ≈ 105</span></div>
+</div>
+
+<p class="p">Las cuentas cierran. Tienen que cerrar. Porque si no cierran, Artemio está cruzando la frontera no por necesidad económica sino por ambición personal, y la ambición personal no justifica cruzar líneas que su madre advirtió que no se cruzan. <b>Así que las cuentas cierran. Artemio las cierra. Porque la aritmética es más obediente que la ética.</b></p>
+
+
+<!-- ══ ILUSTRACIÓN 2: HUANCANÉ — LA SILUETA EN EL ICHU ══ -->
+</div><!-- /body cierra temporalmente para ilustración -->
+
+<div class="illus illus-mid">
+<svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="height:300px;">
+  <defs>
+    <linearGradient id="alt-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121820"/>
+      <stop offset="60%" stop-color="#0e1418"/>
+      <stop offset="100%" stop-color="#080a0c"/>
+    </linearGradient>
+    <linearGradient id="alt-gnd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141008"/>
+      <stop offset="100%" stop-color="#0a0805"/>
+    </linearGradient>
+    <linearGradient id="alt-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#080705"/>
+    </linearGradient>
+    <radialGradient id="alt-vig" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#050404" stop-opacity="0.82"/>
+    </radialGradient>
+    <!-- Brillo de amanecer lejano — alba gris en altiplano -->
+    <linearGradient id="alt-dawn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="40%"  stop-color="#c8a84808" stop-opacity="0.05"/>
+      <stop offset="60%"  stop-color="#d8b85028" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cielo — pre-amanecer altiplano, gris azulado -->
+  <rect width="920" height="300" fill="url(#alt-sky)"/>
+  <!-- Franja de alba en el horizonte -->
+  <rect x="0" y="150" width="920" height="60" fill="url(#alt-dawn)"/>
+  <!-- Estrellas apagándose -->
+  <circle cx="120" cy="30" r="0.8" fill="#a8a098" opacity="0.35"/>
+  <circle cx="280" cy="45" r="0.8" fill="#a8a098" opacity="0.28"/>
+  <circle cx="460" cy="22" r="0.8" fill="#a8a098" opacity="0.32"/>
+  <circle cx="640" cy="38" r="0.8" fill="#a8a098" opacity="0.28"/>
+  <circle cx="820" cy="28" r="0.8" fill="#a8a098" opacity="0.32"/>
+  <!-- Montañas del altiplano, silueta -->
+  <path d="M0 148 Q80 120 160 132 Q240 112 320 126 Q420 106 500 120 Q600 108 680 122 Q760 112 840 124 Q880 118 920 126 L920 200 L0 200 Z" fill="#0e0c0a"/>
+
+  <!-- ICHU (paja brava) — campo enorme, textura -->
+  <rect x="0" y="195" width="920" height="105" fill="#141008"/>
+  <!-- Tallos de ichu -->
+  <line x1="20"  y1="195" x2="14"  y2="215" stroke="#1e1808" stroke-width="1.2"/>
+  <line x1="40"  y1="193" x2="36"  y2="210" stroke="#1c1608" stroke-width="1.2"/>
+  <line x1="60"  y1="196" x2="55"  y2="214" stroke="#1e1808" stroke-width="1"/>
+  <line x1="80"  y1="194" x2="76"  y2="212" stroke="#1a1608" stroke-width="1.2"/>
+  <line x1="100" y1="196" x2="95"  y2="215" stroke="#1e1808" stroke-width="1"/>
+  <line x1="120" y1="193" x2="115" y2="211" stroke="#1c1608" stroke-width="1.2"/>
+  <line x1="140" y1="195" x2="134" y2="213" stroke="#1e1808" stroke-width="1"/>
+  <line x1="160" y1="193" x2="154" y2="210" stroke="#1a1608" stroke-width="1"/>
+  <!-- Más ichu distribuido -->
+  <line x1="320" y1="195" x2="314" y2="213" stroke="#1e1808" stroke-width="1"/>
+  <line x1="340" y1="193" x2="336" y2="210" stroke="#1c1608" stroke-width="1.2"/>
+  <line x1="360" y1="196" x2="355" y2="214" stroke="#1e1808" stroke-width="1"/>
+  <line x1="380" y1="194" x2="376" y2="212" stroke="#1a1608" stroke-width="1"/>
+  <line x1="600" y1="195" x2="594" y2="213" stroke="#1e1808" stroke-width="1"/>
+  <line x1="620" y1="193" x2="616" y2="210" stroke="#1c1608" stroke-width="1"/>
+  <line x1="640" y1="196" x2="635" y2="214" stroke="#1e1808" stroke-width="1"/>
+  <line x1="660" y1="194" x2="656" y2="212" stroke="#1a1608" stroke-width="1"/>
+  <line x1="680" y1="195" x2="676" y2="213" stroke="#1e1808" stroke-width="1"/>
+  <line x1="700" y1="193" x2="695" y2="211" stroke="#1c1608" stroke-width="1"/>
+  <line x1="720" y1="196" x2="716" y2="214" stroke="#1e1808" stroke-width="1"/>
+  <line x1="740" y1="194" x2="736" y2="212" stroke="#1a1608" stroke-width="1"/>
+  <line x1="760" y1="195" x2="755" y2="213" stroke="#1e1808" stroke-width="1"/>
+  <line x1="800" y1="193" x2="796" y2="210" stroke="#1c1608" stroke-width="1"/>
+  <line x1="840" y1="196" x2="835" y2="214" stroke="#1e1808" stroke-width="1"/>
+  <line x1="880" y1="194" x2="876" y2="212" stroke="#1a1608" stroke-width="1"/>
+
+  <!-- CARRETERA a Desaguadero — perspectiva -->
+  <path d="M380 300 L420 180 L500 180 L540 300 Z" fill="#181410" opacity="0.8"/>
+  <line x1="460" y1="300" x2="460" y2="182" stroke="#1e1a0e" stroke-width="1" stroke-dasharray="8,8" opacity="0.5"/>
+  <!-- Carretera lateral -->
+  <line x1="0" y1="218" x2="380" y2="218" stroke="#141008" stroke-width="0.5"/>
+  <line x1="540" y1="218" x2="920" y2="218" stroke="#141008" stroke-width="0.5"/>
+
+  <!-- SILUETA DE MUJER EN EL ICHU — la madre de Artemio -->
+  <!-- Posición: 50 metros a la izquierda, difusa, espectral -->
+  <ellipse cx="195" cy="178" rx="10" ry="10" fill="#282018" opacity="0.65"/>
+  <path d="M185 188 Q190 178 195 175 Q200 178 205 188 L208 225 L182 225 Z" fill="#242018" opacity="0.60"/>
+  <!-- Pollera oscura -->
+  <path d="M180 210 Q195 206 210 210 L215 228 L175 228 Z" fill="#1e1a12" opacity="0.60"/>
+  <!-- Cadera ladeada — cargando peso de un solo lado, igual que la madre -->
+  <path d="M209 208 Q218 212 220 222 L210 222 Z" fill="#1e1a12" opacity="0.45"/>
+  <!-- Levantando la mano en gesto lento — despedida o advertencia -->
+  <path d="M185 195 Q176 185 172 175" stroke="#242018" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.65"/>
+  <!-- Aura difusa — figura espectral -->
+  <ellipse cx="195" cy="200" rx="30" ry="36" fill="#2a2418" opacity="0.12"/>
+  <!-- Movimiento del ichu alrededor de la silueta -->
+  <line x1="170" y1="188" x2="166" y2="202" stroke="#1e1808" stroke-width="1.2" opacity="0.8"/>
+  <line x1="220" y1="188" x2="218" y2="204" stroke="#1e1808" stroke-width="1.2" opacity="0.8"/>
+
+  <!-- ARTEMIO pequeño, de espaldas, mirando la silueta -->
+  <!-- A la derecha, junto a la combi -->
+  <ellipse cx="560" cy="192" rx="9" ry="9" fill="#2a2018" opacity="0.9"/>
+  <path d="M551 201 Q556 193 560 190 Q564 193 569 201 L571 230 L549 230 Z" fill="#242018" opacity="0.9"/>
+  <!-- Bolso verde visible -->
+  <rect x="545" y="210" width="16" height="12" rx="2" fill="#1e3820" opacity="0.8"/>
+
+  <!-- COMBI esperando a la derecha -->
+  <rect x="600" y="196" width="90"  height="40" rx="3" fill="#141008" stroke="#1e1808" stroke-width="0.5"/>
+  <rect x="614" y="186" width="55"  height="14" rx="2" fill="#121008"/>
+  <!-- Faros encendidos -->
+  <ellipse cx="606" cy="214" rx="5" ry="4" fill="#e8d080" opacity="0.5"/>
+  <ellipse cx="606" cy="226" rx="5" ry="4" fill="#e8d080" opacity="0.4"/>
+  <!-- Cartel: DESAGUADERO -->
+  <rect x="622" y="190" width="48" height="10" rx="1" fill="#101008" stroke="#1a1808" stroke-width="0.4"/>
+  <text x="646" y="198" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#3a3018" letter-spacing="0.5">DESAGUADERO</text>
+  <!-- Ruedas -->
+  <ellipse cx="618" cy="236" rx="10" ry="10" fill="#0c0a08" stroke="#161208" stroke-width="0.5"/>
+  <ellipse cx="618" cy="236" rx="6"  ry="6"  fill="#080706"/>
+  <ellipse cx="672" cy="236" rx="10" ry="10" fill="#0c0a08" stroke="#161208" stroke-width="0.5"/>
+  <ellipse cx="672" cy="236" rx="6"  ry="6"  fill="#080706"/>
+
+  <!-- Flecha de dirección — hacia el horizonte -->
+  <path d="M200 244 L390 244" stroke="#2a2418" stroke-width="0.5" stroke-dasharray="4,6" fill="none" opacity="0.4"/>
+  <text x="295" y="238" text-anchor="middle" font-family="'EB Garamond',serif" font-size="8" fill="#2a2010" opacity="0.45" letter-spacing="2">DESAGUADERO → 120 km</text>
+
+  <!-- Vignette + fusión -->
+  <rect width="920" height="300" fill="url(#alt-vig)"/>
+  <rect x="0" y="220" width="920" height="80" fill="url(#alt-bot)"/>
+</svg>
+</div>
+
+<div class="body"><!-- reabre body -->
+
+<!-- ══ ESCENA 3: HUANCANÉ / LA SILUETA ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Huancané &ensp;·&ensp; Parada técnica</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p">Huancané. Parada técnica. Diez minutos. Artemio baja. Estira las piernas. El aire gélido llena sus pulmones. Mira hacia atrás. La carretera de regreso a Juliaca es una línea recta que se pierde en la curvatura del altiplano, línea que desaparece en el punto exacto donde el ichu amarillo encuentra el cielo gris, invitándolo a regresar como si la decisión todavía no estuviera tomada.</p>
+
+<p class="p">Ve algo moviéndose en el ichu. A cincuenta metros. Una silueta. Mujer. Pollera oscura. Inmóvil. Parece su madre. Misma altura. Misma forma de pararse con la cadera ladeada por años de cargar peso en un solo lado. Su madre murió hace veinte años. Artemio vio el cuerpo. Estuvo en el velorio. Lloró. Entonces no puede ser su madre. Pero es.</p>
+
+<p class="p">Levanta la mano. Gesto lento. Despedida o advertencia o bendición. Tres cosas simultáneas, como tres cosas siempre son en la cultura aymara.</p>
+
+<div class="db">
+  <p class="d">—¡Vamos! —grita el conductor.</p>
+  <p class="ac">Artemio voltea dos segundos. Mira hacia el ichu de nuevo. La silueta desapareció. Solo queda ichu movido por viento que no se siente.</p>
+  <div class="db-foot">Huancané &ensp;·&ensp; La frontera que no está en el mapa</div>
+</div>
+
+<p class="p">Sube a la combi. Y con ese subir —con esa decisión que dura dos segundos de levantar el pie, apoyar el pie, soltar la baranda— la decisión que supuestamente era reversible se vuelve irreversible. No porque físicamente no puede bajarse, sino porque psicológicamente ya cruzó. <b>La frontera no está en Desaguadero. Está aquí. En Huancané. En este segundo entre ver la silueta de su madre y subir a la combi.</b> Y Artemio eligió subir. Como todos eligen cuando quedarse es muerte lenta y seguir es muerte rápida, pero al menos la muerte rápida tiene ilusión de movimiento.</p>
+
+
+<!-- ══ ESCENA 4: DESAGUADERO ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Desaguadero &ensp;·&ensp; La cicatriz</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p"><b>Desaguadero no es pueblo. Es cicatriz.</b> Marca que la frontera dejó en el paisaje cuando los colonizadores españoles trazaron una línea arbitraria —porque todas las líneas son arbitrarias, especialmente las que dividen aymaras de aymaras— diciendo "aquí termina Perú, aquí empieza Bolivia", sin consultar con el Titicaca que estaba ahí antes que Perú, antes que Bolivia, antes que España.</p>
+
+<p class="p">Pueblo de tres mil habitantes construido sin lógica urbanística en calles sin asfaltar donde el polvo rojo cubre todo con democracia perfecta: cubre casas, cubre perros, cubre esperanzas. Desaguadero huele a tres cosas: pescado podrido del Titicaca porque el lago recibe el desagüe de cincuenta pueblos sin tratamiento; kerosén de vendedoras que fríen pescado en aceite recalentado veinte veces; orina humana acumulada en las esquinas porque el baño público cuesta un sol y un sol es un sol.</p>
+
+<p class="p">Artemio baja de la combi. Ocho y treinta de la mañana. El bolso verde pesa más, aunque sigue vacío. O él lo siente así, porque los bolsos vacíos pesan según las expectativas que contienen.</p>
+
+<p class="p">Un hombre se le acerca. Sesenta años o setenta, edad imprecisa en rostro curtido por el viento del lago. Chompa de alpaca con agujeros que fueron diseño y ahora son desgaste.</p>
+
+<div class="db">
+  <p class="d">—¿Primera vez, hermano?</p>
+  <p class="ac">Voz rasposa. Carraspeo. Artemio duda. ¿Cómo sabe? ¿Qué hay en su cara que dice "primera vez"?</p>
+  <p class="d">—Sí.</p>
+  <p class="ac">Porque mentir requiere práctica que todavía no tiene.</p>
+  <p class="d">—Mejor el bote. Cinco soles. Te deja del otro lado sin preguntas.</p>
+  <p class="ac">Señala con la barbilla —sin usar las manos, porque señalar es visible y en la frontera todo lo visible es peligroso— hacia la izquierda, donde el río se curva.</p>
+  <div class="db-foot">El hombre que recibe a los que cruzan por primera vez</div>
+</div>
+
+<div class="pq">
+  <p class="pq-t">Artemio mira el puente oficial. Hay fila: treinta personas. Dos controles: PNP peruano, Policía Boliviana. Agentes revisan mochilas. Preguntan. Anotan. <span>Todo toma tiempo. Todo deja registro. Todo es luz. Luz que delata. Luz que documenta. Luz que Artemio no puede permitirse.</span></p>
+</div>
+
+<p class="p">El sendero se estrecha. Artemio mira hacia atrás una última vez. Ve el puente oficial. Ve gente cruzando con papeles. Con normalidad. Con cara de quien hace algo que puede contar en el almuerzo familiar sin bajar la voz. <b>Él elige la sombra. No porque prefiere la sombra, sino porque la sombra lo elige a él.</b> Diferencia técnica que el juez no aceptará en seis años, pero que ahora usa como anestesia moral para poder seguir caminando.</p>
+
+</div><!-- /body cierra para ilustración -->
+
+
+<!-- ══ ILUSTRACIÓN 3: EL BOTE / EL RÍO DESAGUADERO ══ -->
+<div class="illus illus-mid">
+<svg viewBox="0 0 920 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="height:320px;">
+  <defs>
+    <linearGradient id="rio-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141c28"/>
+      <stop offset="50%" stop-color="#0e1420"/>
+      <stop offset="100%" stop-color="#080c10"/>
+    </linearGradient>
+    <linearGradient id="rio-agua" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e2030"/>
+      <stop offset="50%" stop-color="#0a1828"/>
+      <stop offset="100%" stop-color="#060e18"/>
+    </linearGradient>
+    <linearGradient id="rio-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#080705"/>
+    </linearGradient>
+    <radialGradient id="rio-vig" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#040506" stop-opacity="0.85"/>
+    </radialGradient>
+    <!-- Reflejo de luna en el agua -->
+    <radialGradient id="rio-ref" cx="50%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#c8c0a0" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cielo y riberas -->
+  <rect width="920" height="320" fill="url(#rio-sky)"/>
+  <!-- Orilla peruana izquierda -->
+  <path d="M0 148 Q80 138 160 144 Q220 140 280 148 L280 220 L0 220 Z" fill="#0e0c0a"/>
+  <rect x="0" y="218" width="280" height="102" fill="#121008"/>
+  <!-- Vegetación / totora orilla peruana -->
+  <line x1="20"  y1="218" x2="16"  y2="198" stroke="#1c1e0c" stroke-width="2.5"/>
+  <line x1="35"  y1="216" x2="32"  y2="195" stroke="#1c1e0c" stroke-width="2"/>
+  <line x1="50"  y1="218" x2="47"  y2="198" stroke="#1a1c0a" stroke-width="2.5"/>
+  <line x1="65"  y1="216" x2="62"  y2="196" stroke="#1c1e0c" stroke-width="2"/>
+  <line x1="80"  y1="218" x2="76"  y2="200" stroke="#1a1c0a" stroke-width="2.5"/>
+  <line x1="95"  y1="216" x2="92"  y2="196" stroke="#1c1e0c" stroke-width="2"/>
+  <line x1="110" y1="218" x2="106" y2="198" stroke="#1a1c0a" stroke-width="2.5"/>
+  <line x1="125" y1="216" x2="122" y2="196" stroke="#1c1e0c" stroke-width="2"/>
+  <!-- Orilla boliviana derecha -->
+  <path d="M640 148 Q720 138 800 144 Q870 140 920 148 L920 220 L640 220 Z" fill="#0e0c0a"/>
+  <rect x="640" y="218" width="280" height="102" fill="#121008"/>
+  <!-- Totora orilla boliviana -->
+  <line x1="660" y1="218" x2="656" y2="198" stroke="#1c1e0c" stroke-width="2.5"/>
+  <line x1="680" y1="216" x2="677" y2="196" stroke="#1c1e0c" stroke-width="2"/>
+  <line x1="700" y1="218" x2="696" y2="200" stroke="#1a1c0a" stroke-width="2.5"/>
+  <line x1="720" y1="216" x2="717" y2="196" stroke="#1c1e0c" stroke-width="2"/>
+  <line x1="740" y1="218" x2="736" y2="198" stroke="#1a1c0a" stroke-width="2.5"/>
+  <line x1="760" y1="216" x2="757" y2="196" stroke="#1c1e0c" stroke-width="2"/>
+  <line x1="780" y1="218" x2="776" y2="198" stroke="#1a1c0a" stroke-width="2.5"/>
+  <line x1="800" y1="216" x2="797" y2="196" stroke="#1c1e0c" stroke-width="2"/>
+
+  <!-- RÍO DESAGUADERO — agua turbia, opaca -->
+  <rect x="280" y="148" width="360" height="172" fill="url(#rio-agua)"/>
+  <!-- Reflejos de luna en el agua -->
+  <ellipse cx="460" cy="200" rx="35" ry="10" fill="url(#rio-ref)"/>
+  <!-- Ondas del agua -->
+  <path d="M290 165 Q330 160 370 165 Q410 170 450 165" stroke="#1e3040" stroke-width="0.6" fill="none"/>
+  <path d="M310 178 Q360 173 410 178 Q460 183 510 178" stroke="#1e3040" stroke-width="0.6" fill="none"/>
+  <path d="M300 192 Q350 187 400 192 Q450 197 500 192 Q540 187 580 192" stroke="#1e3040" stroke-width="0.5" fill="none"/>
+  <path d="M290 208 Q340 203 390 208 Q450 213 510 208 Q560 203 620 208" stroke="#1a2c3e" stroke-width="0.5" fill="none"/>
+  <path d="M285 225 Q340 220 400 225 Q470 230 540 225 Q600 220 640 225" stroke="#1a2c3e" stroke-width="0.4" fill="none"/>
+
+  <!-- BOTE DE METAL OXIDADO — pintado de azul desvaído, centro del río -->
+  <path d="M360 198 Q380 192 460 190 Q540 192 560 198 L558 228 Q540 234 460 236 Q380 234 362 228 Z" fill="#1e2e3a" stroke="#2a3e4e" stroke-width="0.7"/>
+  <!-- Tablones del bote -->
+  <line x1="390" y1="190" x2="388" y2="234" stroke="#2a3e4e" stroke-width="0.5"/>
+  <line x1="420" y1="190" x2="418" y2="235" stroke="#2a3e4e" stroke-width="0.5"/>
+  <line x1="460" y1="190" x2="460" y2="236" stroke="#2a3e4e" stroke-width="0.5"/>
+  <line x1="500" y1="190" x2="502" y2="235" stroke="#2a3e4e" stroke-width="0.5"/>
+  <line x1="530" y1="190" x2="532" y2="234" stroke="#2a3e4e" stroke-width="0.5"/>
+  <!-- Pintura azul desvaída — parches de pintura original -->
+  <rect x="364" y="200" width="60" height="25" rx="2" fill="#1a2c40" opacity="0.5"/>
+  <rect x="490" y="202" width="50" height="22" rx="2" fill="#1a2c40" opacity="0.4"/>
+  <!-- Nombres tallados en el tablón: "Carlos 1987", "Juana + Miguel" -->
+  <text x="395" y="218" font-family="'EB Garamond',serif" font-size="7.5" fill="#2a3e4e" font-style="italic">Carlos 1987</text>
+  <text x="465" y="218" font-family="'EB Garamond',serif" font-size="7.5" fill="#2a3e4e" font-style="italic">Juana + Miguel</text>
+
+  <!-- BARQUERO — silueta de espaldas, remando -->
+  <ellipse cx="542" cy="196" rx="11" ry="11" fill="#1e1810" opacity="0.9"/>
+  <path d="M531 207 Q536 198 542 195 Q548 198 553 207 L555 226 L529 226 Z" fill="#1c1810" opacity="0.9"/>
+  <!-- Remo -->
+  <line x1="550" y1="210" x2="580" y2="240" stroke="#2a2210" stroke-width="5" stroke-linecap="round"/>
+  <line x1="580" y1="240" x2="600" y2="252" stroke="#1e1a0c" stroke-width="4" stroke-linecap="round"/>
+  <!-- Cicatriz en la mano (detalle) -->
+  <circle cx="558" cy="212" r="4" fill="none" stroke="#5a3818" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ARTEMIO en el bote — sentado, bolso entre las piernas, mirando el agua -->
+  <ellipse cx="416" cy="196" rx="10" ry="10" fill="#2e2418" opacity="0.9"/>
+  <path d="M406 206 Q411 197 416 194 Q421 197 426 206 L428 224 L404 224 Z" fill="#2a2418" opacity="0.9"/>
+  <!-- Bolso verde entre las piernas -->
+  <rect x="406" y="218" width="20" height="16" rx="3" fill="#1e3820" opacity="0.85"/>
+  <!-- Manos aferradas al bolso -->
+  <ellipse cx="408" cy="224" rx="5" ry="3" fill="#2a2018" opacity="0.8"/>
+  <ellipse cx="424" cy="224" rx="5" ry="3" fill="#2a2018" opacity="0.8"/>
+  <!-- Vista hacia el agua — inclinando la cabeza -->
+  <path d="M406 203 Q402 210 400 218" stroke="#201c14" stroke-width="0.8" fill="none" opacity="0.5"/>
+
+  <!-- LA QHAQÑA — bajo el agua, visible pero tenue -->
+  <!-- Forma difusa bajo la superficie, nivel 2/3 del río -->
+  <ellipse cx="430" cy="265" rx="28" ry="14" fill="#1a2838" opacity="0.3"/>
+  <!-- Pelo flotando como algas -->
+  <path d="M408 255 Q416 248 424 255 Q430 260 436 253 Q444 248 450 256" stroke="#2a3e4e" stroke-width="1.2" fill="none" opacity="0.55"/>
+  <!-- Ojos sin pupilas — dos manchas blancas -->
+  <ellipse cx="424" cy="260" rx="4" ry="3" fill="#c8c0b0" opacity="0.35"/>
+  <ellipse cx="438" cy="260" rx="4" ry="3" fill="#c8c0b0" opacity="0.35"/>
+  <!-- Sonrisa -->
+  <path d="M422 268 Q431 273 440 268" stroke="#c8c0b0" stroke-width="0.8" fill="none" opacity="0.30"/>
+  <!-- Diente faltante — colmillo izquierdo -->
+  <rect x="429" y="269" width="3" height="3" rx="1" fill="#0a0c10" opacity="0.4"/>
+  <!-- Manos extendidas hacia arriba -->
+  <path d="M412 270 Q410 260 412 252" stroke="#2a3e4e" stroke-width="2" fill="none" opacity="0.45"/>
+  <path d="M452 270 Q454 260 452 252" stroke="#2a3e4e" stroke-width="2" fill="none" opacity="0.45"/>
+  <!-- Destello en el agua donde está la qhaqña -->
+  <ellipse cx="431" cy="262" rx="40" ry="18" fill="#1e3050" opacity="0.10"/>
+
+  <!-- Texto: "PERU" / "BOLIVIA" en las orillas -->
+  <text x="140" y="240" text-anchor="middle" font-family="'EB Garamond',serif" font-size="9" fill="#2e2818" letter-spacing="3" opacity="0.55">PERÚ</text>
+  <text x="780" y="240" text-anchor="middle" font-family="'EB Garamond',serif" font-size="9" fill="#2e2818" letter-spacing="3" opacity="0.55">BOLIVIA</text>
+  <!-- Línea de frontera invisible sobre el río -->
+  <line x1="460" y1="148" x2="460" y2="320" stroke="#2a2418" stroke-width="0.5" stroke-dasharray="5,10" opacity="0.30"/>
+
+  <!-- Vignette + fusión -->
+  <rect width="920" height="320" fill="url(#rio-vig)"/>
+  <rect x="0" y="240" width="920" height="80" fill="url(#rio-bot)"/>
+  <text x="460" y="312" text-anchor="middle" font-family="'EB Garamond',serif" font-size="10" fill="#3a2e18" letter-spacing="3" opacity="0.55">RÍO DESAGUADERO &ensp;·&ensp; LA FRONTERA INVISIBLE</text>
+</svg>
+</div>
+
+<div class="body"><!-- reabre body -->
+
+<!-- ══ ESCENA 5: EL BOTE / LA QHAQÑA ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">El bote &ensp;·&ensp; La qhaqña</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p">Llegan a la orilla donde el río se curva. El barquero está ahí. Como si esperara. Como si siempre esperara. Como si llevara cuarenta años esperando a hombres exactos como Artemio que eligen la sombra creyendo que eligen, cuando en realidad obedecen.</p>
+
+<p class="p">Sesenta años. Setenta. Ochenta. Edad imprecisa, pero vejez precisa. Rostro que el viento del lago talló durante décadas. Aymara puro. Silencio puro. Y hay un detalle que Artemio nota: cicatriz en el dorso de la mano derecha. Quemadura vieja. Circular. Del tamaño exacto de una moneda de un sol. Piel brillante. Estirada. <b>Como si alguna vez hubiera sostenido algo caliente demasiado tiempo. Como si hubiera elegido el dolor sobre soltarlo. Como si él también hubiera cruzado. Y nunca hubiera regresado.</b></p>
+
+<p class="p">El barquero no pregunta nada. Solo señala con la cabeza: <em>Siéntate.</em> Gesto mínimo. Economía de movimiento de hombre que aprendió que las palabras son exceso que la frontera no necesita.</p>
+
+<p class="p">El bote es de metal oxidado pintado de azul hace décadas —pintura que alguna vez fue azul eléctrico y ahora es azul-gris—. Cuatro tablones como asientos con nombres tallados: <em>"Carlos 1987"</em>, <em>"Juana + Miguel"</em>, <em>"Dios proveerá"</em> escrito en letra de niño. Huele a pescado muerto y agua estancada. Huele a transacciones ilegales de mil hombres anteriores. Huele a frontera.</p>
+
+<p class="p">Artemio vacila en la orilla. Este es el momento. El último momento donde podría decir <em>"me arrepentí"</em> y el barquero entendería sin juzgar, porque ha visto hombres arrepentirse en el último segundo. Pero Artemio piensa en Roxana. En el vientre de seis meses. En Samuel que va a nacer preguntando con su existencia: <em>¿Por qué nací en casa donde el viento entra por ventanas que no cierran?</em> <b>Sube.</b></p>
+
+<p class="p">El bote se mece. Agua contra metal. Sonido hueco que suena como promesa que no se puede cumplir. Se sienta en el tablón del medio, el que dice <em>"Juana + Miguel"</em>. Se pregunta si Juana y Miguel siguen juntos. Si el amor sobrevive la frontera o si la frontera mata el amor como mata otras cosas. Bolso verde entre las piernas. Abrazado. Como un bebé. <em>Hago esto por Samuel. Por Samuel. Por Samuel.</em> Mantra que repite hasta que la palabra pierde significado. Hasta que el nombre se vuelve sonido vacío. Hasta que la justificación se vuelve ruido.</p>
+
+<p class="p">El barquero empuja el bote con una pala de madera vieja —rajada en tres lugares, amarrada con cordel de nailón. La pala entra en el agua sin ruido. Agua turbia. Color verde-café-gris. No transparente sino opaca, <em>como verdad que no quieres ver pero que está ahí, flotando, esperando.</em> Huele a metal oxidado. A monedas viejas. A sangre diluida en siglos de cruces idénticos.</p>
+
+<p class="p">Artemio mira al fondo del agua. El corazón late más fuerte. Ve algo moviéndose bajo la superficie. Una forma. Un rostro. Mujer con pelo largo flotando como algas del Titicaca. Ojos abiertos. Blancos. Sin pupilas. Mirándolo. Sonríe. Dientes blancos contra agua oscura. Dientes perfectos excepto uno que falta. El colmillo izquierdo. <b>Como falta el colmillo izquierdo de Artemio, que perdió hace tres años en pelea con capataz que no le pagó tres días de trabajo.</b> El mismo colmillo. Exactamente el mismo. Como espejo. Como si la criatura en el agua tuviera su colmillo. O como si Artemio estuviera viendo su propio reflejo desde un futuro donde está muerto.</p>
+
+<div class="nota">
+  <div class="nota-label">Qhaqña &ensp;·&ensp; Sirena del Titicaca</div>
+  <div class="nota-t">Ser del lago que la cultura aymara describe como habitante de la profundidad. <em>Mujer que vivía en el valle antes de que el agua llenara la cuenca, convertida en criatura que habita el fondo esperando a los vivos que cometen el mismo error que la ahogó.</em> No es metáfora. Es memoria. Memorias de lago que recuerda lo que las personas olvidan.</div>
+</div>
+
+<p class="p">Artemio cierra los ojos con fuerza. Cuenta hasta diez. Respira. Abre los ojos. El rostro desapareció. Solo queda el agua turbia moviéndose con el remo.</p>
+
+<p class="p">El barquero habla. Primera vez. Única vez. Voz ronca como piedra frotando piedra.</p>
+
+<div class="db">
+  <p class="d">—Uywanak sipansa.</p>
+  <p class="ac">Aymara. Artemio reconoce que es aymara pero no entiende la lengua completa. Reconoce algunas palabras: uywa es animal, sipan suena como matar. El tono es claro. No es bendición. No es despedida. Es advertencia. O confirmación. O ambas.</p>
+  <p class="d">—¿Qué?</p>
+  <p class="ac">Silencio. El barquero no repite. No traduce. Simplemente rema. Porque algunas palabras solo se dicen una vez. Y si no entiendes la primera vez, no importa: las vas a entender eventualmente. Cuando sea demasiado tarde para que la comprensión sirva de algo. Cuando estés en la comisaría de Yura con esposas de acero apretando las muñecas.</p>
+  <div class="db-foot">El barquero Esteban &ensp;·&ensp; Uywanak sipansa: <em>El que cría serpientes, la serpiente lo cría</em></div>
+</div>
+
+<p class="p">El bote toca la orilla boliviana. Metal raspa piedra. Artemio baja. Piernas temblorosas. Barro boliviano en zapatos peruanos. Técnicamente está en otro país. Técnicamente cruzó. Técnicamente cometió delito de evasión migratoria. Pero técnicamente también está salvando a Samuel. <em>Técnicas que el Estado no reconoce porque el Estado no tiene categoría para "crimen por necesidad" en el Código Penal.</em></p>
+
+<p class="p">El barquero extiende la mano. Cinco soles. Artemio paga. La mano del barquero —callosa, áspera— toma el billete sin mirarlo. Ya lo contó con el tacto. Se da vuelta. Empuja el bote de regreso. Sin despedida. Sin consejo. <b>Solo para ser testigo silencioso de mil hombres que cruzaron el río creyendo que cruzaban hacia un futuro mejor, cuando en realidad cruzaban hacia un futuro peor.</b></p>
+
+<p class="p">Artemio empieza a caminar hacia La Paz. Mira hacia atrás una última vez. Río. Bote. Barquero remando. Y en el agua, por un segundo, ve el rostro de nuevo. La qhaqña. Sonriendo. Con su diente faltante que es su diente. Voltea. Sigue caminando. Porque mirar atrás es lujo que el hombre que cruzó la frontera no puede permitirse.</p>
+
+
+<!-- ══ ESCENA 6: LA PAZ / MERCADO RODRÍGUEZ ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">La Paz &ensp;·&ensp; Mercado Rodríguez &ensp;·&ensp; Puesto 347</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p"><b>La Paz aparece después de tres horas.</b> Ciudad construida en un cráter gigante rodeado de montañas. Casas de ladrillo rojo apiladas en laderas con ángulos que desafían la gravedad. Calles que son escaleras. Escaleras que son calles.</p>
+
+<p class="p">Mercado Rodríguez. Tres pisos de comercio informal en un edificio que alguna vez fue estación de tren. Olor a comida frita mezclada con plástico nuevo mezclada con falsificación. Templo de lo falso. Aquí todo es copia. Todo finge ser lo que no es. Y nadie finge que no está fingiendo porque fingir que finges es redundancia que la economía informal no puede permitirse.</p>
+
+<p class="p">Justino Apaza está en el tercer piso. Puesto 347. Treinta y ocho años. Barriga de hombre que come regular. Camisa polo Lacoste falsa. Cocodrilo bordado al revés porque la fábrica china copió el diseño de una foto en espejo. Ve a Artemio. No sonríe. No saluda.</p>
+
+<div class="db">
+  <p class="d">—Llegaste.</p>
+  <p class="d">—Llegué.</p>
+  <p class="d">—¿Cruzaste bien?</p>
+  <p class="d">—En bote.</p>
+  <p class="ac">Justino asiente. Desaparece detrás de una cortina. Regresa con una caja de cartón. Sello de aduana china visible: 深圳 — Shenzhen.</p>
+  <p class="d">—Setenta y cinco cartuchos HP 564XL. Tres dólares cada uno. Total: doscientos veinticinco.</p>
+  <p class="ac">Artemio paga. Justino cuenta de nuevo. Coinciden. Mete los cartuchos en el bolso verde. Setenta y cinco cartuchos pesan exactamente kilo y medio.</p>
+  <p class="d">—Quince dólares al policía peruano. Setenta bolivianos al boliviano. No regatees. Cantidad exacta. Así funciona.</p>
+  <p class="d">—¿Y si hay inspector nuevo?</p>
+  <p class="d">—No hay. El turno de tarde es siempre Gutiérrez y Mamani. Doce años en el mismo puesto.</p>
+  <p class="ac">Justino sabe estos datos porque lleva veinte años cruzando.</p>
+  <p class="d">—Cualquier problema, me llamas.</p>
+  <p class="d">—Gracias.</p>
+  <p class="d">—No es un favor. Es negocio. Tú cruzas bien, yo gano. Tú caes, yo pierdo un contacto.</p>
+  <div class="db-foot">Justino Apaza &ensp;·&ensp; Puesto 347 &ensp;·&ensp; Honestidad de la economía informal</div>
+</div>
+
+
+<!-- ══ ESCENA 7: EL REGRESO / LA MORDIDA ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Regreso &ensp;·&ensp; La mordida &ensp;·&ensp; Triple crimen en cuatro segundos</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p">El regreso es idéntico a la ida, pero al revés y más rápido porque ahora Artemio conoce la ruta. Minibús a Desaguadero: tres horas. Cruce en bote: tres minutos que parecen tres horas. El barquero es el mismo. Rema sin hablar. Artemio no ve a la qhaqña esta vez. O la ve pero no la reconoce. O ya está tan adentro que la qhaqña ya no necesita mostrarse.</p>
+
+<p class="p">Toca la orilla peruana. Cinco soles al barquero. Camina por el sendero paralelo donde el policía espera. <span class="nm">Gutiérrez</span>. Cuarenta y dos años. Barriga. Bigote. Uniforme azul sin planchar. Ve a Artemio. Extiende la mano. Artemio saca quince dólares. Gutiérrez los toma sin contarlos. Los guarda en el bolsillo del pantalón con cremallera.</p>
+
+<div class="climax">
+  <p class="climax-t">—Pasa.</p>
+  <p class="climax-a">Cruzar la frontera ilegalmente con mercadería ilegal pagando mordida a autoridad corrupta.<br>Triple crimen en cuatro segundos.<br>Pero crimen que ya se siente normal. Porque este es el segundo cruce. Y el segundo cruce es cuando el crimen deja de sentirse como crimen y empieza a sentirse como trabajo.</p>
+</div>
+
+<p class="p">Combi de regreso a Juliaca: cuatro horas. Artemio cuenta kilómetros, cuenta curvas, cuenta camiones que pasan. Cuenta todo porque contar distrae de pensar, y pensar conduce a la pregunta que no quiere contestar: <em>¿Qué estoy haciendo?</em> Y la respuesta es: <em>Exactamente lo que dije que no haría.</em> Pero la respuesta también es: <em>Alimentando a Samuel.</em> Entonces la pregunta y la respuesta se cancelan, y queda solo la acción: seguir.</p>
+
+
+<!-- ══ ESCENA 8: ROXANA / LA VUELTA A CASA ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Jr. San Martín &ensp;·&ensp; Nueve de la noche</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p"><b>Nueve de la noche.</b> Artemio llega a casa. Jr. San Martín oscuro. Luz pública apagada hace una semana. Solo la luz viene de las ventanas: velas, linternas. Abre la puerta. Vela de esperma prendida en la mesa. Roxana sentada. Esperando. No lee. No teje. Solo espera con las manos sobre el vientre de siete meses donde Samuel duerme sin saber que el padre acaba de regresar de Bolivia con un delito encima. Levanta la vista. Los ojos no preguntan. Los ojos ya saben.</p>
+
+<div class="db">
+  <p class="d">—Llegaste.</p>
+  <p class="d">—Llegué.</p>
+  <p class="ac">Silencio. Largo. La vela chisporrotea.</p>
+  <p class="d">—¿Trajiste?</p>
+  <p class="ac">Artemio asiente. Levanta el bolso. Roxana lo mira. No lo toca. Como si tocarlo fuera contaminarse.</p>
+  <p class="d">—¿Cuánto vas a ganar?</p>
+  <p class="d">—Mil soles. Aproximadamente.</p>
+  <div class="db-foot">Jr. San Martín &ensp;·&ensp; La conversación que no tiene reversa</div>
+</div>
+
+<p class="p">Roxana no responde inmediatamente. Mira la vela. Fuego pequeño bailando. <em>Mil soles.</em> No es pregunta. Es afirmación que prueba que mil soles es más que lo que Artemio gana en un mes cargando cemento. Que mil soles es el pago del parto más los primeros pañales. Que mil soles es motivo suficiente o insuficiente, dependiendo de cómo calcules el valor de no ir a la cárcel.</p>
+
+<div class="db">
+  <p class="d">—Vamos a hablar claro. Una vez. Solo una vez. Después de esto, no volvemos a hablar del tema. ¿De acuerdo?</p>
+  <p class="d">—De acuerdo.</p>
+  <p class="ac">Roxana se levanta. Va a la ventana. Mira el Jr. San Martín oscuro.</p>
+  <p class="d">—Yo sé lo que hiciste. Cruzaste a Bolivia. Compraste mercadería ilegal. Pagaste mordida. Trajiste mercadería sin declarar. Vas a vender sin factura. Vas a ganar mil soles que el Estado no va a ver.</p>
+  <p class="ac">Se voltea.</p>
+  <p class="d">—Y yo voy a tomar esos mil soles. Los voy a usar para comprar pañales. Para pagar el parto. Para comprar leche cuando la mía no sea suficiente.</p>
+  <p class="ac">Pausa.</p>
+  <p class="d">—¿Sabes qué significa eso?</p>
+  <p class="ac">Artemio no responde porque la respuesta es obvia.</p>
+  <p class="d">—Significa que soy cómplice. Que cada sol que gaste es un voto a favor de que sigas cruzando. Que cada vez que compre pan con ese dinero estoy diciendo: sí, Artemio, vale la pena el riesgo.</p>
+  <p class="ac">Lágrimas. Calladas. Bajando por las mejillas sin sonido.</p>
+  <p class="d">—Y lo peor no es ser cómplice. Lo peor es que quiero que cruces. Que necesito que cruces. Que cuando veo el vientre creciendo y pienso en el parto que cuesta ochocientos soles que no tenemos, parte de mí desea que traigas mercadería.</p>
+  <p class="ac">Se limpia las lágrimas con el dorso de la mano.</p>
+  <p class="d">—Entonces no somos diferentes de ellos. De los corruptos. De los que roban. Porque nosotros también elegimos. Elegimos dinero sobre ley. Elegimos el futuro de Samuel sobre la honestidad. Y elegir significa ser responsables.</p>
+  <div class="db-foot">Roxana &ensp;·&ensp; Las cuatro reglas</div>
+</div>
+
+<p class="p">Roxana camina hacia Artemio. Se para frente a él.</p>
+
+<div class="db">
+  <p class="d">—Pero vamos a poner reglas. Porque sin reglas esto nos destruye. ¿Escuchas?</p>
+  <p class="d">—Escucho.</p>
+  <p class="d">—Regla uno: cruces solo dos veces al mes. No más. No importa si Justino ofrece más viajes. Dos veces. Punto.</p>
+  <p class="d">—De acuerdo.</p>
+  <p class="d">—Regla dos: si en algún cruce sientes peligro real, regresas sin mercadería. Pierdes la inversión, pero regresas vivo y libre. ¿Claro?</p>
+  <p class="d">—Claro.</p>
+  <p class="d">—Regla tres: este dinero es solo para necesidades básicas. Comida. Parto. Pañales. Nada de lujos. Nada que nos haga olvidar cómo conseguimos el dinero.</p>
+  <p class="d">—Entendido.</p>
+  <p class="d">—Y regla cuatro...</p>
+  <p class="ac">Voz que se quiebra. Traga saliva.</p>
+  <p class="d">—Cuando Samuel nazca y sea lo suficientemente grande para preguntar, le mentimos. Le decimos que trabajas en construcción. Que ganas bien. Que eres hombre honesto. Y mentimos tan bien que él nunca dude.</p>
+  <p class="ac">Pausa larga.</p>
+  <p class="d">—Porque si él sabe la verdad, va a repetir. Va a pensar que está bien. Que cruzar la frontera es trabajo normal. Y no lo es. No es normal. Es lo que hacemos porque no tenemos opción, pero no es normal. Y Samuel tiene que tener las opciones que nosotros no tuvimos.</p>
+  <p class="ac">Artemio siente el pecho rompiéndose.</p>
+  <p class="d">—No hables. Solo prométeme.</p>
+  <p class="d">—Te lo prometo.</p>
+  <p class="d">—Júramelo. Por Samuel.</p>
+  <p class="d">—Por Samuel.</p>
+  <div class="db-foot">Roxana &ensp;·&ensp; Las cuatro reglas que Artemio romperá una a una</div>
+</div>
+
+<p class="p">Roxana lo abraza. Fuerte. El vientre de siete meses presionando contra el estómago de Artemio. Samuel entre ellos. Literalmente entre ellos. Hijo que todavía no nace siendo razón y testigo simultáneamente.</p>
+
+<div class="db">
+  <p class="d">—No puedo perderte —susurra Roxana—. Si te pierdo, pierdo todo. Si vas a la cárcel, Samuel nace sin padre. Nace pobre pero además nace con la vergüenza de llevar el apellido de padre preso.</p>
+  <p class="d">—Entiendo.</p>
+  <p class="d">—Entonces tienes que ser inteligente. Tienes que parar antes de que sea tarde.</p>
+  <p class="d">—Voy a parar.</p>
+  <p class="d">—¿Cuándo?</p>
+  <p class="ac">Pregunta que Artemio no puede contestar porque "cuándo" requiere un número específico y un número específico requiere admitir que ya planeó cuántos cruces más.</p>
+  <p class="d">—Pronto.</p>
+  <p class="ac">Respuesta vaga que ambos reconocen como mentira, pero que ambos necesitan creer para poder dormir esta noche.</p>
+  <div class="db-foot">La mentira que tiene que ser dicha</div>
+</div>
+
+<p class="p">Roxana se acuesta. Espalda hacia él. Mensaje claro: No quiero hablar más. Ya dijimos todo. Artemio se acuesta también. No duerme. Cuenta: setenta y cinco cartuchos a doce dólares, menos gastos, igual casi mil soles. Casi un mes de salario en dieciséis horas. Suma que funciona. Suma que justifica. <b>Suma que mata. Porque la aritmética ignora la variable más importante: el costo de normalizar el crimen. Y ese costo se paga en cuotas pequeñas durante seis años hasta que las cuotas suman cárcel.</b> Pero eso Artemio todavía no lo sabe.</p>
+
+</div><!-- /body cierra para ilustración -->
+
+
+<!-- ══ ILUSTRACIÓN 4: EL MERCADO / LAS VENTAS ══ -->
+<div class="illus illus-mid">
+<svg viewBox="0 0 920 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="height:280px;">
+  <defs>
+    <linearGradient id="mkt-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#181408"/>
+      <stop offset="100%" stop-color="#0c0a06"/>
+    </linearGradient>
+    <radialGradient id="mkt-sun" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#e8b84028" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <linearGradient id="mkt-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#080705"/>
+    </linearGradient>
+    <radialGradient id="mkt-vig" cx="50%" cy="50%" r="68%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#050404" stop-opacity="0.80"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="920" height="280" fill="url(#mkt-bg)"/>
+  <rect width="920" height="280" fill="url(#mkt-sun)"/>
+
+  <!-- Piso del mercado — adoquín -->
+  <rect x="0" y="160" width="920" height="120" fill="#141008"/>
+  <line x1="0" y1="172" x2="920" y2="172" stroke="#1a1408" stroke-width="0.5"/>
+  <line x1="0" y1="184" x2="920" y2="184" stroke="#1a1408" stroke-width="0.4"/>
+  <line x1="0" y1="196" x2="920" y2="196" stroke="#1a1408" stroke-width="0.4"/>
+
+  <!-- MANTA en el suelo con cartuchos HP -->
+  <rect x="280" y="158" width="360" height="122" rx="2" fill="#1a1810" stroke="#242018" stroke-width="0.5"/>
+  <!-- Cartucho en filas de 5 — 15 cartuchos visibles -->
+  <!-- Fila 1 -->
+  <rect x="298" y="168" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="312" y="180" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="332" y="168" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="346" y="180" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="366" y="168" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="380" y="180" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="400" y="168" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="414" y="180" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="434" y="168" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="448" y="180" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <!-- Fila 2 -->
+  <rect x="298" y="192" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="312" y="204" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="332" y="192" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="346" y="204" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="366" y="192" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="380" y="204" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="400" y="192" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="414" y="204" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="434" y="192" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="448" y="204" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <!-- Fila 3 -->
+  <rect x="298" y="216" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="312" y="228" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="332" y="216" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="346" y="228" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="366" y="216" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="380" y="228" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="400" y="216" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="414" y="228" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <rect x="434" y="216" width="28" height="18" rx="2" fill="#1e2c3a" stroke="#2a3848" stroke-width="0.5"/>
+  <text x="448" y="228" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#4a6878">HP</text>
+  <!-- Cartel escrito a mano -->
+  <rect x="468" y="170" width="148" height="36" rx="2" fill="#0e0c08" stroke="#1e1a10" stroke-width="0.5"/>
+  <text x="542" y="186" text-anchor="middle" font-family="'EB Garamond',serif" font-size="10" fill="#5a4e2e" letter-spacing="0.5">CARTUCHOS HP 564XL</text>
+  <text x="542" y="200" text-anchor="middle" font-family="'Playfair Display',serif" font-size="12" fill="#c8903a" font-weight="700">S/ 40</text>
+
+  <!-- ARTEMIO detrás de la manta, sentado en banquito -->
+  <ellipse cx="570" cy="130" rx="18" ry="18" fill="#2e2418"/>
+  <path d="M552 148 Q558 132 570 128 Q582 132 588 148 L592 210 Q580 216 570 217 Q560 216 548 210 Z" fill="#282014"/>
+  <!-- Chompa de alpaca, textura -->
+  <line x1="553" y1="158" x2="587" y2="158" stroke="#322c1c" stroke-width="0.5" opacity="0.5"/>
+  <line x1="553" y1="168" x2="587" y2="168" stroke="#322c1c" stroke-width="0.5" opacity="0.45"/>
+  <line x1="553" y1="178" x2="587" y2="178" stroke="#322c1c" stroke-width="0.5" opacity="0.4"/>
+  <!-- Banquito -->
+  <rect x="556" y="210" width="28" height="8" rx="1" fill="#1a1408"/>
+  <!-- Señora comprando con pollera azul -->
+  <ellipse cx="360" cy="130" rx="14" ry="14" fill="#1e1810"/>
+  <path d="M346 144 Q352 130 360 127 Q368 130 374 144" fill="#1c1810"/>
+  <!-- Pollera azul -->
+  <path d="M340 156 Q360 150 380 156 L384 220 L336 220 Z" fill="#1a2030"/>
+  <path d="M338 168 Q360 162 382 168" stroke="#1e2838" stroke-width="0.5" fill="none"/>
+  <path d="M336 180 Q360 174 384 180" stroke="#1e2838" stroke-width="0.5" fill="none"/>
+  <!-- Billete en la mano de la señora -->
+  <rect x="352" y="148" width="22" height="10" rx="1" fill="#3a3218" stroke="#4a4228" stroke-width="0.4"/>
+  <!-- Señora negocia precio -->
+  <text x="360" y="116" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="9" fill="#5a4e2e" font-style="italic">¿35?</text>
+
+  <!-- Lata de galletas Fortunato (dinero guardado, lateral) -->
+  <rect x="76" y="180" width="52" height="44" rx="4" fill="#1e1810" stroke="#2a2418" stroke-width="0.6"/>
+  <rect x="80" y="184" width="44" height="36" rx="2" fill="#181408" stroke="#221c10" stroke-width="0.4"/>
+  <text x="102" y="198" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#3a3018" letter-spacing="0.5">FORTUNATO</text>
+  <text x="102" y="212" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#2e2810" letter-spacing="0.5">GALLETAS</text>
+  <!-- Billetes saliendo de la lata -->
+  <rect x="88"  y="174" width="28" height="10" rx="1" fill="#3a3218" stroke="#4a4228" stroke-width="0.4" transform="rotate(5,102,179)"/>
+  <rect x="86"  y="172" width="28" height="10" rx="1" fill="#3e3620" stroke="#4e4830" stroke-width="0.4" transform="rotate(-3,100,177)"/>
+  <!-- S/920 soles -->
+  <text x="102" y="236" text-anchor="middle" font-family="'Playfair Display',serif" font-size="11" fill="#8a7840" letter-spacing="0.5">S/ 920</text>
+  <text x="102" y="248" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#3a3010" letter-spacing="0.5">primera semana</text>
+
+  <!-- Vignette + fusión -->
+  <rect width="920" height="280" fill="url(#mkt-vig)"/>
+  <rect x="0" y="210" width="920" height="70" fill="url(#mkt-bot)"/>
+  <text x="460" y="272" text-anchor="middle" font-family="'EB Garamond',serif" font-size="10" fill="#3a2e18" letter-spacing="3" opacity="0.60">MERCADO INTERNACIONAL DE JULIACA &ensp;·&ensp; SÁBADO</text>
+</svg>
+</div>
+
+<div class="body"><!-- reabre body -->
+
+<!-- ══ ESCENA 9: LAS VENTAS / LA LATA FORTUNATO ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Mercado Internacional &ensp;·&ensp; La primera semana de ventas</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p"><b>Sábado. Mercado Internacional de Juliaca.</b> Artemio instala su "puesto": manta de plástico en el suelo con la mercadería encima. Setenta y cinco cartuchos HP ordenados en filas de cinco. Cartel escrito a mano: <em>CARTUCHOS HP 564XL — S/40</em>. Primera hora: una venta. Señora con pollera que regatea hasta treinta y cinco. Artemio acepta porque la primera venta es importante psicológicamente.</p>
+
+<div class="datos" data-label="Primera semana de ventas">
+  <div class="dr"><span class="dl">Sábado</span><span class="dv v">13 ventas &ensp;·&ensp; S/ 500</span></div>
+  <div class="dr"><span class="dl">Domingo</span><span class="dv v">8 ventas &ensp;·&ensp; S/ 320</span></div>
+  <div class="dr"><span class="dl">Lunes</span><span class="dv v">6 ventas &ensp;·&ensp; S/ 240</span></div>
+  <div class="dr"><span class="dl">Martes</span><span class="dv v">5 ventas &ensp;·&ensp; S/ 200</span></div>
+  <div class="dr"><span class="dl">Total primera semana (32 cartuchos)</span><span class="dv t">S/ 1,260</span></div>
+  <div class="dr"><span class="dl">Neto recuperando inversión</span><span class="dv t">S/ 920</span></div>
+  <div class="dr"><span class="dl">Quedan por vender</span><span class="dv v">43 cartuchos</span></div>
+</div>
+
+<p class="p">Casi lo que gana en un mes completo cargando cemento. Y todavía le quedan cuarenta y tres cartuchos por vender.</p>
+
+<p class="p">Esa noche, cuando regresa a casa, Roxana está esperándolo sentada en la cama. Vela encendida a su lado. El vientre de siete meses descansa sobre sus piernas cruzadas. Roxana toma los billetes. Los cuenta en voz alta. Despacio. Como enseñando a alguien invisible a contar.</p>
+
+<div class="db">
+  <p class="d">—Cien. Doscientos. Trescientos. Cuatrocientos. Quinientos. Seiscientos. Setecientos. Ochocientos. Novecientos. Novecientos veinte.</p>
+  <p class="ac">Separa los billetes en dos pilas sobre la cama. Cuatrocientos sesenta a la izquierda. Cuatrocientos sesenta a la derecha.</p>
+  <p class="d">—Esta pila —dice señalando la izquierda— es para el tanque de agua. Para que Samuel no tenga que bañarse con balde cuando crezca.</p>
+  <p class="d">—Esta pila —señala la derecha— es para el colegio. Matrícula y mensualidades del primer año. Colegio Micaela Bastidas. Doscientos soles al mes.</p>
+  <p class="ac">Guarda los billetes en una lata de galletas Fortunato vacía. La misma donde antes guardaba botones de repuesto. Cierra la lata. La esconde en la alacena, detrás de la bolsa de azúcar.</p>
+  <p class="d">—Mañana voy a Ferretería La Unión. Voy a hablar con el señor Gutiérrez sobre el tanque. Voy a pagar trescientos soles de inicial. Y si pregunta de dónde saqué la plata, le voy a decir: "Mi esposo trabaja en construcción. Le va bien."</p>
+  <p class="d">—¿Y si no te cree?</p>
+  <p class="d">—En Juliaca nadie pregunta dos veces de dónde viene el dinero. Todos saben. Y todos callan. Porque todos están en lo mismo. O conocen a alguien que está.</p>
+  <div class="db-foot">Roxana &ensp;·&ensp; La contabilidad de la lata Fortunato</div>
+</div>
+
+<p class="p">Apaga la vela. En la oscuridad, Artemio escucha su respiración. Tranquila. Sin culpa aparente. Y entiende que Roxana no está tolerando el contrabando. <b>Está administrándolo.</b> Como si fuera un negocio legítimo que requiere contabilidad precisa. La diferencia entre legal e ilegal no está en el acto, sino en dónde se contabiliza: en libros oficiales con facturas y sellos, o en latas de galletas Fortunato escondidas detrás de bolsas de azúcar.</p>
+
+
+<!-- ══ ESCENA 10: LA NORMALIZACIÓN / EL NOVENO CRUCE ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Los cruces &ensp;·&ensp; La normalización</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p">Dos semanas después viene el segundo cruce. Idéntico al primero. Misma ruta. Mismo barquero. Misma mordida. Pero diferente en un detalle crucial: <b>Artemio ya no tiembla en el bote. Ya no duda al pagar la mordida. Ya no siente que está haciendo algo mal. Siente que está haciendo trabajo.</b> El tercer cruce llega tres semanas después. El cuarto a las cuatro semanas porque Roxana pidió que esperara. El quinto tres semanas más tarde porque Roxana ya no pide. El sexto apenas dos semanas después porque ahora Roxana pregunta <em>"¿cuándo vas de nuevo?"</em> en lugar de pedirle que no vaya.</p>
+
+<p class="p">Mientras Artemio cruza el río Desaguadero en el sexto viaje —cuatro de la mañana, agua turbia reflejando una luna que apenas se ve— Roxana está en el Mercado de Juliaca. Sábado. Diez de la mañana. Sol que quema en altura, pero aire que hiela. Compra tres kilos de pollo fresco. Del que mataron hace dos horas. Noventa soles. Antes compraba dos kilos congelados. Sesenta. Ahora Samuel come más, y hay plata para que coma más y mejor. Compra aceite en botella de vidrio. Marca Primor. Veintiocho soles. Antes compraba aceite en bolsa plástica. Sin marca. Ocho soles.</p>
+
+<div class="fb">
+  <div class="fb-label">El Mercado &ensp;·&ensp; El pacto silencioso</div>
+  <p class="p">Roxana ve a tres mujeres que conoce del barrio. Justina. Mercedes. Yolanda. Esposas de hombres que "viajan a Bolivia". Que "traen mercadería". Que "hacen comercio". Nadie dice "contrabandista" en voz alta. Esa palabra no existe en el vocabulario público de Juliaca. Solo existe en comisarías y en cárceles.</p>
+  <p class="p">Las tres mujeres llevan bolsas llenas. Pollo. Frutas. Pan integral. Se cruzan en el pasillo central del mercado. Justina ve a Roxana. Roxana ve a Justina. Se saludan con la cabeza. Mínimo movimiento. Sin sonrisa. Sin palabras. Mercedes hace lo mismo. Yolanda también.</p>
+  <p class="p em">Cuatro mujeres que se conocen. Que viven a tres cuadras una de otra. Que van a misa todos los domingos. Que se saludan en la calle cuando hay testigos. Pero aquí, en el mercado, solo gestos. Porque hablar sería reconocer. Y reconocer sería romper el pacto. El pacto que dice: Todos sabemos. Nadie pregunta. Todos callan. Todos sobreviven.</p>
+</div>
+
+<p class="p">Roxana sale del mercado. Camina tres cuadras. Llega a la casa amarilla. Tres pisos. Fachada pintada hace un mes con dinero del tercer cruce. Ya descascarándose en las esquinas. Samuel está en la ventana del segundo piso. Mirando hacia Terminal Sur.</p>
+
+<div class="db">
+  <p class="d">—¿Qué cuentas, hijito? —pregunta Roxana desde abajo.</p>
+  <p class="d">—Camiones, mamá. Diecisiete hasta ahora.</p>
+  <p class="d">—¿Y cuántos van a pasar hoy?</p>
+  <p class="d">—No sé. Pero ayer pasaron cuarenta y dos. Los conté todos.</p>
+  <div class="db-foot">Samuel &ensp;·&ensp; Cuatro años &ensp;·&ensp; Hijo de contador que no sabe que es hijo de contador</div>
+</div>
+
+<p class="p">Roxana sube las escaleras. Segundo piso. Dieciocho escalones. <em>Los cuenta sin querer. Como Samuel cuenta camiones. Entra a la cocina nueva. Tres hornillas. Mueble de melamina blanco. Comprado hace dos meses con dinero de culebra. Refrigeradora nueva. Marca Coldex. Dos puertas. Mil ochocientos soles. También comprada con dinero de culebra.</em></p>
+
+<p class="p">Abre la lata Fortunato. Dentro hay trescientos ochenta soles de semanas anteriores. Más ciento veinte de hoy. Quinientos en total. Dinero ahorrado. Dinero que no se gastó. <b>Dinero que existe por primera vez en la vida de Roxana. Porque antes no había qué ahorrar. Antes todo se gastaba en sobrevivir. Ahora sobrevivir cuesta menos. Y lo que sobra se puede guardar.</b></p>
+
+<p class="p">Roxana cierra la lata. Se sienta en la cama. Mira el techo. Techo sin goteras. Arreglado hace tres semanas con dinero del cuarto cruce. Piensa: <em>¿Cuándo es suficiente?</em> No responde. Porque no sabe la respuesta. Porque <em>suficiente</em> no existe en Juliaca. Suficiente es palabra de gente que vive en ciudades donde el Estado funciona. En Juliaca, suficiente es: mientras se pueda. Mientras no te agarren. Mientras Dios mire para otro lado. Y la policía también.</p>
+
+
+<!-- ══ ESCENA 11: LA QHAQÑA DEL NOVENO CRUCE ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<div class="scene-tag">
+  <div class="scene-tag-line"></div>
+  <div class="scene-tag-text">Noveno cruce &ensp;·&ensp; Noche sin luna</div>
+  <div class="scene-tag-line"></div>
+</div>
+
+<p class="p">El noveno cruce llega en una noche sin luna. Cuatro de la mañana. Oscuridad total. Ni estrellas visibles por las nubes bajas. <span class="nm">Esteban</span> —así se llama el barquero, Artemio ya lo sabe— rema sin motor. Silencio absoluto. Solo los remos cortando el agua. Artemio mira abajo. Y la ve.</p>
+
+<p class="p">La qhaqña. La misma mujer del primer cruce. O diferente. Imposible saberlo. Pero esta vez está más cerca. A un metro del bote. El pelo no es solo negro: tiene reflejos verdes, como alga que crece en las piedras sumergidas. La piel no es pálida. Es gris. Gris de pescado muerto hace días. Con manchas oscuras en cuello y hombros. Los ojos no tienen pupilas. Solo blanco turbio. Como agua con leche derramada.</p>
+
+<p class="p">Las manos extendidas hacia arriba. Las palmas abiertas. Pero ahora Artemio ve que las palmas tienen marcas. Líneas. Profundas. Como si alguien las hubiera cortado con navaja y dejado cicatrizar mal. La qhaqña no mueve la boca. Pero Artemio escucha una voz. No con los oídos. Con la cabeza. Desde adentro. Voz que dice: <em>Nueve.</em></p>
+
+<div class="pq">
+  <p class="pq-t">Artemio toca la piedra de Puquina. La que su madre le dio. La que supuestamente protege. Pero la piedra está fría. <span>Más fría que el aire. Más fría que el agua.</span> Y entiende algo que no entendió en ocho cruces anteriores: la piedra no protege de la qhaqña. La piedra lo marca. Para que la qhaqña lo reconozca. Para que lo cuente.</p>
+</div>
+
+<p class="p">El bote llega a la orilla boliviana. Artemio baja. Las piernas tiemblan otra vez. Por primera vez desde el segundo cruce. Esteban lo mira, raro. Como si notara algo.</p>
+
+<div class="db">
+  <p class="d">—¿Estás bien, hermano?</p>
+  <p class="ac">Artemio no responde. Solo camina hacia el pueblo. Hacia Justino Apaza. Hacia la mercadería. Hacia la rutina que lo está llevando a algún lugar. Un lugar donde la qhaqña espera. Contando. Siempre contando.</p>
+  <div class="db-foot">El barquero Esteban &ensp;·&ensp; El único testigo que no juzga</div>
+</div>
+
+<p class="p">Esa noche, de vuelta en Juliaca, Artemio no puede dormir. Va a la ventana. Separa la cortina. Afuera, Juliaca duerme. Pero en el horizonte, hacia Terminal Sur, luces amarillas se mueven. Camiones. Formación serpiente. <b>Culebra.</b> Cuarenta camiones saliendo hacia las fronteras. Como salen todas las noches. Como salieron hace veinte años. Como van a salir en veinte años más.</p>
+
+<div class="db">
+  <p class="d">—¿Tienes miedo? —pregunta Roxana desde la cama.</p>
+  <p class="ac">Artemio piensa. Responde honesto.</p>
+  <p class="d">—Ya no. El miedo se gastó en el primer cruce. Ahora solo es costumbre.</p>
+  <p class="ac">Roxana entiende que esa es la respuesta más peligrosa. No tener miedo. Solo costumbre. Porque el miedo mantiene alerta. La costumbre duerme. Y Juliaca devora a los que se duermen.</p>
+  <div class="db-foot">La respuesta más peligrosa</div>
+</div>
+
+
+<!-- ══ CIERRE DEL CAPÍTULO ══ -->
+<div class="sep">
+  <div class="sep-line"></div><div class="sep-mark">✦ ✦ ✦</div><div class="sep-line"></div>
+</div>
+
+<p class="p">Y así continúan los cruces. Cruce tras cruce. Normalización tras normalización. Hasta que un día —cuatro meses después del primer cruce— Artemio se despierta y se da cuenta de que ya no se llama albañil que contrabandea. <b>Se llama contrabandista que albañilea.</b> Cambio semántico que define un futuro.</p>
+
+<p class="p">Artemio mira las luces moviéndose y entiende algo que no quería entender: que ya es parte de esa culebra. Que el noveno cruce lo convirtió en eslabón. Que el eslabón de culebra no decide la dirección de la culebra. Y la culebra va a Yura. Como siempre fue. Como siempre será.</p>
+
+<p class="p">Siente por primera vez algo que va a sentir con más intensidad en cada cruce siguiente: <em>miedo de no poder parar.</em> Miedo de que "dos cruces al mes" ya sea mentira. Miedo de que la promesa a Roxana ya esté rota. Miedo de que Samuel vaya a crecer con padre que cruza fronteras hasta que la frontera lo cruce a él. Miedo de que su madre tenía razón. Miedo de que la qhaqña no era alucinación. Miedo de que <em>uywanak sipansa</em> era profecía que está cumpliéndose.</p>
+
+<p class="p">El que cría serpientes, la serpiente lo cría. Y Artemio acaba de alimentar a la serpiente nueve veces. Y la serpiente está creciendo. Y la serpiente tiene hambre.</p>
+
+<p class="p">Toca el bolsillo del pantalón. Busca la piedra de Puquina. La encuentra. Todavía ahí. Fría. <em>Akax chhijjxatasktwa.</em> Esto te protegerá. <em>Akax chhijjxaraskitwa.</em> Esto te marcará. Artemio finalmente entiende que su madre nunca aclaró cuál porque la piedra hace ambas cosas. Te protege mientras te marca. Y la marca que la protección deja es más profunda que la protección misma. Porque la protección es temporal. Pero la marca es permanente.</p>
+
+<div class="climax">
+  <p class="climax-t">Y Artemio ya está marcado.<br>Desde el primer cruce que pensó que era único.<br>Desde el noveno que ya no necesita justificación porque ya es hábito.</p>
+  <p class="climax-a">Desde ahora hasta Yura: seis años.<br>Desde el noveno cruce hasta el cruce treinta y dos.<br>Desde "voy a parar pronto" hasta "no puedo parar".</p>
+</div>
+
+<p class="p">Artemio vuelve a la cama. Se acuesta junto a Roxana que duerme. Mira el techo. Grietas en el techo que forman el mapa de un futuro. Mapa de ruta que ya tomó. Mapa que conduce a Yura donde las esposas aprietan las muñecas y Edgar dice <em>"tú querías ser diferente"</em> y Artemio entiende que diferente era ilusión. Que todos somos iguales. Que todos caemos. Que la diferencia solo es la velocidad de caída.</p>
+
+<p class="p">Y Artemio está cayendo rápido. Seis años. Desde ahora hasta Yura. Desde el noveno cruce hasta el cruce treinta y dos. Y el frío sigue ahí. Como siempre. <b>No el frío de Juliaca que se combate con frazadas. El de adentro. El frío que instala la primera vez que cruzas sabiendo que está mal. El que no se va nunca. Porque no es temperatura. Frío es precio. Precio de sobrevivir en sistema que no te deja otra opción.</b></p>
+
+<p class="p">Precio que pagas en cuotas pequeñas durante seis años. Hasta que las cuotas suman el total. Y el total es Yura. Y Yura es ahora. Siempre fue ahora. Solo que ahora era futuro. Y el futuro se volvió presente. Y el presente se vuelve pasado. Y el pasado es lo único que queda cuando caes. Y el frío sigue ahí. Como siempre. Esperando.</p>
+
+<div class="sp48"></div>
+</div><!-- /body final -->
+
+
+<!-- PIE -->
+<div class="ch-foot">
+  <div class="ch-foot-inner">
+    <div>
+      <div class="foot-book">La Culebra &ensp;·&ensp; Parte I &ensp;·&ensp; Hambre</div>
+      <div class="foot-auth">Sergio Esteban Flores Pinazo &ensp;·&ensp; El Quipu &ensp;·&ensp; Quipu Andino 2026</div>
+    </div>
+    <div class="foot-n">02</div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cont">
+  <div class="cont-orn">
+    <div class="cont-orn-line"></div>
+    <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="9" cy="9" r="8" fill="none" stroke="#2a2010" stroke-width="0.5"/>
+      <path d="M9 3 C9 3 5.5 7 5.5 9 C5.5 11 9 15 9 15 C9 15 12.5 11 12.5 9 C12.5 7 9 3 9 3 Z" fill="none" stroke="#3a2e18" stroke-width="0.5"/>
+      <circle cx="9" cy="9" r="2" fill="#3a2e18"/>
+    </svg>
+    <div class="cont-orn-line"></div>
+  </div>
+  <div class="cont-tit">Continúa</div>
+  <div class="cont-sub">Capítulo 3 &ensp;·&ensp; La Culebra &ensp;·&ensp; Parte I: Hambre</div>
+  <div class="sp32"></div>
+  <div style="font-size:11px;letter-spacing:0.38em;color:#2a2010;text-transform:uppercase;">
+    Yape / Plin: 931 177 848 &ensp;·&ensp; Novelas por un Sol &ensp;·&ensp; @quipuandino
+  </div>
+</div>
+
+</body>
+</html>
