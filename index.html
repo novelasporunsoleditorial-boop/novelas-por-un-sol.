@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novelas del Mundo | Editorial Independiente</title>
-    <!-- Google Fonts para estilo premium estilo Dan Brown / Stephen King -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* BASE & PALETA DE COLORES PREMIUM (Estilo Dan Brown) */
+        /* PALETA DE COLORES PREMIUM (Estilo Dan Brown) */
         * {
             margin: 0;
             padding: 0;
@@ -54,7 +53,7 @@
         }
 
         .logo-box img {
-            width: 50px;
+            width: 45px;
             height: auto;
         }
 
@@ -82,7 +81,6 @@
             color: #ff3344;
         }
 
-        /* SECTOR INTERNACIONALIZACIÓN (PREPARADO PARA IDIOMAS) */
         .lang-selector {
             display: flex;
             gap: 8px;
@@ -106,16 +104,15 @@
             font-weight: bold;
         }
 
-        /* HERO SECCIÓN: REESTRUCTURADO Y CORREGIDO (Estilo image_e33da8.jpg) */
+        /* HERO SECCIÓN CORREGIDA */
         .hero {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 1.2s 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
             align-items: center;
-            min-height: auto; /* Corrección para que no se ahogue el texto */
         }
 
         @media (max-width: 768px) {
@@ -132,7 +129,8 @@
         }
 
         .banner-mini {
-            max-width: 380px;
+            max-width: 100%;
+            width: 380px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             border: 1px solid #333;
@@ -174,9 +172,9 @@
 
         .hero-image-box img {
             width: 100%;
-            max-width: 380px;
+            max-width: 360px;
             border-radius: 4px;
-            box-shadow: 0 0 30px rgba(255, 51, 68, 0.15); /* Brillo sutil */
+            box-shadow: 0 0 30px rgba(255, 51, 68, 0.15);
             border: 2px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease;
         }
@@ -185,7 +183,7 @@
             transform: scale(1.02);
         }
 
-        /* BOTONES DE ACCIÓN INMEDIATA */
+        /* BOTONES DE ACCIÓN */
         .cta-group {
             display: flex;
             gap: 15px;
@@ -207,6 +205,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            border: none;
         }
 
         .btn-primary {
@@ -230,7 +229,7 @@
             background: rgba(255,51,68,0.05);
         }
 
-        /* BOLETÍN DE SUSCRIPCIÓN CLUB DE LECTURA (Estilo Stephen King image_e2d82e.jpg) */
+        /* CLUB VIP (Estilo Stephen King) */
         .newsletter-section {
             background: linear-gradient(135deg, #1a080a 0%, #121212 100%);
             border-top: 1px solid #3a1014;
@@ -290,11 +289,7 @@
             transition: background 0.3s;
         }
 
-        .newsletter-form button:hover {
-            background-color: #e02233;
-        }
-
-        /* CATÁLOGO DINÁMICO ESCALABLE (Estilo James Patterson para las 14 novelas) */
+        /* CATÁLOGO ESCALABLE (Estilo Patterson) */
         .catalog-section {
             max-width: 1200px;
             margin: 60px auto;
@@ -306,16 +301,6 @@
             font-size: 2.2rem;
             text-align: center;
             margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #ff3344;
-            margin: 10px auto 0;
         }
 
         .grid-catalog {
@@ -337,7 +322,6 @@
         .book-card:hover {
             transform: translateY(-5px);
             border-color: #444;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .book-cover {
@@ -360,7 +344,6 @@
             text-transform: uppercase;
             color: #ffb400;
             font-weight: 700;
-            letter-spacing: 1px;
         }
 
         .book-info h4 {
@@ -379,10 +362,7 @@
             font-weight: 700;
             font-size: 1.1rem;
             color: #fff;
-            margin: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-top: 10px;
         }
 
         .price-global {
@@ -391,13 +371,13 @@
             font-weight: 400;
         }
 
-        /* MODAL / SECCIÓN DE PAGO AUTOMATIZADA CON DOBLE NÚMERO */
+        /* PASARELA LOGÍSTICA DE PAGO (Doble Número) */
         .payment-box {
             background-color: #1a1a1a;
             border: 1px solid #ff3344;
             border-radius: 6px;
             padding: 25px;
-            margin-top: 15px;
+            margin-top: 40px;
         }
 
         .payment-header {
@@ -406,22 +386,22 @@
             color: #ffb400;
             font-size: 1rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .payment-details {
-            font-size: 0.9rem;
+        .payment-details p {
+            font-size: 0.95rem;
             color: #ccc;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .payment-details strong {
             color: #fff;
-            background: #2a2a2a;
+            background: #333;
             padding: 2px 6px;
             border-radius: 4px;
         }
 
-        /* FOOTER */
         footer {
             background-color: #0b0b0b;
             padding: 30px 20px;
@@ -435,11 +415,11 @@
 </head>
 <body>
 
-    <!-- NAV CON IDIOMAS FUTUROS -->
     <header>
         <div class="nav-container">
             <div class="logo-box">
-                <img src="logo.png" alt="Logotipo">
+                <!-- Ruta exacta según imagen image_d85cdc.jpg -->
+                <img src="recursos/ editorial/ logotipos/logo_de_NOVELAS_DEL_MUNDO_editorial_sin_texto.png" alt="Logo">
                 <div class="logo-text">
                     <h1>NOVELAS DEL MUNDO</h1>
                 </div>
@@ -450,10 +430,9 @@
                     <li><a href="#catalogo">Catálogo</a></li>
                     <li><a href="#club">Club VIP</a></li>
                     <li>
-                        <!-- Selector de idiomas escalable -->
                         <div class="lang-selector">
-                            <span class="lang-btn active" title="Español">ES</span>
-                            <span class="lang-btn" title="English (Próximamente)" onclick="alert('English version coming soon / Versión en inglés próximamente')">EN</span>
+                            <span class="lang-btn active">ES</span>
+                            <span class="lang-btn" onclick="alert('English version coming soon / Versión en inglés próximamente')">EN</span>
                         </div>
                     </li>
                 </ul>
@@ -461,47 +440,45 @@
         </div>
     </header>
 
-    <!-- PORTADA REDISEÑADA -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <img src="image_e33da8.jpg" alt="Banner Novelas del Mundo" class="banner-mini">
+            <!-- Banner horizontal exacto según tu captura image_d85cdc.jpg -->
+            <img src="recursos/ editorial/ logotipos/baner_NOVELAS_DEL_MUNDO_con_logo.png" alt="Banner Novelas del Mundo" class="banner-mini">
             <p class="campaign-tag">Campaña Novelas por un Sol</p>
             <h2>Literatura Peruana<br><span>Que No Pide Permiso</span></h2>
             <p>Editorial independiente que publica novelas, cuentos y poesía. Una biblioteca digital diseñada para romper fronteras, descubrir nuevas obras de suspenso y conectar directamente desde el Perú profundo hacia el mundo entero.</p>
             
             <div class="cta-group">
                 <a href="#catalogo" class="btn btn-primary">Ver Obras Disponibles</a>
-                <a href="#club" class="btn btn-secondary">Unirse al Club de Lectura</a>
+                <a href="#club" class="btn btn-secondary">Unirse al Club VIP</a>
             </div>
         </div>
         
         <div class="hero-image-box">
-            <!-- Tu fotografía principal -->
-            <img src="image_e33da8.jpg" alt="Autor">
+            <!-- Tu fotografía exacta según tu captura image_d85d1a.jpg -->
+            <img src="foto_del_autor.jpg" alt="Autor">
         </div>
     </section>
 
-    <!-- BOLETÍN ESTILO STEPHEN KING (Suscripción WhatsApp) -->
     <section class="newsletter-section" id="club">
         <div class="newsletter-container">
             <h3>Únete al Club de Lectura VIP</h3>
-            <p>Recibe los nuevos capítulos de nuestras 14 novelas listas cada 15 días directamente en tu bandeja. Sé el primero en enterarte de los lanzamientos mundiales.</p>
+            <p>Recibe los nuevos capítulos de nuestras 14 novelas listas cada 15 días directamente en tu bandeja o WhatsApp. Sé el primero en enterarte de los lanzamientos mundiales.</p>
             <form class="newsletter-form" onsubmit="event.preventDefault(); window.open('https://wa.me/51977453686?text=Hola%20Editorial.%20Deseo%20unirme%20al%20Club%20de%20Lectura%20VIP%20para%20recibir%20las%20novedades.', '_blank');">
-                <input type="email" placeholder="Tu correo electrónico o número" required>
+                <input type="text" placeholder="Tu número de WhatsApp o Correo" required>
                 <button type="submit">Inscribirse Ahora</button>
             </form>
         </div>
     </section>
 
-    <!-- CATÁLOGO DINÁMICO CORREGIDO (Estilo Patterson) -->
     <section class="catalog-section" id="catalogo">
         <h3 class="section-title">Catálogo Oficial</h3>
         
         <div class="grid-catalog">
             
-            <!-- OBRA 1: NOVELA -->
+            <!-- OBRA 1: NOVELA (Ruta de imagen corregida según image_d85c61.jpg) -->
             <div class="book-card">
-                <img src="portadas/la_culebra.png" alt="La Culebra" class="book-cover">
+                <img src="novelas/ la culebra/portada_de_la_novela_la_culebra.png" alt="La Culebra" class="book-cover">
                 <div class="book-info">
                     <span class="book-tag">Novela Negra / Noir Andino</span>
                     <h4>La Culebra</h4>
@@ -512,9 +489,9 @@
                 </div>
             </div>
 
-            <!-- OBRA 2: POESÍA (CORREGIDO SIN LA Ñ EN LA RUTA) -->
+            <!-- OBRA 2: POESÍA (Ruta de imagen corregida según image_d85c26.png) -->
             <div class="book-card">
-                <img src="portadas/cuando_el_padre_es_montana_portada.png" alt="Cuando el Padre es Montaña" class="book-cover">
+                <img src="poesia/ cuando-el-padre-es-montana/cuando_el_padre_es_montaña_portada.png" alt="Cuando el Padre es Montaña" class="book-cover">
                 <div class="book-info">
                     <span class="book-tag">Antología Poética</span>
                     <h4>Cuando el Padre es Montaña</h4>
@@ -527,7 +504,7 @@
 
             <!-- OBRA 3: CUENTOS -->
             <div class="book-card">
-                <img src="portadas/cuentos.png" alt="Cuentos Completos" class="book-cover">
+                <img src="primera para face.png" alt="Historias de la Frontera" class="book-cover">
                 <div class="book-info">
                     <span class="book-tag">Relatos Breves</span>
                     <h4>Historias de la Frontera</h4>
@@ -540,24 +517,22 @@
 
         </div>
 
-        <!-- MÓDULO LOGÍSTICO DE PAGO SEGURO (Dos números blindados) -->
+        <!-- LOGÍSTICA DE PAGO AUTOMÁTICA -->
         <div class="payment-box">
-            <div class="payment-header">🌐 Pasarela de Pago e Instrucciones de Envío</div>
+            <div class="payment-header">🌐 Pasarela de Pago e Instrucciones de Envío Internacional</div>
             <div class="payment-details">
-                <p>1. Realiza tu pago de <strong>S/. 1.00 por obra</strong> mediante <strong>Yape o Plin</strong> al número oficial de finanzas: <strong>931177848</strong>.</p>
-                <p style="margin-top: 8px;">2. Para lectores en el <strong>Extranjero (Bolivia, EE.UU., etc.)</strong>, haz clic abajo para coordinar tu envío vía PayPal o Amazon.</p>
+                <p>1. Realiza tu pago de <strong>S/. 1.00 por obra</strong> mediante <strong>Yape o Plin</strong> al número oficial de recaudación: <strong>931177848</strong>.</p>
+                <p>2. Para lectores en el <strong>Extranjero (Bolivia, EE.UU., etc.)</strong>, dale clic al botón de abajo para coordinar tu envío directo vía PayPal o Amazon.</p>
             </div>
-            <!-- El botón abre WhatsApp al número de la EDITORIAL enviando la orden de compra -->
             <a href="https://wa.me/51977453686?text=Hola%20Editorial%20Novelas%20del%20Mundo.%20Acabo%20de%20realizar%20mi%20pago%20al%20número%20de%20Yape%2FPlin.%20Adjunto%20mi%20captura%20para%20recibir%20mi%20libro%20digital." 
                target="_blank" 
                class="btn btn-primary" 
-               style="width: 100%; justify-content: center;">
+               style="width: 100%; justify-content: center; margin-top: 15px;">
                📱 Enviar Captura de Pago al WhatsApp de la Editorial (977453686)
             </a>
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA UNIVERSAL -->
     <footer>
         <p>&copy; 2026 Novelas del Mundo. Editorial Independiente. Diseñado para distribución global desde Arequipa, Perú hacia el mundo.</p>
     </footer>
